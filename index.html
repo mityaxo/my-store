@@ -1,502 +1,517 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EulasHQ Store | Official Catalog & Order Guide</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Outfit Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: #310a11; /* Deep Burgundy Background */
-            background-image: radial-gradient(circle at 20% 20%, #4a121d 0%, transparent 40%),
-                              radial-gradient(circle at 80% 80%, #20050a 0%, transparent 50%);
-        }
-        
-        .brand-heading {
-            font-family: 'Outfit', sans-serif;
-            color: #fbf6f0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Cream Notebook Style Card */
-        .notebook-card {
-            background-color: #fbf6f0;
-            color: #2b1216;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 0 40px rgba(218, 203, 186, 0.2);
-            border: 1px solid #eadacc;
-        }
+  <title>mitya.xo ♡</title>
 
-        /* Dark Wine Accent Cards */
-        .wine-card {
-            background-color: #4a121d;
-            border: 1px solid rgba(251, 246, 240, 0.15);
-        }
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700&display=swap');
 
-        /* Spiral Binder Effect on Left Edge */
-        .spiral-binder {
-            background-image: repeating-linear-gradient(
-                to bottom,
-                transparent,
-                transparent 18px,
-                #20050a 18px,
-                #20050a 26px
-            );
-        }
-    </style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: #f6f3ff;
+      color: #4d4770;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      width: 100%;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #e4dcff;
+    }
+
+    .logo {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #7b6bc4;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #625b7d;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #9b7ede;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        radial-gradient(circle at top left, #e7dcff, transparent 35%),
+        radial-gradient(circle at bottom right, #d9ccff, transparent 35%),
+        #f7f4ff;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .sparkles {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #9b7ede;
+    }
+
+    .hero h1 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      color: #6f5ca8;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      color: #a98be8;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 550px;
+      margin: 0 auto 25px;
+      color: #6b6380;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.25s;
+    }
+
+    .primary {
+      background: #8069c5;
+      color: white;
+      box-shadow: 0 8px 20px rgba(128, 105, 197, 0.25);
+    }
+
+    .primary:hover {
+      transform: translateY(-3px);
+      background: #6e58b0;
+    }
+
+    .secondary {
+      background: white;
+      color: #8069c5;
+      border: 2px solid #ded4ff;
+    }
+
+    .secondary:hover {
+      transform: translateY(-3px);
+    }
+
+    /* General Sections */
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title span {
+      color: #a98be8;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .section-title h2 {
+      font-family: 'Quicksand', sans-serif;
+      color: #62518f;
+      font-size: 2.3rem;
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      color: #7b748d;
+      margin-top: 10px;
+    }
+
+    /* Services */
+    .services {
+      background: white;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 22px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service-card {
+      background: #faf8ff;
+      border: 2px solid #eee9ff;
+      border-radius: 25px;
+      padding: 32px 25px;
+      text-align: center;
+      transition: 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(126, 103, 190, 0.12);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      color: #66528f;
+      font-family: 'Quicksand', sans-serif;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .service-card p {
+      color: #7c758d;
+      line-height: 1.6;
+    }
+
+    /* Why Choose Us */
+    .why {
+      background: #f2edff;
+    }
+
+    .why-grid {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .why-item {
+      background: rgba(255, 255, 255, 0.75);
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .why-item h3 {
+      margin: 10px 0;
+      color: #695590;
+    }
+
+    /* Reviews */
+    .testimonials {
+      background: white;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .testimonial {
+      background: #faf8ff;
+      border-radius: 22px;
+      padding: 25px;
+      border: 1px solid #e9e2ff;
+    }
+
+    .stars {
+      color: #a98be8;
+      margin-bottom: 12px;
+    }
+
+    .testimonial p {
+      line-height: 1.6;
+      color: #70697f;
+    }
+
+    .customer {
+      margin-top: 15px;
+      font-weight: 800;
+      color: #6c5796;
+    }
+
+    /* Socials */
+    .order {
+      text-align: center;
+      background:
+        radial-gradient(circle at center, #e8ddff, transparent 60%),
+        #f5f1ff;
+    }
+
+    .order-box {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      padding: 45px 30px;
+      border-radius: 30px;
+      border: 2px solid #e7dfff;
+      box-shadow: 0 15px 40px rgba(105, 85, 144, 0.1);
+    }
+
+    .order-box h2 {
+      font-family: 'Quicksand', sans-serif;
+      color: #65518c;
+      margin-bottom: 12px;
+      font-size: 2rem;
+    }
+
+    .order-box p {
+      color: #777083;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      background: #65518c;
+      color: #f5f0ff;
+      text-align: center;
+      padding: 28px 20px;
+    }
+
+    footer p {
+      opacity: 0.9;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      .logo {
+        font-size: 1.2rem;
+      }
+
+      .nav-links {
+        gap: 12px;
+        font-size: 0.8rem;
+      }
+
+      section {
+        padding: 60px 6%;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+    }
+  </style>
 </head>
-<body class="text-[#fbf6f0] min-h-screen flex flex-col justify-between selection:bg-[#4a121d] selection:text-[#fbf6f0]">
 
-    <!-- Header Section -->
-    <header class="w-full max-w-5xl mx-auto px-4 py-6 flex flex-col lg:flex-row justify-between items-center gap-4 border-b border-[#4a121d]">
-        <div class="flex items-center gap-3 text-center sm:text-left">
-            <h1 class="text-3xl font-extrabold tracking-wider brand-heading flex items-center gap-2">
-                ✨ EulasHQ Store <span class="text-xs bg-[#4a121d] text-[#ffccd5] px-2.5 py-0.5 rounded-full border border-pink-900/30 font-semibold tracking-normal">OFFICIAL</span>
-            </h1>
-        </div>
-        
-        <!-- Social & Bot Bar -->
-        <div class="flex flex-wrap items-center justify-center gap-2.5">
-            <a href="https://www.instagram.com/eulashq" target="_blank" class="bg-[#4a121d] hover:bg-[#5c1825] text-[#ffccd5] transition text-xs px-3.5 py-2 rounded-xl border border-pink-900/20 flex items-center gap-1.5 font-medium">
-                <i class="fa-brands fa-instagram text-sm"></i> Instagram
-            </a>
-            <a href="https://www.threads.net/@eulashq" target="_blank" class="bg-[#4a121d] hover:bg-[#5c1825] text-[#ffccd5] transition text-xs px-3.5 py-2 rounded-xl border border-pink-900/20 flex items-center gap-1.5 font-medium">
-                <i class="fa-brands fa-threads text-sm"></i> Threads
-            </a>
-            <a href="http://t.me/eulashqorderbot" target="_blank" class="bg-[#fbf6f0] hover:bg-[#eee6dc] text-[#310a11] transition text-xs font-bold px-4 py-2 rounded-xl flex items-center gap-1.5 shadow-md">
-                <i class="fa-solid fa-robot"></i> Order Bot
-            </a>
-        </div>
-    </header>
+<body>
 
-    <!-- Main Workspace -->
-    <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-8">
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">✦ mitya.xo ♡</div>
 
-        <!-- SECTION: HOW TO ORDER GUIDE -->
-        <section class="wine-card rounded-3xl p-6 sm:p-8 mb-10 shadow-2xl relative overflow-hidden">
-            <div class="flex items-center gap-3 mb-6 border-b border-[#ffccd5]/20 pb-4">
-                <div class="w-10 h-10 rounded-2xl bg-[#fbf6f0] text-[#310a11] flex items-center justify-center text-lg font-bold shadow">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
-                <div>
-                    <span class="text-[10px] font-bold tracking-widest text-[#ffccd5]/70 uppercase block">✦ Step-By-Step Guide ✦</span>
-                    <h2 class="text-xl font-extrabold text-white">How To Order From EulasHQ Store</h2>
-                </div>
-            </div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#socials">Socials</a></li>
+    </ul>
+  </nav>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                
-                <!-- Step 1 -->
-                <div class="bg-[#310a11]/80 rounded-2xl p-4 border border-pink-900/30 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold text-[#ffccd5] bg-[#4a121d] px-2.5 py-0.5 rounded-full border border-pink-900/40">Step 1</span>
-                            <i class="fa-brands fa-telegram text-[#ffccd5]"></i>
-                        </div>
-                        <h3 class="font-bold text-sm text-white mb-1">Open Bot & Click Start</h3>
-                        <p class="text-xs text-[#ffccd5]/80 leading-relaxed">Click any order button on this site to open our Telegram Bot, then press <span class="font-bold text-white">START</span>.</p>
-                    </div>
-                    <a href="http://t.me/eulashqorderbot" target="_blank" class="mt-3 block text-center bg-[#4a121d] hover:bg-[#5c1825] text-[#ffccd5] text-[11px] font-semibold py-1.5 rounded-lg border border-pink-900/30 transition">
-                        Open @eulashqorderbot
-                    </a>
-                </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="sparkles">✦ ₊˚ ♡ ⋆｡°✩</div>
 
-                <!-- Step 2 -->
-                <div class="bg-[#310a11]/80 rounded-2xl p-4 border border-pink-900/30">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold text-[#ffccd5] bg-[#4a121d] px-2.5 py-0.5 rounded-full border border-pink-900/40">Step 2</span>
-                        <i class="fa-solid fa-list-check text-[#ffccd5]"></i>
-                    </div>
-                    <h3 class="font-bold text-sm text-white mb-1">View Pricelist & Check Robux</h3>
-                    <p class="text-xs text-[#ffccd5]/80 leading-relaxed">
-                        Click the <code class="bg-[#4a121d] text-[#ffccd5] px-1 py-0.5 rounded text-[10px]">pricelist</code> command button. <br>
-                        <span class="text-[11px] text-pink-300 font-semibold">⚠️ Note:</span> If Robux rates change, check our Threads accounts for live price updates!
-                    </p>
-                </div>
+      <h1>welcome to <span>mitya.xo</span> ♡</h1>
 
-                <!-- Step 3 -->
-                <div class="bg-[#310a11]/80 rounded-2xl p-4 border border-pink-900/30">
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold text-[#ffccd5] bg-[#4a121d] px-2.5 py-0.5 rounded-full border border-pink-900/40">Step 3</span>
-                        <i class="fa-solid fa-copy text-[#ffccd5]"></i>
-                    </div>
-                    <h3 class="font-bold text-sm text-white mb-1">Get Your Order Format</h3>
-                    <p class="text-xs text-[#ffccd5]/80 leading-relaxed">Click the format button you need:</p>
-                    <ul class="text-[11px] text-[#ffccd5] mt-1 space-y-1 font-medium">
-                        <li>✦ <span class="bg-[#4a121d] px-1.5 py-0.5 rounded">୨୧₊˚⊹💗 𝗙𝗢𝗥𝗠𝗔𝗧 𝗢𝗥𝗗𝗘𝗥 𝗥𝗢𝗕𝗨𝗫 ✨ ⊹˚₊୨୧</span></li>
-                        <li>✦ <span class="bg-[#4a121d] px-1.5 py-0.5 rounded">୨୧₊˚⊹💗 𝗙𝗢𝗥𝗠𝗔𝗧 𝗢𝗥𝗗𝗘𝗥 𝗔𝗣𝗣𝗦 𝗣𝗥𝗘𝗠𝗜𝗨𝗠 ✨ ⊹˚₊୨୧</span></li>
-                    </ul>
-                </div>
+      <p>
+        Your little trusted shop for Robux top-ups and Genshin piloting services! ✦
+        Safe, easy, and made with lots of love.
+      </p>
 
-                <!-- Step 4 & 5 -->
-                <div class="md:col-span-2 lg:col-span-3 bg-[#310a11]/80 rounded-2xl p-4 border border-pink-900/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div class="space-y-1">
-                        <div class="flex items-center gap-2">
-                            <span class="text-xs font-bold text-[#ffccd5] bg-[#4a121d] px-2.5 py-0.5 rounded-full border border-pink-900/40">Step 4 & 5</span>
-                            <h3 class="font-bold text-sm text-white">Submit Order & Wait Confirmation</h3>
-                        </div>
-                        <p class="text-xs text-[#ffccd5]/80 leading-relaxed">
-                            Fill in your details and click <span class="font-bold text-pink-200">୨୧₊˚⊹♡ 🛒 𝐎𝐫𝐝𝐞𝐫 𝐇𝐞𝐫𝐞 🛒 ♡⊹˚₊ 💗</span> in the bot to get my order bot and then paste the format to my orderbot. Then, wait until I reply with your order confirmation!
-                        </p>
-                    </div>
-                    <a href="http://t.me/eulashqorderbot" target="_blank" class="bg-[#fbf6f0] hover:bg-[#eee6dc] text-[#310a11] text-xs font-extrabold px-5 py-2.5 rounded-xl shrink-0 transition shadow">
-                        Ready? Launch Bot Now
-                    </a>
-                </div>
+      <div class="hero-buttons">
+        <a href="#services" class="button primary">View Services ♡</a>
+        <a href="#socials" class="button secondary">Follow Us ✦</a>
+      </div>
+    </div>
+  </section>
 
-            </div>
-        </section>
-
-        <!-- Layout Grid: Main Catalog Notebook + Sidebar -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start mb-10">
-            
-            <!-- LEFT & CENTER COLUMN: Services Notebook -->
-            <div class="lg:col-span-2 notebook-card rounded-3xl p-6 sm:p-8 relative overflow-hidden">
-                
-                <!-- Notebook Binder Spiral Effect -->
-                <div class="absolute top-0 bottom-0 left-0 w-6 spiral-binder border-r border-[#eadacc]"></div>
-                <div class="absolute top-0 bottom-0 left-7 w-[2px] border-l border-dashed border-[#eadacc]"></div>
-                
-                <div class="pl-6 space-y-8">
-                    
-                    <!-- SECTION 0: ROBUX PRICE LIST -->
-                    <div>
-                        <div class="text-center sm:text-left mb-4 border-b-2 border-[#310a11]/10 pb-2">
-                            <span class="text-[10px] font-bold tracking-widest text-[#4a121d]/60 uppercase block">✦ Featured Catalog ✦</span>
-                            <h2 class="text-xl font-extrabold text-[#310a11] flex items-center gap-2 justify-center sm:justify-start">
-                                <i class="fa-solid fa-gamepad text-xs text-[#4a121d]"></i> ROBUX PRICE LIST
-                            </h2>
-                        </div>
-                        
-                        <div class="space-y-2.5">
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-1.5 flex justify-between items-center text-xs">
-                                <span class="font-bold text-[#310a11]">◆ 100 Robux</span>
-                                <span class="font-bold bg-[#310a11]/5 px-2.5 py-0.5 rounded text-[#4a121d]">RM4.99</span>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-1.5 flex justify-between items-center text-xs">
-                                <span class="font-bold text-[#310a11]">◆ 150 Robux</span>
-                                <span class="font-bold bg-[#310a11]/5 px-2.5 py-0.5 rounded text-[#4a121d]">RM7.49</span>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-1.5 flex justify-between items-center text-xs">
-                                <span class="font-bold text-[#310a11]">◆ 200 Robux</span>
-                                <span class="font-bold bg-[#310a11]/5 px-2.5 py-0.5 rounded text-[#4a121d]">RM8.99</span>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-1.5 flex justify-between items-center text-xs">
-                                <span class="font-bold text-[#310a11]">◆ 250 Robux</span>
-                                <span class="font-bold bg-[#310a11]/5 px-2.5 py-0.5 rounded text-[#4a121d]">RM10.99</span>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-1.5 flex justify-between items-center text-xs">
-                                <span class="font-bold text-[#310a11]">◆ 300 Robux</span>
-                                <span class="font-bold bg-[#310a11]/5 px-2.5 py-0.5 rounded text-[#4a121d]">RM12.99</span>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-1.5 flex justify-between items-center text-xs">
-                                <span class="font-bold text-[#310a11]">◆ 400 Robux</span>
-                                <span class="font-bold bg-[#310a11]/5 px-2.5 py-0.5 rounded text-[#4a121d]">RM16.99</span>
-                            </div>
-
-                            <!-- BEST SELLER HIGHLIGHT BLOCK -->
-                            <div class="bg-[#4a121d]/10 rounded-2xl p-3 my-3 border border-[#4a121d]/20 space-y-2">
-                                <div class="text-[11px] font-extrabold text-[#4a121d] flex items-center gap-1.5 uppercase tracking-wider">
-                                    <i class="fa-solid fa-star text-amber-600"></i> Best Seller
-                                </div>
-                                <div class="flex justify-between items-center text-xs">
-                                    <span class="font-bold text-[#310a11]">◆ 500 Robux</span>
-                                    <span class="font-bold bg-[#4a121d] text-[#fbf6f0] px-2.5 py-0.5 rounded">RM19.99</span>
-                                </div>
-                                <div class="flex justify-between items-center text-xs">
-                                    <span class="font-bold text-[#310a11]">◆ 1000 Robux</span>
-                                    <span class="font-bold bg-[#4a121d] text-[#fbf6f0] px-2.5 py-0.5 rounded">RM40.99</span>
-                                </div>
-                            </div>
-
-                            <!-- CUSTOM AMOUNT NOTE -->
-                            <div class="bg-[#310a11]/5 rounded-xl p-3 text-xs text-[#4a121d] font-medium border border-[#310a11]/10 flex items-start gap-2">
-                                <i class="fa-solid fa-circle-info mt-0.5 text-[#4a121d]"></i>
-                                <span>Want any other amount not in the list? Just use my order bot to ask the price and amount of Robux you want!</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SECTION 1: EDITING APPS -->
-                    <div>
-                        <div class="text-center sm:text-left mb-4 border-b-2 border-[#310a11]/10 pb-2">
-                            <span class="text-[10px] font-bold tracking-widest text-[#4a121d]/60 uppercase block">✦ Category 01 ✦</span>
-                            <h2 class="text-xl font-extrabold text-[#310a11] flex items-center gap-2 justify-center sm:justify-start">
-                                <i class="fa-solid fa-wand-magic-sparkles text-xs text-[#4a121d]"></i> EDITING PREMIUM APPS
-                            </h2>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-2">
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ ALIGHT MOTION PRO</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Private (1 Month / 1 Year)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM4.00 - RM5.00</span>
-                                </div>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-2">
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ PICSART GOLD</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Private / Sharing (1 Month)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM4.70 - RM5.00</span>
-                                </div>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-2">
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ CAPCUT PRO</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Private (1 Week / 1 Month)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM5.50 - RM11.50</span>
-                                </div>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-2">
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ CANVA PRO</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Invited / Owner Setup</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM2.50 - RM5.00</span>
-                                </div>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-2">
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ REMINI PREMIUM</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Private (14 Days / 1 Month)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM5.50 - RM7.00</span>
-                                </div>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-2">
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ MEITU PREMIUM</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Private (7 Days / 1 Month)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM4.50 - RM6.90</span>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ WINK PREMIUM</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Private / Sharing (1 Month)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM5.50 - RM7.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SECTION 2: STREAMING APPS -->
-                    <div>
-                        <div class="text-center sm:text-left mb-4 border-b-2 border-[#310a11]/10 pb-2">
-                            <span class="text-[10px] font-bold tracking-widest text-[#4a121d]/60 uppercase block">✦ Category 02 ✦</span>
-                            <h2 class="text-xl font-extrabold text-[#310a11] flex items-center gap-2 justify-center sm:justify-start">
-                                <i class="fa-solid fa-tv text-xs text-[#4a121d]"></i> STREAMING APPS
-                            </h2>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-2">
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ NETFLIX PREMIUM 4K HDR</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Private Profile / Sharing (1 Month)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM8.50 - RM15.00</span>
-                                </div>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-2">
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ DISNEY+ HOTSTAR</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Private Profile (1 Month)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM7.50</span>
-                                </div>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-2">
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ VIU PREMIUM</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Private Account (1 Month / 1 Year)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM4.00 - RM10.00</span>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ PRIME VIDEO / HBO GO</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Private Profile (1 Month)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM5.00 - RM8.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SECTION 3: MUSIC APPS -->
-                    <div>
-                        <div class="text-center sm:text-left mb-4 border-b-2 border-[#310a11]/10 pb-2">
-                            <span class="text-[10px] font-bold tracking-widest text-[#4a121d]/60 uppercase block">✦ Category 03 ✦</span>
-                            <h2 class="text-xl font-extrabold text-[#310a11] flex items-center gap-2 justify-center sm:justify-start">
-                                <i class="fa-solid fa-music text-xs text-[#4a121d]"></i> MUSIC APPS
-                            </h2>
-                        </div>
-                        <div class="space-y-3">
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-2">
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ SPOTIFY PREMIUM</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Individual / Family Plan Join (1 Month)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM5.00 - RM12.00</span>
-                                </div>
-                            </div>
-                            <div class="border-b border-dashed border-[#d2c3b2] pb-2">
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ YOUTUBE PREMIUM</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Invited Account (1 Month / 3 Months)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM4.50 - RM11.00</span>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ APPLE MUSIC</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Family Invite (1 Month)</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM6.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SECTION 4: CHATGPT & AI APPS -->
-                    <div>
-                        <div class="text-center sm:text-left mb-4 border-b-2 border-[#310a11]/10 pb-2">
-                            <span class="text-[10px] font-bold tracking-widest text-[#4a121d]/60 uppercase block">✦ Category 04 ✦</span>
-                            <h2 class="text-xl font-extrabold text-[#310a11] flex items-center gap-2 justify-center sm:justify-start">
-                                <i class="fa-solid fa-robot text-xs text-[#4a121d]"></i> CHATGPT & AI APPS
-                            </h2>
-                        </div>
-                        <div class="space-y-3">
-                            <div>
-                                <h3 class="font-bold text-sm text-[#310a11]">◆ CHATGPT PLUS (GPT-4o)</h3>
-                                <div class="flex justify-between items-center text-xs text-[#4a121d]/90 mt-1 pl-3">
-                                    <span>Sharing Account / Private Account</span>
-                                    <span class="font-bold bg-[#310a11]/5 px-2 py-0.5 rounded">RM8.00 - RM25.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Notebook Footer Tags -->
-                    <div class="mt-8 pt-4 border-t-2 border-[#310a11]/10 flex flex-wrap gap-2 justify-center text-xs font-bold text-[#4a121d]">
-                        <span class="bg-[#eadacc]/40 px-2.5 py-1 rounded-md">✦ All Devices Supported</span>
-                        <span class="bg-[#eadacc]/40 px-2.5 py-1 rounded-md">✦ Instant Delivery</span>
-                        <span class="bg-[#eadacc]/40 px-2.5 py-1 rounded-md">✦ Full Warranty Covered</span>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- RIGHT COLUMN: Terms & Direct Bot Button -->
-            <div class="space-y-6">
-
-                <!-- ROBUX TERMS & CONDITIONS CARD -->
-                <div class="wine-card rounded-2xl p-6 shadow-2xl relative border-l-4 border-l-pink-400">
-                    <div class="flex items-center gap-2 border-b border-pink-900/40 pb-2.5 mb-3">
-                        <i class="fa-solid fa-gamepad text-pink-300 text-sm"></i>
-                        <h3 class="text-base font-extrabold text-white tracking-wide">
-                            Robux Terms & Conditions
-                        </h3>
-                    </div>
-                    <span class="text-[11px] font-bold text-[#ffccd5] tracking-widest block mb-2 uppercase text-pink-200">📌 NOTES</span>
-                    <ul class="space-y-2.5 text-xs text-[#ffccd5]/90 font-medium">
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-angle-right text-pink-400 mt-0.5 shrink-0"></i>
-                            <span>Strictly No Refund After Payment</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-angle-right text-pink-400 mt-0.5 shrink-0"></i>
-                            <span class="font-bold text-white bg-pink-950/60 px-1.5 py-0.5 rounded">Process Time: 1-5 minute</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-angle-right text-pink-400 mt-0.5 shrink-0"></i>
-                            <span>Please No Rush Order</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-angle-right text-pink-400 mt-0.5 shrink-0"></i>
-                            <span class="font-bold text-pink-200">No A Scam (100% Trusted Store)</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- GENERAL APPS TERMS & CONDITIONS -->
-                <div class="wine-card rounded-2xl p-6 shadow-2xl relative">
-                    <div class="flex items-center gap-2 border-b border-pink-900/40 pb-2.5 mb-3">
-                        <i class="fa-solid fa-shield-halved text-pink-300 text-sm"></i>
-                        <h3 class="text-base font-extrabold text-white tracking-wide">
-                            Apps Terms & Conditions
-                        </h3>
-                    </div>
-                    <ul class="space-y-2.5 text-xs text-[#ffccd5]/80">
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-circle text-[5px] mt-1.5 text-pink-400 shrink-0"></i>
-                            <span>Full Warranty Covered For All Apps</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-circle text-[5px] mt-1.5 text-pink-400 shrink-0"></i>
-                            <span>Apps Process Time: 1-5 Hours</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <i class="fa-solid fa-circle text-[5px] mt-1.5 text-pink-400 shrink-0"></i>
-                            <span>Follow Account Guidelines Provided</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Order Action Card -->
-                <div class="bg-[#fbf6f0] border-2 border-[#4a121d] rounded-2xl p-5 shadow-xl text-center text-[#310a11]">
-                    <div class="bg-[#4a121d]/10 rounded-lg p-2 mb-3 text-xs font-mono font-bold tracking-tight text-[#4a121d]">
-                         🔍 @eulashq
-                    </div>
-                    <a href="http://t.me/eulashqorderbot" target="_blank" class="block w-full bg-[#4a121d] hover:bg-[#5c1825] text-[#fbf6f0] font-extrabold text-xs py-3.5 rounded-xl tracking-wider transition uppercase shadow-md mb-4">
-                        <i class="fa-solid fa-cart-shopping mr-1.5"></i> ORDER HERE 💗
-                    </a>
-
-                    <!-- NO TELEGRAM ALTERNATIVE CONTACT SECTION -->
-                    <div class="border-t border-[#4a121d]/20 pt-3">
-                        <p class="text-[11px] font-bold text-[#4a121d] mb-2.5 flex items-center justify-center gap-1">
-                            <i class="fa-solid fa-comments"></i> Don't have Telegram?
-                        </p>
-                        <div class="grid grid-cols-2 gap-2">
-                            <a href="https://www.instagram.com/eulashq" target="_blank" class="bg-[#4a121d]/10 hover:bg-[#4a121d]/20 text-[#310a11] text-[11px] font-bold py-2 px-2 rounded-xl border border-[#4a121d]/20 flex items-center justify-center gap-1.5 transition">
-                                <i class="fa-brands fa-instagram text-pink-700"></i> Instagram
-                            </a>
-                            <a href="https://www.threads.net/@eulashq" target="_blank" class="bg-[#4a121d]/10 hover:bg-[#4a121d]/20 text-[#310a11] text-[11px] font-bold py-2 px-2 rounded-xl border border-[#4a121d]/20 flex items-center justify-center gap-1.5 transition">
-                                <i class="fa-brands fa-threads text-black"></i> Threads
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Floating Sticky Action Button -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <a href="http://t.me/eulashqorderbot" target="_blank" class="bg-[#fbf6f0] hover:bg-[#eee6dc] text-[#310a11] px-6 py-4 rounded-full font-extrabold text-xs tracking-wider shadow-2xl transition duration-200 flex items-center gap-3 border-2 border-[#4a121d] uppercase">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4a121d] opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-[#4a121d]"></span>
-            </span>
-            ORDER NOW ! 💗
-        </a>
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="section-title">
+      <span>✦ WHAT WE OFFER ✦</span>
+      <h2>our services ♡</h2>
+      <p>Choose a service and let's get started!</p>
     </div>
 
-    <!-- Web Footer Layout -->
-    <footer class="w-full bg-[#20050a] border-t border-[#310a11] py-8 mt-12 text-xs text-[#ffccd5]/40">
-        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>
-                &copy; 2026 EulasHQ Store. All rights reserved.
-            </div>
-            <div class="flex flex-wrap items-center justify-center gap-5 font-medium">
-                <a href="https://www.instagram.com/eulashq" target="_blank" class="hover:text-white transition">Instagram</a>
-                <a href="https://www.threads.net/@eulashq" target="_blank" class="hover:text-white transition">Threads</a>
-                <a href="https://www.threads.net/@hqeula" target="_blank" class="hover:text-white transition">Alt Account</a>
-                <a href="http://t.me/eulashqorderbot" target="_blank" class="hover:text-white transition">Order Bot</a>
-            </div>
-        </div>
-    </footer>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-icon">💎</div>
+        <h3>Robux Top-Up</h3>
+        <p>
+          Quick and easy Robux top-up services. Contact us to check available packages!
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌸</div>
+        <h3>Genshin Piloting</h3>
+        <p>
+          Need help with your Genshin tasks? Contact us to discuss available piloting services.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💌</div>
+        <h3>Customer Support</h3>
+        <p>
+          Have questions before ordering? We're happy to help!
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why">
+    <div class="section-title">
+      <span>✦ WHY MITA.XO? ✦</span>
+      <h2>made with care ♡</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <div style="font-size:2rem;">✦</div>
+        <h3>Easy Ordering</h3>
+        <p>Simple and friendly ordering process.</p>
+      </div>
+
+      <div class="why-item">
+        <div style="font-size:2rem;">♡</div>
+        <h3>Trusted Service</h3>
+        <p>Your support means everything to us!</p>
+      </div>
+
+      <div class="why-item">
+        <div style="font-size:2rem;">✿</div>
+        <h3>Friendly Support</h3>
+        <p>We're always happy to answer your questions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="testimonials" id="reviews">
+    <div class="section-title">
+      <span>✦ CUSTOMER LOVE ✦</span>
+      <h2>testimonials ♡</h2>
+      <p>Thank you for trusting mitya.xo!</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Thank you so much! Everything went smoothly and quickly ♡"</p>
+        <div class="customer">— Happy Customer ✦</div>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Very friendly and easy to deal with. Thank youuu! 💕"</p>
+        <div class="customer">— Happy Customer ✦</div>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Trusted seller! My order was completed successfully ♡"</p>
+        <div class="customer">— Happy Customer ✦</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Socials -->
+  <section class="order" id="socials">
+    <div class="order-box">
+      <div class="sparkles">₊˚⊹♡✦♡⊹˚₊</div>
+
+      <h2>let's stay connected ♡</h2>
+
+      <p>
+        Follow mitya.xo for shop updates, services, and more! ✦
+      </p>
+
+      <div class="hero-buttons">
+        <a href="https://www.threads.com/@mitya.xo"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="button primary">
+          Follow mitya.xo ♡
+        </a>
+
+        <a href="https://www.threads.com/@lilacmitya"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="button secondary">
+          Backup Account ✦
+        </a>
+      </div>
+
+      <p style="margin-top: 25px; font-size: 0.9rem;">
+        ₊˚♡ My backup account is available in case my main account is unavailable ♡˚₊
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>✦ ₊˚ mitya.xo ♡ thank you for your support ₊˚ ✦</p>
+  </footer>
 
 </body>
 </html>
+```
