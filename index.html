@@ -1,622 +1,894 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mitya.xo — Your Trusted Shop for Genshin Pilot & Robux</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Fredoka & Quicksand for soft bubbly anime feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lavender: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        },
+                        periwinkle: {
+                            light: '#e0e7ff',
+                            DEFAULT: '#8b9bb4',
+                            border: '#a5b4fc',
+                            dark: '#4f46e5',
+                            night: '#1e1b4b',
+                            deep: '#2e1065'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Fredoka', 'Quicksand', 'sans-serif'],
+                        cute: ['Quicksand', 'Fredoka', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(165, 180, 252, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.8)',
+                        'glow-lg': '0 0 35px rgba(139, 92, 246, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.9)',
+                        'card': '0 10px 30px -5px rgba(79, 70, 229, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
 
-  <title>mitya.xo ♡ | Genshin Pilot & Robux</title>
+    <style>
+        body {
+            font-family: 'Fredoka', 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #a5b4fc 0%, #c7d2fe 35%, #93c5fd 70%, #818cf8 100%);
+            background-attachment: fixed;
+            color: #2d264b;
+            overflow-x: hidden;
+        }
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 3px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 8px 32px 0 rgba(79, 70, 229, 0.18), inset 0 0 12px rgba(255, 255, 255, 0.7);
+        }
 
-    :root {
-      --purple: #6657d9;
-      --dark-purple: #33286f;
-      --lavender: #a99cff;
-      --light: #f7f5ff;
-      --pink: #f5a8df;
-    }
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+        }
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+        .glass-btn {
+            background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+            border: 2px solid #ffffff;
+            box-shadow: 0 6px 18px rgba(79, 70, 229, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.6);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
 
-    body {
-      margin: 0;
-      font-family: "Nunito", sans-serif;
-      color: #33286f;
-      background:
-        radial-gradient(circle at 15% 10%, rgba(255,255,255,.8), transparent 18%),
-        radial-gradient(circle at 85% 25%, rgba(197,187,255,.8), transparent 22%),
-        linear-gradient(180deg, #8176e8 0%, #b8b1ff 45%, #6d60c8 100%);
-      overflow-x: hidden;
-    }
+        .glass-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.5), inset 0 2px 6px rgba(255, 255, 255, 0.9);
+        }
 
-    /* ✦ Floating sparkles ✦ */
-    .sparkles {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-      background-image:
-        radial-gradient(circle, white 1px, transparent 2px),
-        radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 2px);
-      background-size: 55px 55px, 90px 90px;
-      background-position: 0 0, 25px 35px;
-      opacity: .55;
-    }
+        .glass-btn:active {
+            transform: translateY(1px) scale(0.98);
+        }
 
-    /* ✦ Navigation ✦ */
-    nav {
-      width: min(1140px, 94%);
-      margin: 16px auto;
-      padding: 10px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      background: rgba(255,255,255,.25);
-      border: 2px solid rgba(255,255,255,.65);
-      box-shadow: 0 8px 25px rgba(50,30,120,.22);
-      border-radius: 30px;
-      backdrop-filter: blur(12px);
-      position: relative;
-      z-index: 5;
-    }
+        /* Sparkle & Floating Keyframe Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
+        }
 
-    .logo {
-      font-family: "Fredoka", sans-serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: white;
-      text-shadow: 0 3px 0 #5141b5, 0 0 12px #fff;
-      white-space: nowrap;
-    }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)); }
+            50% { opacity: 1; filter: drop-shadow(0 0 18px rgba(199, 210, 254, 1)); }
+        }
 
-    .logo span {
-      color: #ffd0ee;
-    }
+        @keyframes sparkle-twinkle {
+            0%, 100% { transform: scale(0.8) rotate(0deg); opacity: 0.4; }
+            50% { transform: scale(1.2) rotate(45deg); opacity: 1; }
+        }
 
-    .nav-links {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
 
-    .nav-links a {
-      text-decoration: none;
-      color: #42348f;
-      font-weight: 800;
-      background: rgba(255,255,255,.75);
-      padding: 8px 15px;
-      border-radius: 20px;
-      transition: .2s;
-    }
+        .animate-float-delayed {
+            animation: float 5s ease-in-out 2s infinite;
+        }
 
-    .nav-links a:hover {
-      transform: translateY(-2px);
-      background: white;
-    }
+        .animate-twinkle {
+            animation: sparkle-twinkle 3s ease-in-out infinite;
+        }
 
-    /* ✦ Hero ✦ */
-    .hero {
-      width: min(1140px, 94%);
-      min-height: 520px;
-      margin: 25px auto;
-      padding: 45px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 45px;
-      border: 3px solid rgba(255,255,255,.7);
-      background:
-        radial-gradient(circle at 80% 25%, rgba(255,255,255,.7), transparent 25%),
-        linear-gradient(135deg, rgba(55,38,140,.9), rgba(126,111,235,.65));
-      box-shadow: 0 15px 40px rgba(42,25,100,.3);
-    }
+        .text-stroke-purple {
+            text-shadow: -2px -2px 0 #4338ca, 2px -2px 0 #4338ca, -2px 2px 0 #4338ca, 2px 2px 0 #4338ca, 0 4px 10px rgba(67, 56, 202, 0.5);
+        }
 
-    .hero::before,
-    .hero::after {
-      content: "✦";
-      position: absolute;
-      color: white;
-      font-size: 80px;
-      opacity: .7;
-    }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #c7d2fe;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #818cf8;
+            border-radius: 10px;
+            border: 2px solid #e0e7ff;
+        }
 
-    .hero::before {
-      top: 20px;
-      right: 40px;
-    }
-
-    .hero::after {
-      bottom: 30px;
-      left: 45%;
-      font-size: 50px;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: 55%;
-      padding-top: 50px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      background: rgba(255,255,255,.18);
-      border: 1px solid rgba(255,255,255,.6);
-      color: white;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: 800;
-    }
-
-    h1 {
-      font-family: "Fredoka", sans-serif;
-      font-size: clamp(3.5rem, 8vw, 7rem);
-      line-height: .9;
-      margin: 20px 0 12px;
-      color: white;
-      letter-spacing: -3px;
-      text-shadow:
-        0 5px 0 #5947bd,
-        0 0 20px rgba(255,255,255,.7);
-    }
-
-    .hero h1 span {
-      color: #ffd3ef;
-    }
-
-    .hero-text {
-      color: white;
-      font-size: 1.25rem;
-      font-weight: 700;
-      max-width: 520px;
-    }
-
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 25px 0;
-    }
-
-    .badge {
-      background: rgba(255,255,255,.88);
-      color: #5443ad;
-      border-radius: 18px;
-      padding: 10px 15px;
-      font-weight: 800;
-      box-shadow: 0 5px 12px rgba(30,20,90,.18);
-    }
-
-    .button {
-      display: inline-block;
-      padding: 14px 30px;
-      border-radius: 25px;
-      background: linear-gradient(135deg, #7565e5, #4938ae);
-      border: 2px solid rgba(255,255,255,.7);
-      color: white;
-      text-decoration: none;
-      font-weight: 900;
-      font-size: 1.1rem;
-      box-shadow: 0 7px 0 rgba(48,33,128,.35);
-      transition: .2s;
-    }
-
-    .button:hover {
-      transform: translateY(-3px);
-    }
-
-    /* Add your own artwork here */
-    .hero-art {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 46%;
-      height: 100%;
-      display: flex;
-      align-items: end;
-      justify-content: center;
-      font-size: 9rem;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.2));
-    }
-
-    .hero-art img {
-      max-width: 100%;
-      max-height: 95%;
-      object-fit: contain;
-    }
-
-    /* ✦ Sections ✦ */
-    section {
-      width: min(1140px, 94%);
-      margin: 35px auto;
-      padding: 35px;
-      background: rgba(248,247,255,.88);
-      border: 3px solid rgba(255,255,255,.8);
-      border-radius: 40px;
-      box-shadow: 0 12px 30px rgba(46,30,115,.2);
-    }
-
-    .section-title {
-      width: fit-content;
-      margin: -62px auto 30px;
-      padding: 10px 35px;
-      border-radius: 30px;
-      background: linear-gradient(135deg, #725fdf, #4a38a9);
-      color: white;
-      font-family: "Fredoka", sans-serif;
-      font-size: 1.8rem;
-      border: 3px solid white;
-      box-shadow: 0 6px 0 rgba(48,33,128,.25);
-    }
-
-    /* ✦ Services ✦ */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-
-    .service-card {
-      padding: 28px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, #ffffff, #e5e1ff);
-      border: 2px solid #b5adff;
-      text-align: center;
-      box-shadow: 0 8px 18px rgba(73,53,155,.14);
-      transition: .25s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .service-icon {
-      font-size: 4rem;
-      margin-bottom: 5px;
-    }
-
-    .service-card h3 {
-      font-family: "Fredoka", sans-serif;
-      font-size: 2rem;
-      margin: 8px 0;
-      color: #4d3bad;
-    }
-
-    .service-card p {
-      font-size: 1.05rem;
-      font-weight: 700;
-    }
-
-    /* ✦ Testimonials ✦ */
-    .testimonial-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr 1fr;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .quote {
-      background: white;
-      border: 2px solid #c2bbff;
-      padding: 25px;
-      border-radius: 25px;
-      text-align: center;
-      font-weight: 800;
-      color: #51409f;
-    }
-
-    .testimonial-image {
-      min-height: 260px;
-      background: linear-gradient(135deg, #d8d2ff, #aaa0f5);
-      border: 4px solid white;
-      border-radius: 25px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(45,30,100,.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 800;
-      text-align: center;
-    }
-
-    .testimonial-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* ✦ Features ✦ */
-    .features {
-      width: min(1140px, 94%);
-      margin: 30px auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .feature {
-      background: rgba(255,255,255,.9);
-      border: 3px solid rgba(255,255,255,.9);
-      border-radius: 28px;
-      padding: 22px 12px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(46,30,115,.18);
-      font-weight: 900;
-      color: #4c3aa6;
-    }
-
-    .feature-icon {
-      font-size: 2rem;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    /* ✦ CTA ✦ */
-    .cta {
-      width: min(1140px, 94%);
-      margin: 35px auto;
-      padding: 45px;
-      text-align: center;
-      border-radius: 40px;
-      background: linear-gradient(135deg, #5c4ac4, #8276e8);
-      color: white;
-      border: 3px solid rgba(255,255,255,.7);
-      box-shadow: 0 12px 30px rgba(40,25,100,.25);
-    }
-
-    .cta h2 {
-      font-family: "Fredoka", sans-serif;
-      font-size: 2.5rem;
-      margin: 0 0 8px;
-    }
-
-    /* ✦ Footer ✦ */
-    footer {
-      margin-top: 50px;
-      padding: 40px 5%;
-      text-align: center;
-      background: rgba(37,26,105,.85);
-      color: white;
-      border-top: 3px solid rgba(255,255,255,.4);
-    }
-
-    footer .footer-logo {
-      font-family: "Fredoka", sans-serif;
-      font-size: 2rem;
-      font-weight: 700;
-    }
-
-    .socials {
-      margin: 20px 0;
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .socials a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 18px;
-      border: 2px solid rgba(255,255,255,.5);
-      border-radius: 20px;
-      background: rgba(255,255,255,.1);
-      font-weight: 800;
-    }
-
-    /* ✦ Mobile ✦ */
-    @media (max-width: 750px) {
-      nav {
-        flex-direction: column;
-      }
-
-      .hero {
-        min-height: 650px;
-        padding: 30px;
-      }
-
-      .hero-content {
-        width: 100%;
-        text-align: center;
-      }
-
-      .badges {
-        justify-content: center;
-      }
-
-      .hero-art {
-        width: 100%;
-        height: 45%;
-      }
-
-      .services,
-      .testimonial-wrap {
-        grid-template-columns: 1fr;
-      }
-
-      .features {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .quote {
-        display: none;
-      }
-
-      h1 {
-        font-size: 4rem;
-      }
-    }
-  </style>
+        /* Toast Popup Animation */
+        #toast {
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+    </style>
 </head>
+<body class="relative min-h-screen selection:bg-indigo-300 selection:text-indigo-900">
 
-<body>
-
-  <div class="sparkles"></div>
-
-  <!-- ✦ Navigation ✦ -->
-  <nav>
-    <div class="logo">♔ mitya<span>.xo</span> ♡</div>
-
-    <div class="nav-links">
-      <a href="#home">⌂ Home</a>
-      <a href="#shop">🛒 Shop</a>
-      <a href="#testimonials">♡ Testimonials</a>
-      <a href="#about">ⓘ About</a>
-      <a href="#socials">✦ Contact</a>
-    </div>
-  </nav>
-
-  <!-- ✦ Hero ✦ -->
-  <main class="hero" id="home">
-
-    <div class="hero-content">
-      <div class="eyebrow">✦ Play more, worry less ♡</div>
-
-      <h1>mitya<span>.xo ♡</span></h1>
-
-      <p class="hero-text">
-        Your trusted shop for Genshin Pilot services and Robux!
-        Fast, friendly, and here to make your game experience easier ♡
-      </p>
-
-      <div class="badges">
-        <div class="badge">🛡 Trusted & Secure</div>
-        <div class="badge">⚡ Quick Process</div>
-        <div class="badge">🎧 Friendly Support</div>
-      </div>
-
-      <a class="button" href="#shop">✦ Shop Now → ✦</a>
+    <!-- Floating Background Sparkles -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute top-12 left-10 text-white/60 text-2xl animate-twinkle" style="animation-delay: 0s;">✦</div>
+        <div class="absolute top-40 right-20 text-indigo-200/80 text-3xl animate-twinkle" style="animation-delay: 1s;">✧</div>
+        <div class="absolute top-1/3 left-1/4 text-white/50 text-xl animate-twinkle" style="animation-delay: 1.5s;">✦</div>
+        <div class="absolute bottom-1/3 right-10 text-white/70 text-4xl animate-twinkle" style="animation-delay: 0.5s;">✦</div>
+        <div class="absolute bottom-20 left-12 text-indigo-200/90 text-2xl animate-twinkle" style="animation-delay: 2s;">✧</div>
     </div>
 
-    <!-- Replace this emoji with your own image later -->
-    <div class="hero-art">
-      ✦
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 pt-4 px-4 sm:px-8 max-w-7xl mx-auto">
+        <nav class="glass-pill rounded-full py-2.5 px-4 sm:px-6 flex items-center justify-between shadow-lg">
+            <!-- Logo with Crown -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="relative">
+                    <svg class="w-8 h-8 text-indigo-600 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+                    </svg>
+                    <span class="absolute -top-1 -right-1 text-xs text-pink-400 animate-ping">♡</span>
+                </div>
+                <span class="text-2xl font-bold tracking-wide text-indigo-900 group-hover:text-indigo-700 transition-colors">mitya.xo</span>
+            </a>
+
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center gap-2">
+                <a href="#home" class="px-4 py-1.5 rounded-full text-indigo-900 font-semibold bg-white/60 hover:bg-white hover:text-indigo-600 transition-all text-sm flex items-center gap-1.5 shadow-sm">
+                    <i class="fa-solid fa-house text-xs text-indigo-500"></i> Home
+                </a>
+                <a href="#shop" class="px-4 py-1.5 rounded-full text-indigo-900 font-semibold hover:bg-white/80 hover:text-indigo-600 transition-all text-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-cart-shopping text-xs text-indigo-500"></i> Shop
+                </a>
+                <a href="#testimonials" class="px-4 py-1.5 rounded-full text-indigo-900 font-semibold hover:bg-white/80 hover:text-indigo-600 transition-all text-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-star text-xs text-indigo-500"></i> Testimonials
+                </a>
+                <a href="#about" class="px-4 py-1.5 rounded-full text-indigo-900 font-semibold hover:bg-white/80 hover:text-indigo-600 transition-all text-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-info text-xs text-indigo-500"></i> About
+                </a>
+                <a href="#faq" class="px-4 py-1.5 rounded-full text-indigo-900 font-semibold hover:bg-white/80 hover:text-indigo-600 transition-all text-sm flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-question text-xs text-indigo-500"></i> FAQ
+                </a>
+            </div>
+
+            <!-- Contact CTA -->
+            <div class="flex items-center gap-2">
+                <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="glass-btn text-white px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2 shadow-md">
+                    <i class="fa-brands fa-discord text-base"></i>
+                    <span>Contact Us</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto px-4 py-8 relative z-10 space-y-10">
+
+        <!-- HERO BANNER SECTION -->
+        <section id="home" class="glass-panel rounded-3xl p-6 md:p-10 relative overflow-hidden">
+            <!-- Background Decorative Stars & Swirls -->
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-indigo-300/40 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-pink-300/40 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Left Side: Neuvillette Anime Illustration & Speech Bubble -->
+                <div class="lg:col-span-5 relative flex flex-col items-center justify-center">
+                    <!-- Speech Bubble -->
+                    <div class="absolute -top-4 left-4 z-20 glass-pill px-5 py-2.5 rounded-3xl shadow-lg border-2 border-indigo-200 animate-float">
+                        <p class="text-indigo-900 font-bold text-sm sm:text-base flex items-center gap-1">
+                            Play more, Worry less <span class="text-pink-500 text-lg">♡</span>
+                        </p>
+                        <!-- Bubble Arrow -->
+                        <div class="absolute -bottom-2 left-8 w-4 h-4 bg-white border-b-2 border-r-2 border-indigo-200 rotate-45"></div>
+                    </div>
+
+                    <!-- Character Card Illustration Frame -->
+                    <div class="relative w-full max-w-xs sm:max-w-sm rounded-3xl p-3 bg-gradient-to-b from-indigo-200/80 to-indigo-400/80 border-4 border-white shadow-2xl overflow-hidden group">
+                        <!-- Custom SVG Neuvillette Anime Character Illustration -->
+                        <div class="relative rounded-2xl overflow-hidden bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 p-4 min-h-[300px] sm:min-h-[340px] flex items-center justify-center">
+                            <!-- Background Hydro Glow -->
+                            <div class="absolute inset-0 bg-blue-500/20 blur-xl"></div>
+                            
+                            <!-- Detailed SVG Anime Avatar (Neuvillette Style) -->
+                            <svg class="w-full h-72 drop-shadow-2xl transition-transform duration-500 group-hover:scale-105" viewBox="0 0 300 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="150" cy="160" r="130" fill="url(#bg_grad)" opacity="0.6"/>
+                                <defs>
+                                    <linearGradient id="bg_grad" x1="0" y1="0" x2="300" y2="320">
+                                        <stop offset="0%" stop-color="#818cf8"/>
+                                        <stop offset="100%" stop-color="#312e81"/>
+                                    </linearGradient>
+                                </defs>
+                                
+                                <!-- Hair Back -->
+                                <path d="M70 120 C 50 180, 40 260, 90 300 C 120 300, 180 300, 210 300 C 260 260, 250 180, 230 120 Z" fill="#c7d2fe"/>
+                                <path d="M50 140 C 30 200, 20 280, 70 310" stroke="#818cf8" stroke-width="6" stroke-linecap="round"/>
+                                <path d="M250 140 C 270 200, 280 280, 230 310" stroke="#818cf8" stroke-width="6" stroke-linecap="round"/>
+
+                                <!-- Clothes / Outfit -->
+                                <path d="M90 240 L150 200 L210 240 L230 320 L70 320 Z" fill="#1e1b4b"/>
+                                <path d="M120 220 L150 250 L180 220 L150 320 Z" fill="#312e81"/>
+                                <!-- Hydro Brooch -->
+                                <circle cx="150" cy="235" r="14" fill="#60a5fa" stroke="#fbbf24" stroke-width="3"/>
+                                <polygon points="150,225 156,235 150,245 144,235" fill="#fff"/>
+
+                                <!-- Face Base -->
+                                <path d="M105 130 C 105 200, 195 200, 195 130 C 195 90, 105 90, 105 130 Z" fill="#fef2f2"/>
+                                
+                                <!-- Eyes -->
+                                <ellipse cx="130" cy="140" rx="12" ry="16" fill="#312e81"/>
+                                <ellipse cx="170" cy="140" rx="12" ry="16" fill="#312e81"/>
+                                <ellipse cx="130" cy="142" rx="6" ry="10" fill="#60a5fa"/>
+                                <ellipse cx="170" cy="142" rx="6" ry="10" fill="#60a5fa"/>
+                                <circle cx="127" cy="135" r="3" fill="#fff"/>
+                                <circle cx="167" cy="135" r="3" fill="#fff"/>
+                                
+                                <!-- Eyelashes & Brows -->
+                                <path d="M115 124 Q 130 120 143 126" stroke="#312e81" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                <path d="M157 126 Q 170 120 185 124" stroke="#312e81" stroke-width="3" stroke-linecap="round" fill="none"/>
+                                <path d="M120 115 Q 130 112 140 116" stroke="#818cf8" stroke-width="2.5" fill="none"/>
+                                <path d="M160 116 Q 170 112 180 115" stroke="#818cf8" stroke-width="2.5" fill="none"/>
+
+                                <!-- Soft Blush & Smile -->
+                                <ellipse cx="120" cy="154" rx="8" ry="4" fill="#f43f5e" opacity="0.3"/>
+                                <ellipse cx="180" cy="154" rx="8" ry="4" fill="#f43f5e" opacity="0.3"/>
+                                <path d="M144 160 Q 150 164 156 160" stroke="#e11d48" stroke-width="2" stroke-linecap="round" fill="none"/>
+
+                                <!-- Front Hair Bangs -->
+                                <path d="M100 115 C 90 70, 150 50, 150 95 C 150 50, 210 70, 200 115 C 180 90, 160 120, 150 110 C 140 120, 120 90, 100 115 Z" fill="#e0e7ff"/>
+                                <path d="M150 50 L150 105" stroke="#a5b4fc" stroke-width="2"/>
+                                
+                                <!-- Horns / Accessories -->
+                                <path d="M95 90 Q 70 60 65 40 Q 80 50 100 75" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+                                <path d="M205 90 Q 230 60 235 40 Q 220 50 200 75" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
+                            </svg>
+
+                            <!-- Mini Chibi Mascot Overlay at corner -->
+                            <div class="absolute bottom-2 right-2 bg-white/90 rounded-full p-1.5 shadow-md flex items-center gap-1 border border-indigo-200 animate-bounce">
+                                <span class="text-xs font-bold text-indigo-900 px-1">Neuvillette Certified ✨</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Store Title, Tagline & Features -->
+                <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+                    
+                    <!-- Stylized Main Heading -->
+                    <div class="space-y-2">
+                        <!-- Crown Icon -->
+                        <div class="flex justify-center lg:justify-start">
+                            <svg class="w-16 h-16 text-indigo-500 drop-shadow-md animate-pulse" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+                            </svg>
+                        </div>
+                        
+                        <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white text-stroke-purple flex items-center justify-center lg:justify-start gap-2">
+                            mitya.xo<span class="text-pink-400 text-4xl sm:text-5xl">♡</span>
+                        </h1>
+                        
+                        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-indigo-950 max-w-lg">
+                            Your Trusted Shop for <br class="hidden sm:inline"/>
+                            <span class="text-indigo-600 underline decoration-indigo-300 decoration-wavy">Genshin Pilot</span> & <span class="text-indigo-600 underline decoration-indigo-300 decoration-wavy">Robux</span> ♡
+                        </h2>
+                    </div>
+
+                    <!-- Feature Badges Row -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+                        <div class="glass-pill px-4 py-2 rounded-2xl flex items-center gap-2.5 border border-indigo-200 text-indigo-900 font-semibold text-sm shadow-sm">
+                            <div class="w-7 h-7 rounded-xl bg-indigo-500 text-white flex items-center justify-center text-xs shadow">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <span>Trusted & Secure</span>
+                        </div>
+
+                        <div class="glass-pill px-4 py-2 rounded-2xl flex items-center gap-2.5 border border-indigo-200 text-indigo-900 font-semibold text-sm shadow-sm">
+                            <div class="w-7 h-7 rounded-xl bg-indigo-500 text-white flex items-center justify-center text-xs shadow">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <span>Instant Process</span>
+                        </div>
+
+                        <div class="glass-pill px-4 py-2 rounded-2xl flex items-center gap-2.5 border border-indigo-200 text-indigo-900 font-semibold text-sm shadow-sm">
+                            <div class="w-7 h-7 rounded-xl bg-indigo-500 text-white flex items-center justify-center text-xs shadow">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <span>Friendly Support</span>
+                        </div>
+                    </div>
+
+                    <!-- Big Shop Now Button -->
+                    <div class="pt-4">
+                        <a href="#shop" class="glass-btn inline-flex items-center gap-3 text-white text-lg sm:text-xl font-bold px-10 py-4 rounded-full shadow-glow hover:shadow-glow-lg">
+                            <span>✦ Shop Now ✦</span>
+                            <i class="fa-solid fa-arrow-right text-base transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- OUR SERVICES SECTION -->
+        <section id="shop" class="glass-panel rounded-3xl p-6 sm:p-10 relative">
+            
+            <!-- Cute Ribbon Bow Accents on Border Left & Right -->
+            <div class="absolute -left-5 top-1/2 -translate-y-1/2 text-indigo-400 text-4xl hidden md:block drop-shadow animate-float">
+                🎀
+            </div>
+            <div class="absolute -right-5 top-1/2 -translate-y-1/2 text-indigo-400 text-4xl hidden md:block drop-shadow animate-float-delayed">
+                🎀
+            </div>
+
+            <!-- Section Pill Header -->
+            <div class="flex justify-center -mt-12 sm:-mt-14 mb-8">
+                <div class="glass-btn bg-indigo-600 text-white font-bold text-lg sm:text-xl px-8 py-2.5 rounded-full shadow-lg border-2 border-white flex items-center gap-3">
+                    <span class="text-indigo-200">✦</span>
+                    <span>Our Services</span>
+                    <span class="text-indigo-200">✦</span>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                
+                <!-- Service Card 1: Genshin Pilot -->
+                <div class="glass-pill rounded-3xl p-6 sm:p-8 border-2 border-indigo-200 hover:border-indigo-400 transition-all duration-300 flex flex-col items-center text-center space-y-4 group hover:shadow-xl">
+                    <!-- Primogem Icon Box -->
+                    <div class="w-24 h-24 rounded-3xl bg-gradient-to-tr from-indigo-100 to-white flex items-center justify-center p-3 shadow-inner border border-indigo-200 group-hover:scale-110 transition-transform">
+                        <!-- Genshin Primogem SVG Icon -->
+                        <svg class="w-16 h-16 drop-shadow-md" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="50,5 63,37 95,50 63,63 50,95 37,63 5,50 37,37" fill="url(#primo_grad)"/>
+                            <polygon points="50,20 58,42 80,50 58,58 50,80 42,58 20,50 42,42" fill="#ffffff" opacity="0.6"/>
+                            <defs>
+                                <linearGradient id="primo_grad" x1="0" y1="0" x2="100" y2="100">
+                                    <stop offset="0%" stop-color="#ec4899"/>
+                                    <stop offset="50%" stop-color="#8b5cf6"/>
+                                    <stop offset="100%" stop-color="#3b82f6"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-indigo-950">Genshin Pilot</h3>
+                    <p class="text-indigo-800 text-sm sm:text-base max-w-xs font-medium">
+                        Get your Genshin wishes, spiral abyss, and daily missions done easily!
+                    </p>
+                    
+                    <button onclick="openOrderModal('Genshin Pilot')" class="glass-btn text-white font-bold px-7 py-2.5 rounded-full text-base flex items-center gap-2 mt-2">
+                        <span>Order Now</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 2: Robux -->
+                <div class="glass-pill rounded-3xl p-6 sm:p-8 border-2 border-indigo-200 hover:border-indigo-400 transition-all duration-300 flex flex-col items-center text-center space-y-4 group hover:shadow-xl">
+                    <!-- Robux Icon Box -->
+                    <div class="w-24 h-24 rounded-3xl bg-gradient-to-tr from-slate-900 to-indigo-950 flex items-center justify-center p-3 shadow-md border border-indigo-300 group-hover:scale-110 transition-transform">
+                        <!-- Roblox Cube Logo SVG -->
+                        <svg class="w-14 h-14 text-white drop-shadow" viewBox="0 0 100 100" fill="currentColor">
+                            <path d="M20 5 L95 25 L80 95 L5 75 Z" />
+                            <path d="M45 42 L62 46 L57 63 L40 58 Z" fill="#0f172a" />
+                        </svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-indigo-950">Robux</h3>
+                    <p class="text-indigo-800 text-sm sm:text-base max-w-xs font-medium">
+                        Top up your Robux quickly, cheaply and 100% safely!
+                    </p>
+                    
+                    <button onclick="openOrderModal('Robux Top Up')" class="glass-btn text-white font-bold px-7 py-2.5 rounded-full text-base flex items-center gap-2 mt-2">
+                        <span>Order Now</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CUSTOMER TESTIMONIALS SECTION -->
+        <section id="testimonials" class="glass-panel rounded-3xl p-6 sm:p-10 relative">
+            
+            <!-- Section Pill Header -->
+            <div class="flex justify-center -mt-12 sm:-mt-14 mb-8">
+                <div class="glass-btn bg-indigo-600 text-white font-bold text-lg sm:text-xl px-8 py-2.5 rounded-full shadow-lg border-2 border-white flex items-center gap-3">
+                    <span class="text-indigo-200">✦</span>
+                    <span>Customer Testimonials</span>
+                    <span class="text-indigo-200">✦</span>
+                </div>
+            </div>
+
+            <!-- Testimonial Carousel Container -->
+            <div class="relative max-w-4xl mx-auto py-4">
+                
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    
+                    <!-- Left Chat Bubble -->
+                    <div class="w-full md:w-1/3 flex flex-col items-center md:items-end text-center md:text-right space-y-2 order-2 md:order-1">
+                        <!-- Cute Chibi Character Left -->
+                        <div class="w-16 h-16 rounded-full bg-indigo-200 border-2 border-white p-1 shadow-md mb-1 animate-float">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="45" fill="#c7d2fe"/>
+                                <circle cx="35" cy="45" r="5" fill="#312e81"/>
+                                <circle cx="65" cy="45" r="5" fill="#312e81"/>
+                                <path d="M40 60 Q 50 68 60 60" stroke="#312e81" stroke-width="4" stroke-linecap="round"/>
+                                <ellipse cx="25" cy="52" rx="6" ry="3" fill="#f43f5e" opacity="0.4"/>
+                                <ellipse cx="75" cy="52" rx="6" ry="3" fill="#f43f5e" opacity="0.4"/>
+                            </svg>
+                        </div>
+
+                        <div class="glass-pill p-4 rounded-2xl border border-indigo-200 shadow-md relative w-full">
+                            <p id="testi-left-text" class="text-indigo-950 font-semibold text-sm sm:text-base">
+                                "ada masukk , thankyouu awaknyaaa 💕💕 ♡"
+                            </p>
+                            <span id="testi-left-author" class="block text-indigo-600 text-xs font-bold mt-2">
+                                - vqnillaaa ♡
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Center Tablet Screenshot Display -->
+                    <div class="w-full md:w-1/3 flex items-center justify-center order-1 md:order-2">
+                        
+                        <!-- Left Carousel Arrow -->
+                        <button onclick="prevTestimonial()" class="w-9 h-9 rounded-full bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 transition shadow-md shrink-0 mr-2">
+                            <i class="fa-solid fa-chevron-left text-sm"></i>
+                        </button>
+
+                        <!-- Tablet Device Frame -->
+                        <div class="relative w-56 h-72 sm:w-64 sm:h-80 bg-slate-900 rounded-3xl p-3 shadow-2xl border-4 border-indigo-300 flex flex-col justify-between overflow-hidden">
+                            <!-- Camera Notch -->
+                            <div class="absolute top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-slate-700 rounded-full z-10"></div>
+                            
+                            <!-- Mock Discord / Chat Receipt Screen -->
+                            <div id="testi-screen" class="w-full h-full bg-slate-900 rounded-2xl p-3 text-white overflow-hidden flex flex-col justify-between border border-slate-800">
+                                <!-- Top Bar -->
+                                <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-[10px] text-slate-400">
+                                    <div class="flex items-center gap-1">
+                                        <i class="fa-solid fa-lock text-[8px]"></i>
+                                        <span>Proof of Transaction</span>
+                                    </div>
+                                    <span class="text-green-400">● Completed</span>
+                                </div>
+
+                                <!-- Transaction Detail Mock -->
+                                <div class="my-auto space-y-2 text-left bg-slate-800/60 p-2.5 rounded-xl border border-slate-700/50">
+                                    <div class="flex items-center justify-between text-xs">
+                                        <span class="text-indigo-300 font-bold" id="testi-item">Genshin 6480 Genesis</span>
+                                        <span class="text-pink-300 font-bold">RM 45.00</span>
+                                    </div>
+                                    <div class="h-1.5 w-full bg-indigo-950 rounded-full overflow-hidden">
+                                        <div class="h-full bg-indigo-500 w-full"></div>
+                                    </div>
+                                    <div class="text-[10px] text-slate-300 space-y-0.5">
+                                        <p>Status: <span class="text-emerald-400 font-semibold">Success Delivery</span></p>
+                                        <p class="text-slate-400">Buyer: <span id="testi-buyer">@vqnillaaa</span></p>
+                                    </div>
+                                </div>
+
+                                <!-- Chat Message Preview -->
+                                <div class="bg-indigo-950/80 p-2 rounded-lg border border-indigo-500/30 text-[10px] text-indigo-200 flex items-center gap-2">
+                                    <div class="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center text-[8px] font-bold">M</div>
+                                    <div class="truncate">
+                                        <p class="font-bold text-white">mitya.xo</p>
+                                        <p class="truncate" id="testi-reply">Order processing done! Thank you ♡</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Carousel Arrow -->
+                        <button onclick="nextTestimonial()" class="w-9 h-9 rounded-full bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 transition shadow-md shrink-0 ml-2">
+                            <i class="fa-solid fa-chevron-right text-sm"></i>
+                        </button>
+                    </div>
+
+                    <!-- Right Chat Bubble -->
+                    <div class="w-full md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left space-y-2 order-3">
+                        <!-- Cute Chibi Character Right -->
+                        <div class="w-16 h-16 rounded-full bg-indigo-200 border-2 border-white p-1 shadow-md mb-1 animate-float-delayed">
+                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="45" fill="#a5b4fc"/>
+                                <ellipse cx="35" cy="45" rx="6" ry="7" fill="#1e1b4b"/>
+                                <ellipse cx="65" cy="45" rx="6" ry="7" fill="#1e1b4b"/>
+                                <circle cx="37" cy="43" r="2" fill="#fff"/>
+                                <circle cx="67" cy="43" r="2" fill="#fff"/>
+                                <path d="M42 60 Q 50 54 58 60" stroke="#1e1b4b" stroke-width="4" stroke-linecap="round"/>
+                                <ellipse cx="25" cy="52" rx="5" ry="3" fill="#f43f5e" opacity="0.4"/>
+                                <ellipse cx="75" cy="52" rx="5" ry="3" fill="#f43f5e" opacity="0.4"/>
+                            </svg>
+                        </div>
+
+                        <div class="glass-pill p-4 rounded-2xl border border-indigo-200 shadow-md relative w-full">
+                            <p id="testi-right-text" class="text-indigo-950 font-semibold text-sm sm:text-base">
+                                "sama2, thank you beli kat saya 💕💕 ♡"
+                            </p>
+                            <span id="testi-right-author" class="block text-indigo-600 text-xs font-bold mt-2">
+                                - sama2 ♡
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel Indicator Dots -->
+                <div class="flex justify-center gap-2 mt-6">
+                    <button onclick="setTestimonial(0)" class="testi-dot w-3 h-3 rounded-full bg-indigo-600 transition-all"></button>
+                    <button onclick="setTestimonial(1)" class="testi-dot w-3 h-3 rounded-full bg-indigo-300 hover:bg-indigo-400 transition-all"></button>
+                    <button onclick="setTestimonial(2)" class="testi-dot w-3 h-3 rounded-full bg-indigo-300 hover:bg-indigo-400 transition-all"></button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- FEATURE HIGHLIGHTS & CTA ROW -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+            
+            <!-- 4 Glassmorphism Feature Cards Grid (8 cols) -->
+            <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4">
+                
+                <!-- Feature 1: Fast Delivery -->
+                <div class="glass-pill rounded-2xl p-4 flex flex-col items-center justify-center text-center space-y-2 border border-indigo-200 hover:scale-105 transition-transform shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center text-lg shadow">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h4 class="font-bold text-indigo-950 text-sm">Fast Delivery</h4>
+                </div>
+
+                <!-- Feature 2: 100% Trusted -->
+                <div class="glass-pill rounded-2xl p-4 flex flex-col items-center justify-center text-center space-y-2 border border-indigo-200 hover:scale-105 transition-transform shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center text-lg shadow">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h4 class="font-bold text-indigo-950 text-sm">100% Trusted</h4>
+                </div>
+
+                <!-- Feature 3: 24/7 Support -->
+                <div class="glass-pill rounded-2xl p-4 flex flex-col items-center justify-center text-center space-y-2 border border-indigo-200 hover:scale-105 transition-transform shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center text-lg shadow">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h4 class="font-bold text-indigo-950 text-sm">24/7 Support</h4>
+                </div>
+
+                <!-- Feature 4: Affordable Prices -->
+                <div class="glass-pill rounded-2xl p-4 flex flex-col items-center justify-center text-center space-y-2 border border-indigo-200 hover:scale-105 transition-transform shadow-sm">
+                    <div class="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center text-lg shadow">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h4 class="font-bold text-indigo-950 text-sm">Affordable Prices</h4>
+                </div>
+
+            </div>
+
+            <!-- Ready to get started Banner (5 cols) -->
+            <div class="lg:col-span-5 glass-panel rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-2 border-indigo-200">
+                <div class="text-center sm:text-left space-y-1">
+                    <h3 class="text-xl sm:text-2xl font-extrabold text-indigo-950">Ready to get started?</h3>
+                    <p class="text-indigo-800 text-xs sm:text-sm font-medium">
+                        Let's make your game experience even better with mitya.xo ♡
+                    </p>
+                </div>
+                <a href="#shop" class="glass-btn text-white text-sm font-bold px-6 py-2.5 rounded-full shrink-0 shadow-md">
+                    Shop Now →
+                </a>
+            </div>
+
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section id="faq" class="glass-panel rounded-3xl p-6 sm:p-8">
+            <h3 class="text-2xl font-bold text-indigo-950 text-center mb-6">Frequently Asked Questions</h3>
+            <div class="space-y-3 max-w-3xl mx-auto">
+                <details class="glass-pill rounded-2xl p-4 border border-indigo-200 group cursor-pointer">
+                    <summary class="font-bold text-indigo-900 flex justify-between items-center list-none">
+                        <span>How long does the Genshin Pilot process take?</span>
+                        <span class="text-indigo-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-indigo-800 text-sm mt-3 pt-2 border-t border-indigo-100">
+                        Most daily commissions and resin spending tasks take 15–30 minutes. Larger quest orders are usually completed within 24 hours depending on the request!
+                    </p>
+                </details>
+
+                <details class="glass-pill rounded-2xl p-4 border border-indigo-200 group cursor-pointer">
+                    <summary class="font-bold text-indigo-900 flex justify-between items-center list-none">
+                        <span>Is my account 100% safe with mitya.xo?</span>
+                        <span class="text-indigo-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-indigo-800 text-sm mt-3 pt-2 border-t border-indigo-100">
+                        Yes! All services are done manually by hand. No cheats, third-party software, or exploits are ever used. Your login details remain encrypted and private.
+                    </p>
+                </details>
+
+                <details class="glass-pill rounded-2xl p-4 border border-indigo-200 group cursor-pointer">
+                    <summary class="font-bold text-indigo-900 flex justify-between items-center list-none">
+                        <span>How do I receive my Robux top up?</span>
+                        <span class="text-indigo-500 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <p class="text-indigo-800 text-sm mt-3 pt-2 border-t border-indigo-100">
+                        Robux are gifted via standard gamepass/group payout methods immediately after purchase confirmation through our official Discord or TikTok support.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER SECTION -->
+    <footer id="about" class="relative mt-16 bg-indigo-950 text-indigo-100 pt-16 pb-8 z-10">
+        
+        <!-- Wave Divider SVG Top -->
+        <div class="absolute -top-12 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
+            <svg class="relative block w-full h-12 text-indigo-950" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,10 1200,40 L1200,120 L0,120 Z" fill="currentColor"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 flex flex-col items-center space-y-6">
+            
+            <!-- Logo & Tagline -->
+            <div class="flex flex-col items-center text-center space-y-2">
+                <div class="flex items-center gap-2">
+                    <svg class="w-8 h-8 text-pink-400" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+                    </svg>
+                    <span class="text-3xl font-extrabold text-white tracking-wide">mitya.xo</span>
+                </div>
+                <p class="text-indigo-300 text-sm font-medium">Play more, Worry less ♡</p>
+            </div>
+
+            <!-- Footer Navigation -->
+            <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-indigo-200">
+                <a href="#home" class="hover:text-white transition">Home</a>
+                <a href="#shop" class="hover:text-white transition">Shop</a>
+                <a href="#testimonials" class="hover:text-white transition">Testimonials</a>
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#faq" class="hover:text-white transition">FAQ</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex items-center gap-4 pt-2">
+                <a href="https://discord.com" target="_blank" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-700 flex items-center justify-center text-indigo-200 hover:bg-indigo-600 hover:text-white transition shadow-md">
+                    <i class="fa-brands fa-discord text-lg"></i>
+                </a>
+                <a href="https://tiktok.com" target="_blank" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-700 flex items-center justify-center text-indigo-200 hover:bg-indigo-600 hover:text-white transition shadow-md">
+                    <i class="fa-brands fa-tiktok text-lg"></i>
+                </a>
+                <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-700 flex items-center justify-center text-indigo-200 hover:bg-indigo-600 hover:text-white transition shadow-md">
+                    <i class="fa-brands fa-youtube text-lg"></i>
+                </a>
+                <a href="mailto:support@mitya.xo" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-700 flex items-center justify-center text-indigo-200 hover:bg-indigo-600 hover:text-white transition shadow-md">
+                    <i class="fa-solid fa-envelope text-lg"></i>
+                </a>
+            </div>
+
+            <!-- Copyright Line -->
+            <div class="pt-6 border-t border-indigo-900/80 w-full text-center text-xs text-indigo-400 font-medium">
+                © 2025 mitya.xo. All rights reserved. ♡
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- ORDER MODAL DIALOG -->
+    <div id="orderModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="glass-panel bg-white/90 rounded-3xl p-6 sm:p-8 max-w-md w-full border-4 border-indigo-200 shadow-2xl space-y-5 transform scale-95 transition-transform duration-300" id="modalContent">
+            <div class="flex justify-between items-center border-b border-indigo-100 pb-3">
+                <h3 id="modalTitle" class="text-2xl font-extrabold text-indigo-950">Order Service</h3>
+                <button onclick="closeOrderModal()" class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold hover:bg-indigo-200">✕</button>
+            </div>
+
+            <p class="text-xs text-indigo-700">Fill in your preferred order details and click submit to open direct chat with our agent!</p>
+
+            <form onsubmit="handleOrderSubmit(event)" class="space-y-4 text-left">
+                <div>
+                    <label class="block text-xs font-bold text-indigo-950 uppercase mb-1">Your Discord / Username</label>
+                    <input type="text" required placeholder="e.g. traveler_123" class="w-full px-4 py-2.5 rounded-xl border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white/80 text-sm">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-indigo-950 uppercase mb-1">Service Type</label>
+                    <select id="modalServiceSelect" class="w-full px-4 py-2.5 rounded-xl border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white/80 text-sm font-semibold">
+                        <option value="Genshin Pilot">Genshin Pilot Service</option>
+                        <option value="Robux Top Up">Robux Top Up</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-indigo-950 uppercase mb-1">Notes / Request</label>
+                    <textarea rows="3" placeholder="Tell us what quests, primos, or robux amount you need..." class="w-full px-4 py-2.5 rounded-xl border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white/80 text-sm"></textarea>
+                </div>
+
+                <button type="submit" class="w-full glass-btn text-white font-bold py-3 rounded-2xl text-base shadow-lg mt-2">
+                    Submit Order Request ♡
+                </button>
+            </form>
+        </div>
     </div>
 
-  </main>
-
-  <!-- ✦ Services ✦ -->
-  <section id="shop">
-
-    <h2 class="section-title">✦ Our Services ✦</h2>
-
-    <div class="services">
-
-      <div class="service-card">
-        <div class="service-icon">✧</div>
-        <h3>Genshin Pilot</h3>
-        <p>
-          Need help with your Genshin journey? Check out our pilot services
-          and let us help make things easier!
-        </p>
-        <a class="button" href="#socials">Order Now →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">◆</div>
-        <h3>Robux</h3>
-        <p>
-          Top up your Robux quickly and easily! Contact us for more
-          information about available options.
-        </p>
-        <a class="button" href="#socials">Order Now →</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ✦ Testimonials ✦ -->
-  <section id="testimonials">
-
-    <h2 class="section-title">✦ Customer Testimonials ✦</h2>
-
-    <div class="testimonial-wrap">
-
-      <div class="quote">
-        “Thank you for choosing mitya.xo! ♡<br><br>
-        Your support means so much!”
-      </div>
-
-      <div class="testimonial-image">
-        <!-- Put your testimonial image here -->
-        <span>♡ Add your customer screenshot here ♡</span>
-      </div>
-
-      <div class="quote">
-        “Thank you for your trust! 💗<br><br>
-        We appreciate every customer ♡”
-      </div>
-
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 glass-btn bg-indigo-900 text-white px-5 py-3 rounded-2xl shadow-2xl border-2 border-indigo-300 flex items-center gap-3 transform translate-y-24 opacity-0 pointer-events-none">
+        <span class="text-pink-400 text-xl">✨</span>
+        <div>
+            <h5 id="toast-title" class="font-bold text-sm">Success!</h5>
+            <p id="toast-msg" class="text-xs text-indigo-200">Your order request has been registered.</p>
+        </div>
     </div>
 
-  </section>
 
-  <!-- ✦ Features ✦ -->
-  <div class="features">
+    <!-- JAVASCRIPT FOR INTERACTIVITY -->
+    <script>
+        // Testimonials Data Carousel
+        const testimonials = [
+            {
+                leftText: `"ada masukk , thankyouu awaknyaaa 💕💕 ♡"`,
+                leftAuthor: `- vqnillaaa ♡`,
+                rightText: `"sama2, thank you beli kat saya 💕💕 ♡"`,
+                rightAuthor: `- sama2 ♡`,
+                item: `Genshin 6480 Genesis`,
+                buyer: `@vqnillaaa`,
+                reply: `Order processing done! Thank you ♡`
+            },
+            {
+                leftText: `"fast delivery & seller fast reply super trusted!! 🌸"`,
+                leftAuthor: `- cherry_blossom ♡`,
+                rightText: `"tq order dgn mitya.xo! enjoy your pull 💕"`,
+                rightAuthor: `- mitya.xo ♡`,
+                item: `10,000 Robux Payout`,
+                buyer: `@cherry_blossom`,
+                reply: `Robux transferred safely! ✨`
+            },
+            {
+                leftText: `"Spiral Abyss 36 stars cleared so fast, highly recommended 👍"`,
+                leftAuthor: `- kazuha_main ♡`,
+                rightText: `"welcome anytime dear! happy gaming 💕"`,
+                rightAuthor: `- mitya.xo ♡`,
+                item: `Abyss 12 Full Clear`,
+                buyer: `@kazuha_main`,
+                reply: `Abyss cleared 36/36 stars ⭐`
+            }
+        ];
 
-    <div class="feature">
-      <span class="feature-icon">⚡</span>
-      Fast Delivery
-    </div>
+        let currentTestiIndex = 0;
 
-    <div class="feature">
-      <span class="feature-icon">🛡</span>
-      Trusted Service
-    </div>
+        function updateTestimonialUI() {
+            const data = testimonials[currentTestiIndex];
+            
+            document.getElementById('testi-left-text').innerText = data.leftText;
+            document.getElementById('testi-left-author').innerText = data.leftAuthor;
+            
+            document.getElementById('testi-right-text').innerText = data.rightText;
+            document.getElementById('testi-right-author').innerText = data.rightAuthor;
+            
+            document.getElementById('testi-item').innerText = data.item;
+            document.getElementById('testi-buyer').innerText = data.buyer;
+            document.getElementById('testi-reply').innerText = data.reply;
 
-    <div class="feature">
-      <span class="feature-icon">🎧</span>
-      Friendly Support
-    </div>
+            // Update dots styling
+            const dots = document.querySelectorAll('.testi-dot');
+            dots.forEach((dot, idx) => {
+                if (idx === currentTestiIndex) {
+                    dot.classList.remove('bg-indigo-300');
+                    dot.classList.add('bg-indigo-600', 'w-6');
+                } else {
+                    dot.classList.remove('bg-indigo-600', 'w-6');
+                    dot.classList.add('bg-indigo-300', 'w-3');
+                }
+            });
+        }
 
-    <div class="feature">
-      <span class="feature-icon">♡</span>
-      Affordable Prices
-    </div>
+        function nextTestimonial() {
+            currentTestiIndex = (currentTestiIndex + 1) % testimonials.length;
+            updateTestimonialUI();
+        }
 
-  </div>
+        function prevTestimonial() {
+            currentTestiIndex = (currentTestiIndex - 1 + testimonials.length) % testimonials.length;
+            updateTestimonialUI();
+        }
 
-  <!-- ✦ About / CTA ✦ -->
-  <section class="cta" id="about">
+        function setTestimonial(index) {
+            currentTestiIndex = index;
+            updateTestimonialUI();
+        }
 
-    <h2>Ready to get started? ♡</h2>
+        // Auto rotate testimonials every 6s
+        setInterval(() => {
+            nextTestimonial();
+        }, 6000);
 
-    <p>
-      Let's make your gaming experience even better with mitya.xo!
-    </p>
+        // Modal Logic
+        function openOrderModal(serviceName) {
+            const modal = document.getElementById('orderModal');
+            const modalContent = document.getElementById('modalContent');
+            const select = document.getElementById('modalServiceSelect');
+            
+            if (serviceName) {
+                select.value = serviceName;
+            }
 
-    <a class="button" href="#socials">Shop Now →</a>
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }
 
-  </section>
+        function closeOrderModal() {
+            const modal = document.getElementById('orderModal');
+            const modalContent = document.getElementById('modalContent');
 
-  <!-- ✦ Footer ✦ -->
-  <footer id="socials">
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
 
-    <div class="footer-logo">♔ mitya.xo ♡</div>
+        function showToast(title, message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-msg').innerText = message;
 
-    <p>Play more, worry less ♡</p>
+            toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
 
-    <div class="socials">
-      <a href="https://www.threads.com/@mitya.xo" target="_blank">
-        ♡ Follow @mitya.xo
-      </a>
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+            }, 4000);
+        }
 
-      <a href="https://www.threads.com/@lilacmitya" target="_blank">
-        ✦ Backup @lilacmitya
-      </a>
-    </div>
+        function handleOrderSubmit(e) {
+            e.preventDefault();
+            closeOrderModal();
+            showToast("Order Request Sent! ♡", "We will redirect you to Discord to finalize details.");
+        }
 
-    <p>© 2026 mitya.xo. All rights reserved. ♡</p>
-
-  </footer>
-
+        // Initialize UI states
+        window.onload = function() {
+            updateTestimonialUI();
+        }
+    </script>
 </body>
 </html>
-```
