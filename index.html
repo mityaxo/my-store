@@ -5,344 +5,452 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>mitya.xo ♡</title>
+  <title>mitya.xo ♡ | Genshin Pilot & Robux</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+    :root {
+      --purple: #6657d9;
+      --dark-purple: #33286f;
+      --lavender: #a99cff;
+      --light: #f7f5ff;
+      --pink: #f5a8df;
+    }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Nunito', sans-serif;
-      background: #f6f3ff;
-      color: #4d4770;
+      margin: 0;
+      font-family: "Nunito", sans-serif;
+      color: #33286f;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(255,255,255,.8), transparent 18%),
+        radial-gradient(circle at 85% 25%, rgba(197,187,255,.8), transparent 22%),
+        linear-gradient(180deg, #8176e8 0%, #b8b1ff 45%, #6d60c8 100%);
       overflow-x: hidden;
     }
 
-    /* Navigation */
+    /* ✦ Floating sparkles ✦ */
+    .sparkles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background-image:
+        radial-gradient(circle, white 1px, transparent 2px),
+        radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 2px);
+      background-size: 55px 55px, 90px 90px;
+      background-position: 0 0, 25px 35px;
+      opacity: .55;
+    }
+
+    /* ✦ Navigation ✦ */
     nav {
-      width: 100%;
-      padding: 18px 8%;
+      width: min(1140px, 94%);
+      margin: 16px auto;
+      padding: 10px 18px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #e4dcff;
+      justify-content: space-between;
+      gap: 20px;
+      background: rgba(255,255,255,.25);
+      border: 2px solid rgba(255,255,255,.65);
+      box-shadow: 0 8px 25px rgba(50,30,120,.22);
+      border-radius: 30px;
+      backdrop-filter: blur(12px);
+      position: relative;
+      z-index: 5;
     }
 
     .logo {
-      font-family: 'Quicksand', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: #7b6bc4;
+      font-family: "Fredoka", sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      text-shadow: 0 3px 0 #5141b5, 0 0 12px #fff;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #ffd0ee;
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
-      list-style: none;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: #625b7d;
-      font-weight: 700;
-      transition: 0.2s;
+      color: #42348f;
+      font-weight: 800;
+      background: rgba(255,255,255,.75);
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: .2s;
     }
 
     .nav-links a:hover {
-      color: #9b7ede;
+      transform: translateY(-2px);
+      background: white;
     }
 
-    /* Hero */
+    /* ✦ Hero ✦ */
     .hero {
-      min-height: 560px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 70px 20px;
+      width: min(1140px, 94%);
+      min-height: 520px;
+      margin: 25px auto;
+      padding: 45px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 45px;
+      border: 3px solid rgba(255,255,255,.7);
       background:
-        radial-gradient(circle at top left, #e7dcff, transparent 35%),
-        radial-gradient(circle at bottom right, #d9ccff, transparent 35%),
-        #f7f4ff;
+        radial-gradient(circle at 80% 25%, rgba(255,255,255,.7), transparent 25%),
+        linear-gradient(135deg, rgba(55,38,140,.9), rgba(126,111,235,.65));
+      box-shadow: 0 15px 40px rgba(42,25,100,.3);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "✦";
+      position: absolute;
+      color: white;
+      font-size: 80px;
+      opacity: .7;
+    }
+
+    .hero::before {
+      top: 20px;
+      right: 40px;
+    }
+
+    .hero::after {
+      bottom: 30px;
+      left: 45%;
+      font-size: 50px;
     }
 
     .hero-content {
-      max-width: 750px;
+      position: relative;
+      z-index: 2;
+      width: 55%;
+      padding-top: 50px;
     }
 
-    .sparkles {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: #9b7ede;
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.6);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 800;
     }
 
-    .hero h1 {
-      font-family: 'Quicksand', sans-serif;
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      color: #6f5ca8;
-      margin-bottom: 12px;
+    h1 {
+      font-family: "Fredoka", sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: .9;
+      margin: 20px 0 12px;
+      color: white;
+      letter-spacing: -3px;
+      text-shadow:
+        0 5px 0 #5947bd,
+        0 0 20px rgba(255,255,255,.7);
     }
 
     .hero h1 span {
-      color: #a98be8;
+      color: #ffd3ef;
     }
 
-    .hero p {
-      font-size: 1.15rem;
-      line-height: 1.7;
-      max-width: 550px;
-      margin: 0 auto 25px;
-      color: #6b6380;
+    .hero-text {
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 700;
+      max-width: 520px;
     }
 
-    .hero-buttons {
+    .badges {
       display: flex;
-      justify-content: center;
-      gap: 12px;
       flex-wrap: wrap;
+      gap: 10px;
+      margin: 25px 0;
+    }
+
+    .badge {
+      background: rgba(255,255,255,.88);
+      color: #5443ad;
+      border-radius: 18px;
+      padding: 10px 15px;
+      font-weight: 800;
+      box-shadow: 0 5px 12px rgba(30,20,90,.18);
     }
 
     .button {
       display: inline-block;
-      padding: 13px 24px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 800;
-      transition: 0.25s;
-    }
-
-    .primary {
-      background: #8069c5;
+      padding: 14px 30px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #7565e5, #4938ae);
+      border: 2px solid rgba(255,255,255,.7);
       color: white;
-      box-shadow: 0 8px 20px rgba(128, 105, 197, 0.25);
+      text-decoration: none;
+      font-weight: 900;
+      font-size: 1.1rem;
+      box-shadow: 0 7px 0 rgba(48,33,128,.35);
+      transition: .2s;
     }
 
-    .primary:hover {
-      transform: translateY(-3px);
-      background: #6e58b0;
-    }
-
-    .secondary {
-      background: white;
-      color: #8069c5;
-      border: 2px solid #ded4ff;
-    }
-
-    .secondary:hover {
+    .button:hover {
       transform: translateY(-3px);
     }
 
-    /* General Sections */
+    /* Add your own artwork here */
+    .hero-art {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 46%;
+      height: 100%;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      font-size: 9rem;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.2));
+    }
+
+    .hero-art img {
+      max-width: 100%;
+      max-height: 95%;
+      object-fit: contain;
+    }
+
+    /* ✦ Sections ✦ */
     section {
-      padding: 80px 8%;
+      width: min(1140px, 94%);
+      margin: 35px auto;
+      padding: 35px;
+      background: rgba(248,247,255,.88);
+      border: 3px solid rgba(255,255,255,.8);
+      border-radius: 40px;
+      box-shadow: 0 12px 30px rgba(46,30,115,.2);
     }
 
     .section-title {
-      text-align: center;
-      margin-bottom: 45px;
+      width: fit-content;
+      margin: -62px auto 30px;
+      padding: 10px 35px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #725fdf, #4a38a9);
+      color: white;
+      font-family: "Fredoka", sans-serif;
+      font-size: 1.8rem;
+      border: 3px solid white;
+      box-shadow: 0 6px 0 rgba(48,33,128,.25);
     }
 
-    .section-title span {
-      color: #a98be8;
-      font-weight: 800;
-      font-size: 0.9rem;
-    }
-
-    .section-title h2 {
-      font-family: 'Quicksand', sans-serif;
-      color: #62518f;
-      font-size: 2.3rem;
-      margin-top: 8px;
-    }
-
-    .section-title p {
-      color: #7b748d;
-      margin-top: 10px;
-    }
-
-    /* Services */
+    /* ✦ Services ✦ */
     .services {
-      background: white;
-    }
-
-    .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 22px;
-      max-width: 1000px;
-      margin: auto;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
     }
 
     .service-card {
-      background: #faf8ff;
-      border: 2px solid #eee9ff;
-      border-radius: 25px;
-      padding: 32px 25px;
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #ffffff, #e5e1ff);
+      border: 2px solid #b5adff;
       text-align: center;
-      transition: 0.25s;
+      box-shadow: 0 8px 18px rgba(73,53,155,.14);
+      transition: .25s;
     }
 
     .service-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 15px 35px rgba(126, 103, 190, 0.12);
     }
 
     .service-icon {
-      font-size: 3rem;
-      margin-bottom: 15px;
+      font-size: 4rem;
+      margin-bottom: 5px;
     }
 
     .service-card h3 {
-      color: #66528f;
-      font-family: 'Quicksand', sans-serif;
-      margin-bottom: 10px;
-      font-size: 1.4rem;
+      font-family: "Fredoka", sans-serif;
+      font-size: 2rem;
+      margin: 8px 0;
+      color: #4d3bad;
     }
 
     .service-card p {
-      color: #7c758d;
-      line-height: 1.6;
+      font-size: 1.05rem;
+      font-weight: 700;
     }
 
-    /* Why Choose Us */
-    .why {
-      background: #f2edff;
-    }
-
-    .why-grid {
-      max-width: 900px;
-      margin: auto;
+    /* ✦ Testimonials ✦ */
+    .testimonial-wrap {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: 1fr 1.2fr 1fr;
       gap: 20px;
+      align-items: center;
     }
 
-    .why-item {
-      background: rgba(255, 255, 255, 0.75);
-      padding: 25px;
-      border-radius: 20px;
-      text-align: center;
-    }
-
-    .why-item h3 {
-      margin: 10px 0;
-      color: #695590;
-    }
-
-    /* Reviews */
-    .testimonials {
+    .quote {
       background: white;
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .testimonial {
-      background: #faf8ff;
-      border-radius: 22px;
+      border: 2px solid #c2bbff;
       padding: 25px;
-      border: 1px solid #e9e2ff;
-    }
-
-    .stars {
-      color: #a98be8;
-      margin-bottom: 12px;
-    }
-
-    .testimonial p {
-      line-height: 1.6;
-      color: #70697f;
-    }
-
-    .customer {
-      margin-top: 15px;
+      border-radius: 25px;
+      text-align: center;
       font-weight: 800;
-      color: #6c5796;
+      color: #51409f;
     }
 
-    /* Socials */
-    .order {
+    .testimonial-image {
+      min-height: 260px;
+      background: linear-gradient(135deg, #d8d2ff, #aaa0f5);
+      border: 4px solid white;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(45,30,100,.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
       text-align: center;
-      background:
-        radial-gradient(circle at center, #e8ddff, transparent 60%),
-        #f5f1ff;
     }
 
-    .order-box {
-      max-width: 650px;
-      margin: auto;
-      background: white;
-      padding: 45px 30px;
-      border-radius: 30px;
-      border: 2px solid #e7dfff;
-      box-shadow: 0 15px 40px rgba(105, 85, 144, 0.1);
+    .testimonial-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .order-box h2 {
-      font-family: 'Quicksand', sans-serif;
-      color: #65518c;
-      margin-bottom: 12px;
+    /* ✦ Features ✦ */
+    .features {
+      width: min(1140px, 94%);
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .feature {
+      background: rgba(255,255,255,.9);
+      border: 3px solid rgba(255,255,255,.9);
+      border-radius: 28px;
+      padding: 22px 12px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(46,30,115,.18);
+      font-weight: 900;
+      color: #4c3aa6;
+    }
+
+    .feature-icon {
       font-size: 2rem;
+      display: block;
+      margin-bottom: 5px;
     }
 
-    .order-box p {
-      color: #777083;
-      margin-bottom: 25px;
-      line-height: 1.6;
-    }
-
-    /* Footer */
-    footer {
-      background: #65518c;
-      color: #f5f0ff;
+    /* ✦ CTA ✦ */
+    .cta {
+      width: min(1140px, 94%);
+      margin: 35px auto;
+      padding: 45px;
       text-align: center;
-      padding: 28px 20px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #5c4ac4, #8276e8);
+      color: white;
+      border: 3px solid rgba(255,255,255,.7);
+      box-shadow: 0 12px 30px rgba(40,25,100,.25);
     }
 
-    footer p {
-      opacity: 0.9;
+    .cta h2 {
+      font-family: "Fredoka", sans-serif;
+      font-size: 2.5rem;
+      margin: 0 0 8px;
     }
 
-    /* Mobile */
-    @media (max-width: 600px) {
+    /* ✦ Footer ✦ */
+    footer {
+      margin-top: 50px;
+      padding: 40px 5%;
+      text-align: center;
+      background: rgba(37,26,105,.85);
+      color: white;
+      border-top: 3px solid rgba(255,255,255,.4);
+    }
+
+    footer .footer-logo {
+      font-family: "Fredoka", sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .socials {
+      margin: 20px 0;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border: 2px solid rgba(255,255,255,.5);
+      border-radius: 20px;
+      background: rgba(255,255,255,.1);
+      font-weight: 800;
+    }
+
+    /* ✦ Mobile ✦ */
+    @media (max-width: 750px) {
       nav {
-        padding: 15px 5%;
-      }
-
-      .logo {
-        font-size: 1.2rem;
-      }
-
-      .nav-links {
-        gap: 12px;
-        font-size: 0.8rem;
-      }
-
-      section {
-        padding: 60px 6%;
+        flex-direction: column;
       }
 
       .hero {
-        min-height: 500px;
+        min-height: 650px;
+        padding: 30px;
+      }
+
+      .hero-content {
+        width: 100%;
+        text-align: center;
+      }
+
+      .badges {
+        justify-content: center;
+      }
+
+      .hero-art {
+        width: 100%;
+        height: 45%;
+      }
+
+      .services,
+      .testimonial-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .quote {
+        display: none;
+      }
+
+      h1 {
+        font-size: 4rem;
       }
     }
   </style>
@@ -350,166 +458,163 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="logo">✦ mitya.xo ♡</div>
+  <div class="sparkles"></div>
 
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#socials">Socials</a></li>
-    </ul>
+  <!-- ✦ Navigation ✦ -->
+  <nav>
+    <div class="logo">♔ mitya<span>.xo</span> ♡</div>
+
+    <div class="nav-links">
+      <a href="#home">⌂ Home</a>
+      <a href="#shop">🛒 Shop</a>
+      <a href="#testimonials">♡ Testimonials</a>
+      <a href="#about">ⓘ About</a>
+      <a href="#socials">✦ Contact</a>
+    </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
+  <!-- ✦ Hero ✦ -->
+  <main class="hero" id="home">
+
     <div class="hero-content">
-      <div class="sparkles">✦ ₊˚ ♡ ⋆｡°✩</div>
+      <div class="eyebrow">✦ Play more, worry less ♡</div>
 
-      <h1>welcome to <span>mitya.xo</span> ♡</h1>
+      <h1>mitya<span>.xo ♡</span></h1>
 
-      <p>
-        Your little trusted shop for Robux top-ups and Genshin piloting services! ✦
-        Safe, easy, and made with lots of love.
+      <p class="hero-text">
+        Your trusted shop for Genshin Pilot services and Robux!
+        Fast, friendly, and here to make your game experience easier ♡
       </p>
 
-      <div class="hero-buttons">
-        <a href="#services" class="button primary">View Services ♡</a>
-        <a href="#socials" class="button secondary">Follow Us ✦</a>
+      <div class="badges">
+        <div class="badge">🛡 Trusted & Secure</div>
+        <div class="badge">⚡ Quick Process</div>
+        <div class="badge">🎧 Friendly Support</div>
       </div>
-    </div>
-  </section>
 
-  <!-- Services -->
-  <section class="services" id="services">
-    <div class="section-title">
-      <span>✦ WHAT WE OFFER ✦</span>
-      <h2>our services ♡</h2>
-      <p>Choose a service and let's get started!</p>
+      <a class="button" href="#shop">✦ Shop Now → ✦</a>
     </div>
 
-    <div class="service-grid">
+    <!-- Replace this emoji with your own image later -->
+    <div class="hero-art">
+      ✦
+    </div>
+
+  </main>
+
+  <!-- ✦ Services ✦ -->
+  <section id="shop">
+
+    <h2 class="section-title">✦ Our Services ✦</h2>
+
+    <div class="services">
 
       <div class="service-card">
-        <div class="service-icon">💎</div>
-        <h3>Robux Top-Up</h3>
+        <div class="service-icon">✧</div>
+        <h3>Genshin Pilot</h3>
         <p>
-          Quick and easy Robux top-up services. Contact us to check available packages!
+          Need help with your Genshin journey? Check out our pilot services
+          and let us help make things easier!
         </p>
+        <a class="button" href="#socials">Order Now →</a>
       </div>
 
       <div class="service-card">
-        <div class="service-icon">🌸</div>
-        <h3>Genshin Piloting</h3>
+        <div class="service-icon">◆</div>
+        <h3>Robux</h3>
         <p>
-          Need help with your Genshin tasks? Contact us to discuss available piloting services.
+          Top up your Robux quickly and easily! Contact us for more
+          information about available options.
         </p>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">💌</div>
-        <h3>Customer Support</h3>
-        <p>
-          Have questions before ordering? We're happy to help!
-        </p>
+        <a class="button" href="#socials">Order Now →</a>
       </div>
 
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section class="why">
-    <div class="section-title">
-      <span>✦ WHY MITA.XO? ✦</span>
-      <h2>made with care ♡</h2>
+  <!-- ✦ Testimonials ✦ -->
+  <section id="testimonials">
+
+    <h2 class="section-title">✦ Customer Testimonials ✦</h2>
+
+    <div class="testimonial-wrap">
+
+      <div class="quote">
+        “Thank you for choosing mitya.xo! ♡<br><br>
+        Your support means so much!”
+      </div>
+
+      <div class="testimonial-image">
+        <!-- Put your testimonial image here -->
+        <span>♡ Add your customer screenshot here ♡</span>
+      </div>
+
+      <div class="quote">
+        “Thank you for your trust! 💗<br><br>
+        We appreciate every customer ♡”
+      </div>
+
     </div>
 
-    <div class="why-grid">
-      <div class="why-item">
-        <div style="font-size:2rem;">✦</div>
-        <h3>Easy Ordering</h3>
-        <p>Simple and friendly ordering process.</p>
-      </div>
-
-      <div class="why-item">
-        <div style="font-size:2rem;">♡</div>
-        <h3>Trusted Service</h3>
-        <p>Your support means everything to us!</p>
-      </div>
-
-      <div class="why-item">
-        <div style="font-size:2rem;">✿</div>
-        <h3>Friendly Support</h3>
-        <p>We're always happy to answer your questions.</p>
-      </div>
-    </div>
   </section>
 
-  <!-- Reviews -->
-  <section class="testimonials" id="reviews">
-    <div class="section-title">
-      <span>✦ CUSTOMER LOVE ✦</span>
-      <h2>testimonials ♡</h2>
-      <p>Thank you for trusting mitya.xo!</p>
+  <!-- ✦ Features ✦ -->
+  <div class="features">
+
+    <div class="feature">
+      <span class="feature-icon">⚡</span>
+      Fast Delivery
     </div>
 
-    <div class="testimonial-grid">
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>"Thank you so much! Everything went smoothly and quickly ♡"</p>
-        <div class="customer">— Happy Customer ✦</div>
-      </div>
-
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>"Very friendly and easy to deal with. Thank youuu! 💕"</p>
-        <div class="customer">— Happy Customer ✦</div>
-      </div>
-
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>"Trusted seller! My order was completed successfully ♡"</p>
-        <div class="customer">— Happy Customer ✦</div>
-      </div>
+    <div class="feature">
+      <span class="feature-icon">🛡</span>
+      Trusted Service
     </div>
+
+    <div class="feature">
+      <span class="feature-icon">🎧</span>
+      Friendly Support
+    </div>
+
+    <div class="feature">
+      <span class="feature-icon">♡</span>
+      Affordable Prices
+    </div>
+
+  </div>
+
+  <!-- ✦ About / CTA ✦ -->
+  <section class="cta" id="about">
+
+    <h2>Ready to get started? ♡</h2>
+
+    <p>
+      Let's make your gaming experience even better with mitya.xo!
+    </p>
+
+    <a class="button" href="#socials">Shop Now →</a>
+
   </section>
 
-  <!-- Socials -->
-  <section class="order" id="socials">
-    <div class="order-box">
-      <div class="sparkles">₊˚⊹♡✦♡⊹˚₊</div>
+  <!-- ✦ Footer ✦ -->
+  <footer id="socials">
 
-      <h2>let's stay connected ♡</h2>
+    <div class="footer-logo">♔ mitya.xo ♡</div>
 
-      <p>
-        Follow mitya.xo for shop updates, services, and more! ✦
-      </p>
+    <p>Play more, worry less ♡</p>
 
-      <div class="hero-buttons">
-        <a href="https://www.threads.com/@mitya.xo"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="button primary">
-          Follow mitya.xo ♡
-        </a>
+    <div class="socials">
+      <a href="https://www.threads.com/@mitya.xo" target="_blank">
+        ♡ Follow @mitya.xo
+      </a>
 
-        <a href="https://www.threads.com/@lilacmitya"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="button secondary">
-          Backup Account ✦
-        </a>
-      </div>
-
-      <p style="margin-top: 25px; font-size: 0.9rem;">
-        ₊˚♡ My backup account is available in case my main account is unavailable ♡˚₊
-      </p>
+      <a href="https://www.threads.com/@lilacmitya" target="_blank">
+        ✦ Backup @lilacmitya
+      </a>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>✦ ₊˚ mitya.xo ♡ thank you for your support ₊˚ ✦</p>
+    <p>© 2026 mitya.xo. All rights reserved. ♡</p>
+
   </footer>
 
 </body>
