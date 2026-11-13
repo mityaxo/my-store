@@ -1,55 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mitya.xo — Your Trusted Shop for Genshin Pilot & Robux</title>
-    
+    <title>mitya.xo — Genshin Pilot & Robux Shop ♡</title>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Fredoka & Quicksand for soft bubbly anime feel -->
+
+    <!-- Google Fonts: Fredoka & Nunito -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        lavender: {
-                            50: '#f5f3ff',
-                            100: '#ede9fe',
-                            200: '#ddd6fe',
-                            300: '#c4b5fd',
-                            400: '#a78bfa',
-                            500: '#8b5cf6',
-                            600: '#7c3aed',
-                            700: '#6d28d9',
-                            800: '#5b21b6',
-                            900: '#4c1d95',
-                        },
-                        periwinkle: {
-                            light: '#e0e7ff',
-                            DEFAULT: '#8b9bb4',
-                            border: '#a5b4fc',
-                            dark: '#4f46e5',
-                            night: '#1e1b4b',
-                            deep: '#2e1065'
-                        }
-                    },
                     fontFamily: {
-                        sans: ['Fredoka', 'Quicksand', 'sans-serif'],
-                        cute: ['Quicksand', 'Fredoka', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                        body: ['Nunito', 'sans-serif'],
                     },
-                    boxShadow: {
-                        'glow': '0 0 20px rgba(165, 180, 252, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.8)',
-                        'glow-lg': '0 0 35px rgba(139, 92, 246, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.9)',
-                        'card': '0 10px 30px -5px rgba(79, 70, 229, 0.25)',
+                    colors: {
+                        periwinkle: {
+                            50: '#f5f6ff',
+                            100: '#ebebff',
+                            200: '#d8daff',
+                            300: '#b9beff',
+                            400: '#949aff',
+                            500: '#6f73f8',
+                            600: '#5554ec',
+                            700: '#4743d2',
+                            800: '#3b38aa',
+                            900: '#323286',
+                            950: '#1f1d52',
+                        }
                     }
                 }
             }
@@ -58,495 +46,833 @@
 
     <style>
         body {
-            font-family: 'Fredoka', 'Quicksand', sans-serif;
-            background: linear-gradient(135deg, #a5b4fc 0%, #c7d2fe 35%, #93c5fd 70%, #818cf8 100%);
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(145deg, #aeb6ff 0%, #c8ceff 30%, #dce1ff 60%, #a5afff 100%);
             background-attachment: fixed;
-            color: #2d264b;
+            color: #2c2857;
             overflow-x: hidden;
         }
 
-        /* Glassmorphism Styles */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 3px solid rgba(255, 255, 255, 0.85);
-            box-shadow: 0 8px 32px 0 rgba(79, 70, 229, 0.18), inset 0 0 12px rgba(255, 255, 255, 0.7);
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* Dreamy Glassmorphism Panels */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 3px solid rgba(255, 255, 255, 0.92);
+            box-shadow: 0 12px 32px rgba(71, 67, 210, 0.16), inset 0 0 16px rgba(255, 255, 255, 0.85);
+        }
+
+        .glass-subcard {
+            background: rgba(245, 246, 255, 0.82);
+            backdrop-filter: blur(8px);
+            border: 2px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 6px 18px rgba(85, 84, 236, 0.1);
         }
 
         .glass-pill {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(8px);
-            border: 2px solid rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
-        }
-
-        .glass-btn {
-            background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(10px);
             border: 2px solid #ffffff;
-            box-shadow: 0 6px 18px rgba(79, 70, 229, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.6);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 14px rgba(71, 67, 210, 0.14);
         }
 
-        .glass-btn:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.5), inset 0 2px 6px rgba(255, 255, 255, 0.9);
+        /* Bubbly Buttons */
+        .btn-lavender {
+            background: linear-gradient(135deg, #7c82ff 0%, #5554ec 100%);
+            border: 2.5px solid #ffffff;
+            color: #ffffff;
+            box-shadow: 0 6px 18px rgba(85, 84, 236, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.65);
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .btn-lavender:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 24px rgba(85, 84, 236, 0.45), inset 0 2px 6px rgba(255, 255, 255, 0.9);
         }
 
-        .glass-btn:active {
-            transform: translateY(1px) scale(0.98);
+        .btn-pink {
+            background: linear-gradient(135deg, #f472b6 0%, #db2777 100%);
+            border: 2.5px solid #ffffff;
+            color: #ffffff;
+            box-shadow: 0 6px 18px rgba(219, 39, 119, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.65);
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .btn-pink:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 10px 24px rgba(219, 39, 119, 0.4), inset 0 2px 6px rgba(255, 255, 255, 0.9);
         }
 
-        /* Sparkle & Floating Keyframe Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(3deg); }
+        /* Section Banner Pill */
+        .section-ribbon {
+            background: linear-gradient(135deg, #6366f1 0%, #4743d2 100%);
+            border: 3px solid #ffffff;
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(71, 67, 210, 0.3), inset 0 2px 5px rgba(255, 255, 255, 0.5);
         }
 
-        @keyframes pulse-glow {
-            0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)); }
-            50% { opacity: 1; filter: drop-shadow(0 0 18px rgba(199, 210, 254, 1)); }
+        /* Text Outline Effect */
+        .title-stroke {
+            text-shadow:
+                -2px -2px 0 #4743d2,
+                 2px -2px 0 #4743d2,
+                -2px  2px 0 #4743d2,
+                 2px  2px 0 #4743d2,
+                 0px  5px 12px rgba(71, 67, 210, 0.35);
         }
 
-        @keyframes sparkle-twinkle {
-            0%, 100% { transform: scale(0.8) rotate(0deg); opacity: 0.4; }
-            50% { transform: scale(1.2) rotate(45deg); opacity: 1; }
+        /* Animations */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-7px); }
         }
-
-        .animate-float {
-            animation: float 4s ease-in-out infinite;
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.35; transform: scale(0.85) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.2) rotate(25deg); }
         }
+        .animate-float { animation: floatSlow 3.8s ease-in-out infinite; }
+        .animate-twinkle { animation: twinkle 3.2s ease-in-out infinite; }
 
-        .animate-float-delayed {
-            animation: float 5s ease-in-out 2s infinite;
+        /* Page Transition */
+        .page-view {
+            animation: fadeSlideIn 0.35s ease-out forwards;
         }
-
-        .animate-twinkle {
-            animation: sparkle-twinkle 3s ease-in-out infinite;
-        }
-
-        .text-stroke-purple {
-            text-shadow: -2px -2px 0 #4338ca, 2px -2px 0 #4338ca, -2px 2px 0 #4338ca, 2px 2px 0 #4338ca, 0 4px 10px rgba(67, 56, 202, 0.5);
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #c7d2fe;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #818cf8;
-            border-radius: 10px;
-            border: 2px solid #e0e7ff;
-        }
-
-        /* Toast Popup Animation */
-        #toast {
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #dce1ff; }
+        ::-webkit-scrollbar-thumb { background: #7c82ff; border-radius: 999px; border: 2px solid #eef0ff; }
     </style>
 </head>
-<body class="relative min-h-screen selection:bg-indigo-300 selection:text-indigo-900">
+<body class="min-h-screen relative selection:bg-indigo-300 selection:text-indigo-950">
 
-    <!-- Floating Background Sparkles -->
-    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div class="absolute top-12 left-10 text-white/60 text-2xl animate-twinkle" style="animation-delay: 0s;">✦</div>
-        <div class="absolute top-40 right-20 text-indigo-200/80 text-3xl animate-twinkle" style="animation-delay: 1s;">✧</div>
-        <div class="absolute top-1/3 left-1/4 text-white/50 text-xl animate-twinkle" style="animation-delay: 1.5s;">✦</div>
-        <div class="absolute bottom-1/3 right-10 text-white/70 text-4xl animate-twinkle" style="animation-delay: 0.5s;">✦</div>
-        <div class="absolute bottom-20 left-12 text-indigo-200/90 text-2xl animate-twinkle" style="animation-delay: 2s;">✧</div>
+    <!-- Decorative Floating Sparkles -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <span class="absolute top-14 left-[7%] text-white/80 text-2xl animate-twinkle">✦</span>
+        <span class="absolute top-36 right-[10%] text-indigo-100 text-3xl animate-twinkle" style="animation-delay:0.8s">✧</span>
+        <span class="absolute top-[45%] left-[4%] text-white/70 text-xl animate-twinkle" style="animation-delay:1.4s">✦</span>
+        <span class="absolute bottom-[28%] right-[6%] text-white/85 text-3xl animate-twinkle" style="animation-delay:0.4s">✦</span>
+        <span class="absolute bottom-24 left-[14%] text-pink-100 text-2xl animate-twinkle" style="animation-delay:1.9s">♡</span>
     </div>
 
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 pt-4 px-4 sm:px-8 max-w-7xl mx-auto">
-        <nav class="glass-pill rounded-full py-2.5 px-4 sm:px-6 flex items-center justify-between shadow-lg">
-            <!-- Logo with Crown -->
-            <a href="#" class="flex items-center gap-2 group">
-                <div class="relative">
-                    <svg class="w-8 h-8 text-indigo-600 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor">
+    <!-- STICKY TOP NAVBAR -->
+    <header class="sticky top-0 z-40 pt-3 px-3 sm:px-6 max-w-6xl mx-auto">
+        <nav class="glass-pill rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between gap-2">
+            <!-- Brand Logo -->
+            <button type="button" onclick="navigateTo('home')" class="flex items-center gap-2 group focus:outline-none">
+                <div class="relative w-9 h-9 rounded-full bg-gradient-to-br from-indigo-100 to-indigo-200 border-2 border-indigo-400 flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+                    <!-- Crown SVG -->
+                    <svg class="w-5 h-5 text-indigo-600" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
                     </svg>
-                    <span class="absolute -top-1 -right-1 text-xs text-pink-400 animate-ping">♡</span>
+                    <span class="absolute -top-1 -right-1 text-[10px] text-pink-500">♡</span>
                 </div>
-                <span class="text-2xl font-bold tracking-wide text-indigo-900 group-hover:text-indigo-700 transition-colors">mitya.xo</span>
-            </a>
+                <span class="font-display font-bold text-xl sm:text-2xl text-indigo-950 tracking-tight">mitya.xo</span>
+            </button>
 
-            <!-- Navigation Links -->
-            <div class="hidden md:flex items-center gap-2">
-                <a href="#home" class="px-4 py-1.5 rounded-full text-indigo-900 font-semibold bg-white/60 hover:bg-white hover:text-indigo-600 transition-all text-sm flex items-center gap-1.5 shadow-sm">
-                    <i class="fa-solid fa-house text-xs text-indigo-500"></i> Home
-                </a>
-                <a href="#shop" class="px-4 py-1.5 rounded-full text-indigo-900 font-semibold hover:bg-white/80 hover:text-indigo-600 transition-all text-sm flex items-center gap-1.5">
-                    <i class="fa-solid fa-cart-shopping text-xs text-indigo-500"></i> Shop
-                </a>
-                <a href="#testimonials" class="px-4 py-1.5 rounded-full text-indigo-900 font-semibold hover:bg-white/80 hover:text-indigo-600 transition-all text-sm flex items-center gap-1.5">
-                    <i class="fa-solid fa-star text-xs text-indigo-500"></i> Testimonials
-                </a>
-                <a href="#about" class="px-4 py-1.5 rounded-full text-indigo-900 font-semibold hover:bg-white/80 hover:text-indigo-600 transition-all text-sm flex items-center gap-1.5">
-                    <i class="fa-solid fa-circle-info text-xs text-indigo-500"></i> About
-                </a>
-                <a href="#faq" class="px-4 py-1.5 rounded-full text-indigo-900 font-semibold hover:bg-white/80 hover:text-indigo-600 transition-all text-sm flex items-center gap-1.5">
-                    <i class="fa-solid fa-circle-question text-xs text-indigo-500"></i> FAQ
-                </a>
+            <!-- Center Navigation Links -->
+            <div class="hidden md:flex items-center gap-1.5">
+                <button type="button" onclick="navigateTo('home')" id="nav-home" class="nav-btn px-3.5 py-1.5 rounded-full text-sm font-bold text-indigo-950 bg-indigo-100/90 hover:bg-indigo-200/80 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-house text-indigo-600 text-xs"></i> Home
+                </button>
+                <button type="button" onclick="navigateTo('genshin')" id="nav-genshin" class="nav-btn px-3.5 py-1.5 rounded-full text-sm font-bold text-indigo-900 hover:bg-indigo-100/80 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-star text-indigo-500 text-xs"></i> Genshin Pilot
+                </button>
+                <button type="button" onclick="navigateTo('robux')" id="nav-robux" class="nav-btn px-3.5 py-1.5 rounded-full text-sm font-bold text-indigo-900 hover:bg-indigo-100/80 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-cube text-indigo-500 text-xs"></i> Roblox Robux
+                </button>
+                <button type="button" onclick="scrollToShared('testimonials-section')" class="px-3.5 py-1.5 rounded-full text-sm font-bold text-indigo-900 hover:bg-indigo-100/80 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-heart text-pink-500 text-xs"></i> Testimonials
+                </button>
+                <button type="button" onclick="scrollToShared('faq-section')" class="px-3.5 py-1.5 rounded-full text-sm font-bold text-indigo-900 hover:bg-indigo-100/80 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-question text-indigo-500 text-xs"></i> FAQ
+                </button>
             </div>
 
-            <!-- Contact CTA -->
-            <div class="flex items-center gap-2">
-                <a href="https://discord.com" target="_blank" rel="noopener noreferrer" class="glass-btn text-white px-4 py-2 rounded-full font-bold text-sm flex items-center gap-2 shadow-md">
-                    <i class="fa-brands fa-discord text-base"></i>
+            <!-- Right Threads Contact Buttons -->
+            <div class="flex items-center gap-1.5 sm:gap-2">
+                <a href="https://www.threads.com/@mitya.xo" target="_blank" rel="noopener noreferrer" class="btn-lavender px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold flex items-center gap-1.5">
+                    <i class="fa-brands fa-threads"></i>
                     <span>Contact Us</span>
+                </a>
+                <a href="https://www.threads.com/@lilacmitya" target="_blank" rel="noopener noreferrer" title="Backup / Alt Threads (@lilacmitya)" class="btn-pink px-2.5 sm:px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1">
+                    <span>Alt</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                 </a>
             </div>
         </nav>
+
+        <!-- Mobile Quick Nav Bar -->
+        <div class="flex md:hidden items-center justify-center gap-1.5 mt-2 overflow-x-auto pb-1">
+            <button type="button" onclick="navigateTo('home')" class="glass-pill px-3 py-1 rounded-full text-xs font-bold text-indigo-950 whitespace-nowrap">Home</button>
+            <button type="button" onclick="navigateTo('genshin')" class="glass-pill px-3 py-1 rounded-full text-xs font-bold text-indigo-950 whitespace-nowrap">✦ Genshin Pilot</button>
+            <button type="button" onclick="navigateTo('robux')" class="glass-pill px-3 py-1 rounded-full text-xs font-bold text-indigo-950 whitespace-nowrap">◼ Robux Shop</button>
+            <button type="button" onclick="scrollToShared('testimonials-section')" class="glass-pill px-3 py-1 rounded-full text-xs font-bold text-indigo-950 whitespace-nowrap">Reviews</button>
+            <button type="button" onclick="scrollToShared('faq-section')" class="glass-pill px-3 py-1 rounded-full text-xs font-bold text-indigo-950 whitespace-nowrap">FAQ</button>
+        </div>
     </header>
 
-    <!-- Main Content Container -->
-    <main class="max-w-6xl mx-auto px-4 py-8 relative z-10 space-y-10">
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="max-w-6xl mx-auto px-4 pt-6 pb-12 relative z-10 space-y-12">
 
-        <!-- HERO BANNER SECTION -->
-        <section id="home" class="glass-panel rounded-3xl p-6 md:p-10 relative overflow-hidden">
-            <!-- Background Decorative Stars & Swirls -->
-            <div class="absolute -top-10 -right-10 w-48 h-48 bg-indigo-300/40 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-pink-300/40 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                
-                <!-- Left Side: Neuvillette Anime Illustration & Speech Bubble -->
-                <div class="lg:col-span-5 relative flex flex-col items-center justify-center">
-                    <!-- Speech Bubble -->
-                    <div class="absolute -top-4 left-4 z-20 glass-pill px-5 py-2.5 rounded-3xl shadow-lg border-2 border-indigo-200 animate-float">
-                        <p class="text-indigo-900 font-bold text-sm sm:text-base flex items-center gap-1">
-                            Play more, Worry less <span class="text-pink-500 text-lg">♡</span>
-                        </p>
-                        <!-- Bubble Arrow -->
-                        <div class="absolute -bottom-2 left-8 w-4 h-4 bg-white border-b-2 border-r-2 border-indigo-200 rotate-45"></div>
-                    </div>
+        <!-- =========================================================
+             VIEW 1: HOME PAGE VIEW
+             ========================================================= -->
+        <div id="view-home" class="page-view space-y-12">
 
-                    <!-- Character Card Illustration Frame -->
-                    <div class="relative w-full max-w-xs sm:max-w-sm rounded-3xl p-3 bg-gradient-to-b from-indigo-200/80 to-indigo-400/80 border-4 border-white shadow-2xl overflow-hidden group">
-                        <!-- Custom SVG Neuvillette Anime Character Illustration -->
-                        <div class="relative rounded-2xl overflow-hidden bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900 p-4 min-h-[300px] sm:min-h-[340px] flex items-center justify-center">
-                            <!-- Background Hydro Glow -->
-                            <div class="absolute inset-0 bg-blue-500/20 blur-xl"></div>
-                            
-                            <!-- Detailed SVG Anime Avatar (Neuvillette Style) -->
-                            <svg class="w-full h-72 drop-shadow-2xl transition-transform duration-500 group-hover:scale-105" viewBox="0 0 300 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="150" cy="160" r="130" fill="url(#bg_grad)" opacity="0.6"/>
-                                <defs>
-                                    <linearGradient id="bg_grad" x1="0" y1="0" x2="300" y2="320">
-                                        <stop offset="0%" stop-color="#818cf8"/>
-                                        <stop offset="100%" stop-color="#312e81"/>
-                                    </linearGradient>
-                                </defs>
-                                
-                                <!-- Hair Back -->
-                                <path d="M70 120 C 50 180, 40 260, 90 300 C 120 300, 180 300, 210 300 C 260 260, 250 180, 230 120 Z" fill="#c7d2fe"/>
-                                <path d="M50 140 C 30 200, 20 280, 70 310" stroke="#818cf8" stroke-width="6" stroke-linecap="round"/>
-                                <path d="M250 140 C 270 200, 280 280, 230 310" stroke="#818cf8" stroke-width="6" stroke-linecap="round"/>
+            <!-- HERO SECTION WITH REPLACEABLE PROFILE PHOTO -->
+            <section class="glass-card rounded-[2rem] p-6 sm:p-10 relative overflow-hidden">
+                <!-- Soft ambient glows -->
+                <div class="absolute -top-12 -right-12 w-56 h-56 bg-indigo-300/40 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-12 -left-12 w-56 h-56 bg-pink-300/40 rounded-full blur-3xl pointer-events-none"></div>
 
-                                <!-- Clothes / Outfit -->
-                                <path d="M90 240 L150 200 L210 240 L230 320 L70 320 Z" fill="#1e1b4b"/>
-                                <path d="M120 220 L150 250 L180 220 L150 320 Z" fill="#312e81"/>
-                                <!-- Hydro Brooch -->
-                                <circle cx="150" cy="235" r="14" fill="#60a5fa" stroke="#fbbf24" stroke-width="3"/>
-                                <polygon points="150,225 156,235 150,245 144,235" fill="#fff"/>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
-                                <!-- Face Base -->
-                                <path d="M105 130 C 105 200, 195 200, 195 130 C 195 90, 105 90, 105 130 Z" fill="#fef2f2"/>
-                                
-                                <!-- Eyes -->
-                                <ellipse cx="130" cy="140" rx="12" ry="16" fill="#312e81"/>
-                                <ellipse cx="170" cy="140" rx="12" ry="16" fill="#312e81"/>
-                                <ellipse cx="130" cy="142" rx="6" ry="10" fill="#60a5fa"/>
-                                <ellipse cx="170" cy="142" rx="6" ry="10" fill="#60a5fa"/>
-                                <circle cx="127" cy="135" r="3" fill="#fff"/>
-                                <circle cx="167" cy="135" r="3" fill="#fff"/>
-                                
-                                <!-- Eyelashes & Brows -->
-                                <path d="M115 124 Q 130 120 143 126" stroke="#312e81" stroke-width="3" stroke-linecap="round" fill="none"/>
-                                <path d="M157 126 Q 170 120 185 124" stroke="#312e81" stroke-width="3" stroke-linecap="round" fill="none"/>
-                                <path d="M120 115 Q 130 112 140 116" stroke="#818cf8" stroke-width="2.5" fill="none"/>
-                                <path d="M160 116 Q 170 112 180 115" stroke="#818cf8" stroke-width="2.5" fill="none"/>
-
-                                <!-- Soft Blush & Smile -->
-                                <ellipse cx="120" cy="154" rx="8" ry="4" fill="#f43f5e" opacity="0.3"/>
-                                <ellipse cx="180" cy="154" rx="8" ry="4" fill="#f43f5e" opacity="0.3"/>
-                                <path d="M144 160 Q 150 164 156 160" stroke="#e11d48" stroke-width="2" stroke-linecap="round" fill="none"/>
-
-                                <!-- Front Hair Bangs -->
-                                <path d="M100 115 C 90 70, 150 50, 150 95 C 150 50, 210 70, 200 115 C 180 90, 160 120, 150 110 C 140 120, 120 90, 100 115 Z" fill="#e0e7ff"/>
-                                <path d="M150 50 L150 105" stroke="#a5b4fc" stroke-width="2"/>
-                                
-                                <!-- Horns / Accessories -->
-                                <path d="M95 90 Q 70 60 65 40 Q 80 50 100 75" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
-                                <path d="M205 90 Q 230 60 235 40 Q 220 50 200 75" fill="#60a5fa" stroke="#3b82f6" stroke-width="2"/>
-                            </svg>
-
-                            <!-- Mini Chibi Mascot Overlay at corner -->
-                            <div class="absolute bottom-2 right-2 bg-white/90 rounded-full p-1.5 shadow-md flex items-center gap-1 border border-indigo-200 animate-bounce">
-                                <span class="text-xs font-bold text-indigo-900 px-1">Neuvillette Certified ✨</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Side: Store Title, Tagline & Features -->
-                <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
-                    
-                    <!-- Stylized Main Heading -->
-                    <div class="space-y-2">
-                        <!-- Crown Icon -->
-                        <div class="flex justify-center lg:justify-start">
-                            <svg class="w-16 h-16 text-indigo-500 drop-shadow-md animate-pulse" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
-                            </svg>
-                        </div>
-                        
-                        <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white text-stroke-purple flex items-center justify-center lg:justify-start gap-2">
-                            mitya.xo<span class="text-pink-400 text-4xl sm:text-5xl">♡</span>
-                        </h1>
-                        
-                        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-indigo-950 max-w-lg">
-                            Your Trusted Shop for <br class="hidden sm:inline"/>
-                            <span class="text-indigo-600 underline decoration-indigo-300 decoration-wavy">Genshin Pilot</span> & <span class="text-indigo-600 underline decoration-indigo-300 decoration-wavy">Robux</span> ♡
-                        </h2>
-                    </div>
-
-                    <!-- Feature Badges Row -->
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
-                        <div class="glass-pill px-4 py-2 rounded-2xl flex items-center gap-2.5 border border-indigo-200 text-indigo-900 font-semibold text-sm shadow-sm">
-                            <div class="w-7 h-7 rounded-xl bg-indigo-500 text-white flex items-center justify-center text-xs shadow">
-                                <i class="fa-solid fa-shield-halved"></i>
-                            </div>
-                            <span>Trusted & Secure</span>
-                        </div>
-
-                        <div class="glass-pill px-4 py-2 rounded-2xl flex items-center gap-2.5 border border-indigo-200 text-indigo-900 font-semibold text-sm shadow-sm">
-                            <div class="w-7 h-7 rounded-xl bg-indigo-500 text-white flex items-center justify-center text-xs shadow">
-                                <i class="fa-solid fa-bolt"></i>
-                            </div>
-                            <span>Instant Process</span>
-                        </div>
-
-                        <div class="glass-pill px-4 py-2 rounded-2xl flex items-center gap-2.5 border border-indigo-200 text-indigo-900 font-semibold text-sm shadow-sm">
-                            <div class="w-7 h-7 rounded-xl bg-indigo-500 text-white flex items-center justify-center text-xs shadow">
-                                <i class="fa-solid fa-headset"></i>
-                            </div>
-                            <span>Friendly Support</span>
-                        </div>
-                    </div>
-
-                    <!-- Big Shop Now Button -->
-                    <div class="pt-4">
-                        <a href="#shop" class="glass-btn inline-flex items-center gap-3 text-white text-lg sm:text-xl font-bold px-10 py-4 rounded-full shadow-glow hover:shadow-glow-lg">
-                            <span>✦ Shop Now ✦</span>
-                            <i class="fa-solid fa-arrow-right text-base transition-transform group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- OUR SERVICES SECTION -->
-        <section id="shop" class="glass-panel rounded-3xl p-6 sm:p-10 relative">
-            
-            <!-- Cute Ribbon Bow Accents on Border Left & Right -->
-            <div class="absolute -left-5 top-1/2 -translate-y-1/2 text-indigo-400 text-4xl hidden md:block drop-shadow animate-float">
-                🎀
-            </div>
-            <div class="absolute -right-5 top-1/2 -translate-y-1/2 text-indigo-400 text-4xl hidden md:block drop-shadow animate-float-delayed">
-                🎀
-            </div>
-
-            <!-- Section Pill Header -->
-            <div class="flex justify-center -mt-12 sm:-mt-14 mb-8">
-                <div class="glass-btn bg-indigo-600 text-white font-bold text-lg sm:text-xl px-8 py-2.5 rounded-full shadow-lg border-2 border-white flex items-center gap-3">
-                    <span class="text-indigo-200">✦</span>
-                    <span>Our Services</span>
-                    <span class="text-indigo-200">✦</span>
-                </div>
-            </div>
-
-            <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                
-                <!-- Service Card 1: Genshin Pilot -->
-                <div class="glass-pill rounded-3xl p-6 sm:p-8 border-2 border-indigo-200 hover:border-indigo-400 transition-all duration-300 flex flex-col items-center text-center space-y-4 group hover:shadow-xl">
-                    <!-- Primogem Icon Box -->
-                    <div class="w-24 h-24 rounded-3xl bg-gradient-to-tr from-indigo-100 to-white flex items-center justify-center p-3 shadow-inner border border-indigo-200 group-hover:scale-110 transition-transform">
-                        <!-- Genshin Primogem SVG Icon -->
-                        <svg class="w-16 h-16 drop-shadow-md" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <polygon points="50,5 63,37 95,50 63,63 50,95 37,63 5,50 37,37" fill="url(#primo_grad)"/>
-                            <polygon points="50,20 58,42 80,50 58,58 50,80 42,58 20,50 42,42" fill="#ffffff" opacity="0.6"/>
-                            <defs>
-                                <linearGradient id="primo_grad" x1="0" y1="0" x2="100" y2="100">
-                                    <stop offset="0%" stop-color="#ec4899"/>
-                                    <stop offset="50%" stop-color="#8b5cf6"/>
-                                    <stop offset="100%" stop-color="#3b82f6"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
-
-                    <h3 class="text-2xl font-bold text-indigo-950">Genshin Pilot</h3>
-                    <p class="text-indigo-800 text-sm sm:text-base max-w-xs font-medium">
-                        Get your Genshin wishes, spiral abyss, and daily missions done easily!
-                    </p>
-                    
-                    <button onclick="openOrderModal('Genshin Pilot')" class="glass-btn text-white font-bold px-7 py-2.5 rounded-full text-base flex items-center gap-2 mt-2">
-                        <span>Order Now</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </button>
-                </div>
-
-                <!-- Service Card 2: Robux -->
-                <div class="glass-pill rounded-3xl p-6 sm:p-8 border-2 border-indigo-200 hover:border-indigo-400 transition-all duration-300 flex flex-col items-center text-center space-y-4 group hover:shadow-xl">
-                    <!-- Robux Icon Box -->
-                    <div class="w-24 h-24 rounded-3xl bg-gradient-to-tr from-slate-900 to-indigo-950 flex items-center justify-center p-3 shadow-md border border-indigo-300 group-hover:scale-110 transition-transform">
-                        <!-- Roblox Cube Logo SVG -->
-                        <svg class="w-14 h-14 text-white drop-shadow" viewBox="0 0 100 100" fill="currentColor">
-                            <path d="M20 5 L95 25 L80 95 L5 75 Z" />
-                            <path d="M45 42 L62 46 L57 63 L40 58 Z" fill="#0f172a" />
-                        </svg>
-                    </div>
-
-                    <h3 class="text-2xl font-bold text-indigo-950">Robux</h3>
-                    <p class="text-indigo-800 text-sm sm:text-base max-w-xs font-medium">
-                        Top up your Robux quickly, cheaply and 100% safely!
-                    </p>
-                    
-                    <button onclick="openOrderModal('Robux Top Up')" class="glass-btn text-white font-bold px-7 py-2.5 rounded-full text-base flex items-center gap-2 mt-2">
-                        <span>Order Now</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </button>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- CUSTOMER TESTIMONIALS SECTION -->
-        <section id="testimonials" class="glass-panel rounded-3xl p-6 sm:p-10 relative">
-            
-            <!-- Section Pill Header -->
-            <div class="flex justify-center -mt-12 sm:-mt-14 mb-8">
-                <div class="glass-btn bg-indigo-600 text-white font-bold text-lg sm:text-xl px-8 py-2.5 rounded-full shadow-lg border-2 border-white flex items-center gap-3">
-                    <span class="text-indigo-200">✦</span>
-                    <span>Customer Testimonials</span>
-                    <span class="text-indigo-200">✦</span>
-                </div>
-            </div>
-
-            <!-- Testimonial Carousel Container -->
-            <div class="relative max-w-4xl mx-auto py-4">
-                
-                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                    
-                    <!-- Left Chat Bubble -->
-                    <div class="w-full md:w-1/3 flex flex-col items-center md:items-end text-center md:text-right space-y-2 order-2 md:order-1">
-                        <!-- Cute Chibi Character Left -->
-                        <div class="w-16 h-16 rounded-full bg-indigo-200 border-2 border-white p-1 shadow-md mb-1 animate-float">
-                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" fill="#c7d2fe"/>
-                                <circle cx="35" cy="45" r="5" fill="#312e81"/>
-                                <circle cx="65" cy="45" r="5" fill="#312e81"/>
-                                <path d="M40 60 Q 50 68 60 60" stroke="#312e81" stroke-width="4" stroke-linecap="round"/>
-                                <ellipse cx="25" cy="52" rx="6" ry="3" fill="#f43f5e" opacity="0.4"/>
-                                <ellipse cx="75" cy="52" rx="6" ry="3" fill="#f43f5e" opacity="0.4"/>
-                            </svg>
-                        </div>
-
-                        <div class="glass-pill p-4 rounded-2xl border border-indigo-200 shadow-md relative w-full">
-                            <p id="testi-left-text" class="text-indigo-950 font-semibold text-sm sm:text-base">
-                                "ada masukk , thankyouu awaknyaaa 💕💕 ♡"
+                    <!-- Left: Arched Anime Character / Custom Profile Photo Frame -->
+                    <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
+                        <!-- Floating Speech Bubble -->
+                        <div class="self-start sm:ml-4 mb-3 glass-pill px-4 py-2 rounded-2xl border-2 border-indigo-200 shadow-md animate-float relative z-20">
+                            <p class="font-display font-bold text-indigo-950 text-xs sm:text-sm">
+                                Play more, Worry less <span class="text-pink-500">♡</span>
                             </p>
-                            <span id="testi-left-author" class="block text-indigo-600 text-xs font-bold mt-2">
+                            <div class="absolute -bottom-2 left-7 w-3.5 h-3.5 bg-white border-r-2 border-b-2 border-indigo-200 rotate-45"></div>
+                        </div>
+
+                        <!-- Portrait Frame -->
+                        <div class="relative group">
+                            <div class="w-64 h-72 sm:w-72 sm:h-80 rounded-t-full rounded-b-[2.2rem] p-2.5 bg-gradient-to-b from-white via-indigo-200 to-indigo-400 shadow-xl border-4 border-white">
+                                <div class="w-full h-full rounded-t-full rounded-b-[1.7rem] overflow-hidden bg-gradient-to-b from-indigo-950 via-indigo-900 to-periwinkle-950 relative flex items-center justify-center">
+                                    
+                                    <!-- Custom Uploaded Photo (hidden until set or loaded from localStorage) -->
+                                    <img id="hero-custom-photo" src="" alt="mitya.xo Profile Photo" class="hidden w-full h-full object-cover object-center">
+
+                                    <!-- Default Cute Anime Chibi Mascot SVG -->
+                                    <div id="hero-default-svg" class="w-full h-full flex items-center justify-center p-3">
+                                        <svg class="w-full h-full drop-shadow-2xl" viewBox="0 0 300 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="150" cy="160" r="128" fill="url(#heroGlow)" opacity="0.55"/>
+                                            <defs>
+                                                <linearGradient id="heroGlow" x1="0" y1="0" x2="300" y2="320">
+                                                    <stop offset="0%" stop-color="#a5b4fc"/>
+                                                    <stop offset="100%" stop-color="#312e81"/>
+                                                </linearGradient>
+                                            </defs>
+                                            <!-- Flowing Silver-Lavender Hair Back -->
+                                            <path d="M68 125 C 46 185, 38 265, 88 305 C 120 305, 180 305, 212 305 C 262 265, 254 185, 232 125 Z" fill="#c7d2fe"/>
+                                            <!-- Royal Coat -->
+                                            <path d="M88 242 L150 202 L212 242 L232 320 L68 320 Z" fill="#1e1b4b"/>
+                                            <path d="M118 220 L150 252 L182 220 L150 320 Z" fill="#3730a3"/>
+                                            <!-- Hydro Gem Brooch -->
+                                            <circle cx="150" cy="236" r="14" fill="#60a5fa" stroke="#fcd34d" stroke-width="3"/>
+                                            <polygon points="150,226 156,236 150,246 144,236" fill="#ffffff"/>
+                                            <!-- Face -->
+                                            <path d="M104 132 C 104 202, 196 202, 196 132 C 196 90, 104 90, 104 132 Z" fill="#fff1f2"/>
+                                            <!-- Eyes -->
+                                            <ellipse cx="130" cy="142" rx="12" ry="16" fill="#312e81"/>
+                                            <ellipse cx="170" cy="142" rx="12" ry="16" fill="#312e81"/>
+                                            <ellipse cx="130" cy="144" rx="6" ry="10" fill="#818cf8"/>
+                                            <ellipse cx="170" cy="144" rx="6" ry="10" fill="#818cf8"/>
+                                            <circle cx="126" cy="136" r="3.5" fill="#ffffff"/>
+                                            <circle cx="166" cy="136" r="3.5" fill="#ffffff"/>
+                                            <!-- Blush & Smile -->
+                                            <ellipse cx="118" cy="156" rx="8" ry="4" fill="#fb7185" opacity="0.35"/>
+                                            <ellipse cx="182" cy="156" rx="8" ry="4" fill="#fb7185" opacity="0.35"/>
+                                            <path d="M144 162 Q 150 167 156 162" stroke="#e11d48" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                                            <!-- Front Hair Bangs -->
+                                            <path d="M98 116 C 88 68, 150 48, 150 96 C 150 48, 212 68, 202 116 C 180 90, 160 122, 150 112 C 140 122, 120 90, 98 116 Z" fill="#e0e7ff"/>
+                                        </svg>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Floating Change Photo Button -->
+                            <button type="button" onclick="openPhotoModal()" class="absolute -bottom-3 left-1/2 -translate-x-1/2 glass-pill hover:bg-white text-indigo-950 font-bold text-xs px-4 py-2 rounded-full shadow-lg border-2 border-indigo-300 flex items-center gap-1.5 whitespace-nowrap transition hover:scale-105 cursor-pointer z-20">
+                                <span>📷</span>
+                                <span>Change Photo</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right: Brand Headline, Trust Badges & Primary Actions -->
+                    <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-5">
+                        <div class="space-y-2">
+                            <!-- Crown Accent -->
+                            <div class="inline-flex items-center gap-2 glass-pill px-3.5 py-1 rounded-full text-xs font-extrabold text-indigo-900">
+                                <svg class="w-4 h-4 text-amber-500" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+                                </svg>
+                                <span>Malaysian Trusted Gaming Shop 🇲🇾</span>
+                            </div>
+
+                            <h1 class="font-display text-5xl sm:text-6xl font-bold text-white title-stroke tracking-tight flex items-center justify-center lg:justify-start gap-2">
+                                mitya.xo<span class="text-pink-300 text-4xl sm:text-5xl">♡</span>
+                            </h1>
+
+                            <p class="font-display text-lg sm:text-2xl font-semibold text-indigo-950">
+                                Your Trusted Shop for <span class="text-indigo-600 underline decoration-wavy decoration-indigo-300">Genshin Pilot</span> & <span class="text-indigo-600 underline decoration-wavy decoration-indigo-300">Robux</span> ♡
+                            </p>
+                        </div>
+
+                        <!-- 3 Trust Badges -->
+                        <div class="grid grid-cols-3 gap-2.5 sm:gap-3 w-full max-w-lg">
+                            <div class="glass-subcard rounded-2xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-center justify-center gap-2 text-center sm:text-left">
+                                <div class="w-8 h-8 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <span class="text-xs font-extrabold text-indigo-950 leading-tight">Trusted & Secure</span>
+                            </div>
+                            <div class="glass-subcard rounded-2xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-center justify-center gap-2 text-center sm:text-left">
+                                <div class="w-8 h-8 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <span class="text-xs font-extrabold text-indigo-950 leading-tight">Instant Process</span>
+                            </div>
+                            <div class="glass-subcard rounded-2xl p-2.5 sm:p-3 flex flex-col sm:flex-row items-center justify-center gap-2 text-center sm:text-left">
+                                <div class="w-8 h-8 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-headset"></i>
+                                </div>
+                                <span class="text-xs font-extrabold text-indigo-950 leading-tight">Friendly Support</span>
+                            </div>
+                        </div>
+
+                        <!-- Threads / IG Contact Links Box -->
+                        <div class="glass-subcard rounded-2xl p-3.5 w-full max-w-lg space-y-2 text-left">
+                            <div class="flex items-center justify-between text-xs font-extrabold text-indigo-950">
+                                <span><i class="fa-brands fa-threads text-indigo-600 mr-1"></i> Contact & Follow on Threads / IG:</span>
+                                <span class="text-[11px] text-pink-600 font-bold">DM anytime ♡</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <a href="https://www.threads.com/@mitya.xo" target="_blank" rel="noopener noreferrer" class="bg-white/90 hover:bg-indigo-50 border border-indigo-200 rounded-xl px-3 py-2 flex items-center justify-between text-xs font-bold text-indigo-950 transition shadow-sm">
+                                    <span>Main: <strong class="text-indigo-600">@mitya.xo</strong></span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-indigo-400"></i>
+                                </a>
+                                <a href="https://www.threads.com/@lilacmitya" target="_blank" rel="noopener noreferrer" class="bg-white/90 hover:bg-pink-50 border border-pink-200 rounded-xl px-3 py-2 flex items-center justify-between text-xs font-bold text-indigo-950 transition shadow-sm">
+                                    <span>Alt (Backup): <strong class="text-pink-600">@lilacmitya</strong></span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-pink-400"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Quick CTA Buttons -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-1">
+                            <button type="button" onclick="navigateTo('genshin')" class="btn-lavender px-6 py-3 rounded-full font-display font-bold text-sm sm:text-base flex items-center gap-2 cursor-pointer">
+                                <span>✦ Order Genshin Pilot</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                            <button type="button" onclick="navigateTo('robux')" class="btn-pink px-6 py-3 rounded-full font-display font-bold text-sm sm:text-base flex items-center gap-2 cursor-pointer">
+                                <span>◼ Order Robux</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- OUR SERVICES SECTION (2 DISTINCT SERVICE CARDS OPENING DEDICATED PAGES) -->
+            <section id="services-section" class="glass-card rounded-[2rem] p-6 sm:p-10 relative">
+                <!-- Decorative Ribbon Bows Left & Right -->
+                <div class="hidden sm:block absolute -top-5 -left-4 text-indigo-500 drop-shadow-md transform -rotate-12 pointer-events-none" aria-hidden="true">
+                    <svg class="w-16 h-16" viewBox="0 0 64 64" fill="none">
+                        <path d="M32 30 C18 14, 4 18, 10 32 C14 40, 26 36, 32 30 Z" fill="#818cf8" stroke="#fff" stroke-width="2.5"/>
+                        <path d="M32 30 C46 14, 60 18, 54 32 C50 40, 38 36, 32 30 Z" fill="#818cf8" stroke="#fff" stroke-width="2.5"/>
+                        <path d="M28 33 L18 52 L26 49 L31 35 Z" fill="#6366f1" stroke="#fff" stroke-width="2"/>
+                        <path d="M36 33 L46 52 L38 49 L33 35 Z" fill="#6366f1" stroke="#fff" stroke-width="2"/>
+                        <circle cx="32" cy="31" r="6" fill="#c7d2fe" stroke="#fff" stroke-width="2.5"/>
+                    </svg>
+                </div>
+                <div class="hidden sm:block absolute -top-5 -right-4 text-indigo-500 drop-shadow-md transform rotate-12 pointer-events-none" aria-hidden="true">
+                    <svg class="w-16 h-16" viewBox="0 0 64 64" fill="none">
+                        <path d="M32 30 C18 14, 4 18, 10 32 C14 40, 26 36, 32 30 Z" fill="#818cf8" stroke="#fff" stroke-width="2.5"/>
+                        <path d="M32 30 C46 14, 60 18, 54 32 C50 40, 38 36, 32 30 Z" fill="#818cf8" stroke="#fff" stroke-width="2.5"/>
+                        <path d="M28 33 L18 52 L26 49 L31 35 Z" fill="#6366f1" stroke="#fff" stroke-width="2"/>
+                        <path d="M36 33 L46 52 L38 49 L33 35 Z" fill="#6366f1" stroke="#fff" stroke-width="2"/>
+                        <circle cx="32" cy="31" r="6" fill="#c7d2fe" stroke="#fff" stroke-width="2.5"/>
+                    </svg>
+                </div>
+
+                <!-- Ribbon Title -->
+                <div class="flex justify-center -mt-11 sm:-mt-14 mb-8">
+                    <div class="section-ribbon px-8 py-2.5 rounded-full font-display font-bold text-lg sm:text-2xl flex items-center gap-3">
+                        <span class="text-indigo-200 text-sm">✦</span>
+                        <span>Our Services</span>
+                        <span class="text-indigo-200 text-sm">✦</span>
+                    </div>
+                </div>
+
+                <!-- Two Side-by-Side Service Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+
+                    <!-- CARD 1: GENSHIN PILOT -->
+                    <div class="glass-subcard rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-2 border-white hover:border-indigo-300 transition shadow-md group">
+                        <div class="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+                            <!-- Custom Primogem SVG -->
+                            <div class="w-24 h-24 shrink-0 rounded-2xl bg-gradient-to-br from-indigo-100 to-sky-100 border-2 border-white shadow-inner flex items-center justify-center group-hover:scale-105 transition">
+                                <svg class="w-16 h-16 drop-shadow-md" viewBox="0 0 100 100" fill="none">
+                                    <polygon points="50,6 64,36 94,50 64,64 50,94 36,64 6,50 36,36" fill="url(#primoOuter)" stroke="#ffffff" stroke-width="3"/>
+                                    <polygon points="50,18 60,40 82,50 60,60 50,82 40,60 18,50 40,40" fill="url(#primoInner)"/>
+                                    <polygon points="50,6 50,50 36,36" fill="#ffffff" opacity="0.45"/>
+                                    <polygon points="50,6 64,36 50,50" fill="#bae6fd" opacity="0.5"/>
+                                    <defs>
+                                        <linearGradient id="primoOuter" x1="6" y1="6" x2="94" y2="94">
+                                            <stop offset="0%" stop-color="#bae6fd"/>
+                                            <stop offset="50%" stop-color="#a5b4fc"/>
+                                            <stop offset="100%" stop-color="#f472b6"/>
+                                        </linearGradient>
+                                        <linearGradient id="primoInner" x1="18" y1="18" x2="82" y2="82">
+                                            <stop offset="0%" stop-color="#e0f2fe"/>
+                                            <stop offset="100%" stop-color="#c4b5fd"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="inline-block bg-indigo-100 text-indigo-700 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">
+                                    🇲🇾 Malaysian Players Only
+                                </div>
+                                <h3 class="font-display text-2xl font-bold text-indigo-950">Genshin Pilot</h3>
+                                <p class="text-xs sm:text-sm text-indigo-900 font-semibold">
+                                    Pay What You Desire! World Quests, Daily Commissions & Archon Quests done safely.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-t border-indigo-200/70 flex flex-col sm:flex-row items-center justify-between gap-3">
+                            <span class="text-xs font-extrabold text-indigo-700">From RM0.50 Upfront ♡</span>
+                            <button type="button" onclick="navigateTo('genshin')" class="w-full sm:w-auto btn-lavender px-6 py-2.5 rounded-full font-display font-bold text-sm flex items-center justify-center gap-2 cursor-pointer">
+                                <span>Order Genshin Pilot</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: ROBLOX ROBUX -->
+                    <div class="glass-subcard rounded-3xl p-6 sm:p-7 flex flex-col justify-between border-2 border-white hover:border-pink-300 transition shadow-md group">
+                        <div class="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+                            <!-- Custom Roblox Tilted Cube SVG -->
+                            <div class="w-24 h-24 shrink-0 rounded-2xl bg-gradient-to-br from-indigo-100 to-purple-100 border-2 border-white shadow-inner flex items-center justify-center group-hover:scale-105 transition">
+                                <svg class="w-16 h-16 drop-shadow-md" viewBox="0 0 100 100" fill="none">
+                                    <g transform="rotate(14 50 50)">
+                                        <rect x="18" y="18" width="64" height="64" rx="10" fill="#27273f" stroke="#ffffff" stroke-width="3.5"/>
+                                        <rect x="41" y="41" width="18" height="18" rx="3" fill="#e0e7ff"/>
+                                    </g>
+                                </svg>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="inline-block bg-pink-100 text-pink-700 text-[11px] font-extrabold px-2.5 py-0.5 rounded-full">
+                                    Fast & Safe Top-Up
+                                </div>
+                                <h3 class="font-display text-2xl font-bold text-indigo-950">Roblox Robux</h3>
+                                <p class="text-xs sm:text-sm text-indigo-900 font-semibold">
+                                    Top up via Username! Packages from 100 to 5,000 Robux (RM5.00 – RM185.00).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-t border-indigo-200/70 flex flex-col sm:flex-row items-center justify-between gap-3">
+                            <span class="text-xs font-extrabold text-pink-600">100 – 5,000 Robux ♡</span>
+                            <button type="button" onclick="navigateTo('robux')" class="w-full sm:w-auto btn-pink px-6 py-2.5 rounded-full font-display font-bold text-sm flex items-center justify-center gap-2 cursor-pointer">
+                                <span>Order Robux</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+        <!-- END VIEW 1: HOME -->
+
+
+        <!-- =========================================================
+             VIEW 2: DEDICATED GENSHIN PILOT ORDER & INQUIRY PAGE
+             ========================================================= -->
+        <div id="view-genshin" class="hidden page-view space-y-8">
+            <!-- Top Back Navigation Bar -->
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <button type="button" onclick="navigateTo('home')" class="glass-pill hover:bg-white text-indigo-950 font-bold text-sm px-5 py-2.5 rounded-full flex items-center gap-2 transition cursor-pointer">
+                    <i class="fa-solid fa-arrow-left text-indigo-600"></i>
+                    <span>Back to Home</span>
+                </button>
+                <div class="glass-pill px-4 py-1.5 rounded-full text-xs font-extrabold text-indigo-900">
+                    ✦ Genshin Impact Piloting Service (MY 🇲🇾 Only)
+                </div>
+            </div>
+
+            <!-- Main Genshin Pilot Page Container -->
+            <section class="glass-card rounded-[2rem] p-6 sm:p-10 space-y-8">
+                <div class="text-center space-y-2 max-w-2xl mx-auto">
+                    <div class="inline-block section-ribbon px-7 py-2 rounded-full font-display font-bold text-xl sm:text-2xl">
+                        ✦ GENSHIN PILOT SERVICE ! ♡ ✦
+                    </div>
+                    <p class="text-sm sm:text-base font-bold text-indigo-950 pt-2">
+                        Hii! I'm offering Genshin Impact piloting services to build reputation, gain experience, and earn customers' trust before introducing fixed prices in the future! +°𐐪♡
+                    </p>
+                </div>
+
+                <!-- 2x2 Flyer Information Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- Pay What You Desire -->
+                    <div class="glass-subcard rounded-3xl p-5 sm:p-6 space-y-2.5">
+                        <div class="inline-block bg-indigo-600 text-white font-display font-bold text-xs sm:text-sm px-4 py-1 rounded-full">
+                            {a PAY WHAT YOU DESIRE 8}
+                        </div>
+                        <p class="text-xs sm:text-sm text-indigo-950 font-semibold leading-relaxed">
+                            For now, I'm only accepting <strong>Malaysian players 🇲🇾</strong> because I want to build up my reputation, gain experience, and earn customers' trust before introducing fixed prices in the future.
+                        </p>
+                    </div>
+
+                    <!-- Services I Accept -->
+                    <div class="glass-subcard rounded-3xl p-5 sm:p-6 space-y-2.5">
+                        <div class="inline-block bg-indigo-600 text-white font-display font-bold text-xs sm:text-sm px-4 py-1 rounded-full">
+                            {a SERVICES I ACCEPT : 8}
+                        </div>
+                        <ul class="space-y-1.5 text-sm font-bold text-indigo-950">
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✩</span> World Quests</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✩</span> Daily Commissions</li>
+                            <li class="flex items-center gap-2"><span class="text-indigo-500">✩</span> Archon Quests</li>
+                        </ul>
+                    </div>
+
+                    <!-- Archon Quest Conditions -->
+                    <div class="glass-subcard rounded-3xl p-5 sm:p-6 space-y-2.5">
+                        <div class="inline-block bg-indigo-600 text-white font-display font-bold text-xs sm:text-sm px-4 py-1 rounded-full">
+                            {a ARCHON QUEST CONDITIONS : 8}
+                        </div>
+                        <ul class="space-y-1.5 text-xs sm:text-sm text-indigo-950 font-semibold">
+                            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5">✩</span><span>Archon Quests with normal enemies and combat encounters are accepted.</span></li>
+                            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5">✩</span><span>Archon Quests involving major boss fights are also accepted, but require a different upfront payment.</span></li>
+                            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5">✩</span><span>A boss fight specifically means a boss battle that is part of the Archon Quest itself (normal enemy encounters do <strong>NOT</strong> count).</span></li>
+                            <li class="flex items-start gap-2"><span class="text-pink-500 mt-0.5">✩</span><span>Please inform me beforehand if your requested Archon Quest contains a boss battle.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Payment Info -->
+                    <div class="glass-subcard rounded-3xl p-5 sm:p-6 space-y-2.5">
+                        <div class="inline-block bg-indigo-600 text-white font-display font-bold text-xs sm:text-sm px-4 py-1 rounded-full">
+                            {a PAYMENT INFO : 8}
+                        </div>
+                        <ul class="space-y-1.5 text-xs sm:text-sm text-indigo-950 font-semibold">
+                            <li class="flex items-start gap-2"><span class="text-amber-500 mt-0.5">✩</span><span>Regular quests (World Quests, Daily Commissions & Archon Quests without boss fights): <strong class="text-indigo-700">RM0.50 upfront</strong>.</span></li>
+                            <li class="flex items-start gap-2"><span class="text-pink-500 mt-0.5">✩</span><span>Archon Quests involving boss fights: <strong class="text-pink-600">RM10 upfront</strong>.</span></li>
+                            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5">✩</span><span>After completing regular quests, you can pay whatever amount you desire!</span></li>
+                            <li class="flex items-start gap-2"><span class="text-indigo-500 mt-0.5">✩</span><span>Upfront payment must be made before I start working on your account.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Interactive Genshin Pilot Inquiry Form -->
+                <div class="glass-subcard rounded-3xl p-6 sm:p-8 border-2 border-indigo-300 max-w-2xl mx-auto space-y-5">
+                    <div class="text-center space-y-1">
+                        <h3 class="font-display text-2xl font-bold text-indigo-950">✦ Genshin Pilot Inquiry Form ✦</h3>
+                        <p class="text-xs text-indigo-800 font-semibold">Fill in your details below to generate a ready-to-send inquiry slip for Threads DM!</p>
+                    </div>
+
+                    <form id="genshin-inquiry-form" onsubmit="handleGenshinSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-extrabold text-indigo-950 uppercase mb-1">Threads / IG Username *</label>
+                                <input type="text" id="g-handle" required placeholder="e.g. @yourname" class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-indigo-200 text-sm font-semibold text-indigo-950 focus:border-indigo-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-extrabold text-indigo-950 uppercase mb-1">Server *</label>
+                                <select id="g-server" class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-indigo-200 text-sm font-bold text-indigo-950 focus:border-indigo-500 outline-none">
+                                    <option value="Asia">Asia</option>
+                                    <option value="America">America</option>
+                                    <option value="Europe">Europe</option>
+                                    <option value="TW / HK / MO">TW / HK / MO</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-extrabold text-indigo-950 uppercase mb-1">Quest Type *</label>
+                            <select id="g-quest-type" onchange="updateGenshinUpfront()" class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-indigo-200 text-sm font-bold text-indigo-950 focus:border-indigo-500 outline-none">
+                                <option value="World Quest (RM0.50 Upfront + Pay What You Desire)">World Quest (RM0.50 Upfront + Pay What You Desire)</option>
+                                <option value="Daily Commissions (RM0.50 Upfront + Pay What You Desire)">Daily Commissions (RM0.50 Upfront + Pay What You Desire)</option>
+                                <option value="Archon Quest - No Boss (RM0.50 Upfront + Pay What You Desire)">Archon Quest - No Boss (RM0.50 Upfront + Pay What You Desire)</option>
+                                <option value="Archon Quest - With Boss Fight (RM10.00 Upfront)">Archon Quest - With Boss Fight (RM10.00 Upfront)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-extrabold text-indigo-950 uppercase mb-1">Quest Details & Notes *</label>
+                            <textarea id="g-details" rows="3" required placeholder="Mention the exact Archon Quest Act / World Quest name, and confirm if there is any major boss fight..." class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-indigo-200 text-sm font-semibold text-indigo-950 focus:border-indigo-500 outline-none"></textarea>
+                        </div>
+
+                        <!-- Upfront Summary Pill -->
+                        <div class="bg-indigo-100/80 border border-indigo-300 rounded-2xl p-3.5 flex items-center justify-between">
+                            <span class="text-xs font-extrabold text-indigo-950">Required Upfront Payment:</span>
+                            <span id="g-upfront-display" class="font-display font-bold text-base text-indigo-700">RM0.50 Upfront (+ Pay What You Desire after)</span>
+                        </div>
+
+                        <!-- Payment Tier & Eligibility Acknowledgment -->
+                        <div class="space-y-2 text-xs font-bold text-indigo-950">
+                            <label class="flex items-start gap-2.5 cursor-pointer">
+                                <input type="checkbox" required class="mt-0.5 w-4 h-4 rounded accent-indigo-600">
+                                <span>I confirm I am a <strong>Malaysian player 🇲🇾</strong> and understand that upfront payment (RM0.50 for regular quests / RM10 for boss fights) is required before piloting starts.</span>
+                            </label>
+                            <label class="flex items-start gap-2.5 cursor-pointer">
+                                <input type="checkbox" required class="mt-0.5 w-4 h-4 rounded accent-indigo-600">
+                                <span>I confirm my request does <strong>NOT</strong> include Spiral Abyss, artifact farming, material farming, or domain farming.</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full btn-lavender py-3.5 rounded-2xl font-display font-bold text-base flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Generate Inquiry & Copy Slip ♡</span>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <!-- END VIEW 2: GENSHIN PILOT PAGE -->
+
+
+        <!-- =========================================================
+             VIEW 3: DEDICATED ROBLOX ROBUX ORDER PAGE
+             ========================================================= -->
+        <div id="view-robux" class="hidden page-view space-y-8">
+            <!-- Top Back Navigation Bar -->
+            <div class="flex flex-wrap items-center justify-between gap-3">
+                <button type="button" onclick="navigateTo('home')" class="glass-pill hover:bg-white text-indigo-950 font-bold text-sm px-5 py-2.5 rounded-full flex items-center gap-2 transition cursor-pointer">
+                    <i class="fa-solid fa-arrow-left text-indigo-600"></i>
+                    <span>Back to Home</span>
+                </button>
+                <div class="glass-pill px-4 py-1.5 rounded-full text-xs font-extrabold text-pink-700">
+                    ◼ Robux Via Username Pricelist & Order Form
+                </div>
+            </div>
+
+            <!-- Main Robux Page Container -->
+            <section class="glass-card rounded-[2rem] p-6 sm:p-10 space-y-8">
+                <div class="text-center space-y-2">
+                    <div class="inline-block section-ribbon px-7 py-2 rounded-full font-display font-bold text-xl sm:text-2xl">
+                        ✦ ROBLOX PRICELIST (VIA USERNAME) ✦
+                    </div>
+                    <p class="text-xs sm:text-sm font-bold text-indigo-900 pt-1">
+                        Tap any Robux package below to select it automatically in the order form!
+                    </p>
+                </div>
+
+                <!-- Interactive Clickable Pricelist Grid (15 Packages) -->
+                <div id="robux-pricelist-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                    <!-- Populated via JS for crisp state syncing -->
+                </div>
+
+                <!-- IMPORTANT WARNINGS & REQUIREMENTS (MUST READ BEFORE ORDERING) -->
+                <div class="glass-subcard rounded-3xl p-5 sm:p-7 border-2 border-pink-300 bg-pink-50/40 space-y-4">
+                    <div class="flex items-center gap-2.5 border-b border-pink-200 pb-2.5">
+                        <span class="w-8 h-8 rounded-full bg-pink-500 text-white flex items-center justify-center font-bold shrink-0">!</span>
+                        <div>
+                            <h3 class="font-display font-bold text-base sm:text-lg text-indigo-950">PLEASE READ ALL WARNINGS BEFORE ORDERING !</h3>
+                            <p class="text-xs text-indigo-900 font-semibold">Make sure your Roblox account meets every requirement below to avoid delays:</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5 text-xs sm:text-sm">
+                        <div class="bg-white/90 rounded-2xl p-4 border border-indigo-200 space-y-1">
+                            <div class="font-display font-bold text-indigo-700">{a AGE ELIGIBILITY 8}✦</div>
+                            <p class="text-indigo-950 font-semibold">Your Roblox account must meet the <strong>18–20 age requirement</strong>. Check your account's age eligibility before placing an order.</p>
+                        </div>
+                        <div class="bg-white/90 rounded-2xl p-4 border border-indigo-200 space-y-1">
+                            <div class="font-display font-bold text-indigo-700">{a TWO-STEP VERIFICATION (2SV) 8}✦</div>
+                            <p class="text-indigo-950 font-semibold">Your Roblox account <strong>MUST have Two-Step Verification (2SV) enabled through email</strong>. Please enable it before purchasing.</p>
+                        </div>
+                        <div class="bg-white/90 rounded-2xl p-4 border border-indigo-200 space-y-1">
+                            <div class="font-display font-bold text-indigo-700">{a DAILY ROBUX LIMIT 8}</div>
+                            <p class="text-indigo-950 font-semibold">Check your account's <strong>daily Robux purchase limit</strong> to make sure your account can receive the amount you intend to purchase.</p>
+                        </div>
+                        <div class="bg-white/90 rounded-2xl p-4 border border-pink-300 space-y-1">
+                            <div class="font-display font-bold text-pink-600">{a SCREENSHOT PROOF IS REQUIRED (3) 8}✦</div>
+                            <p class="text-indigo-950 font-semibold">You <strong>MUST provide 3 screenshots</strong> showing: (1) Account age eligibility, (2) Enabled email 2SV, and (3) Daily Robux purchase limit. <strong>Hide sensitive personal info</strong> (email address & codes)!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Robux Order Form -->
+                <div class="glass-subcard rounded-3xl p-6 sm:p-8 border-2 border-pink-300 max-w-2xl mx-auto space-y-5">
+                    <div class="text-center space-y-1">
+                        <h3 class="font-display text-2xl font-bold text-indigo-950">✦ Robux Order Form (Via Username) ✦</h3>
+                        <p class="text-xs text-indigo-800 font-semibold">Please double-check all your information before submitting your order!</p>
+                    </div>
+
+                    <form id="robux-order-form" onsubmit="handleRobuxSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-extrabold text-indigo-950 uppercase mb-1">Roblox Username *</label>
+                                <input type="text" id="r-username" required placeholder="Exact @username" class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-indigo-200 text-sm font-semibold text-indigo-950 focus:border-pink-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-extrabold text-indigo-950 uppercase mb-1">Display Name *</label>
+                                <input type="text" id="r-display" required placeholder="Your display name" class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-indigo-200 text-sm font-semibold text-indigo-950 focus:border-pink-500 outline-none">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-extrabold text-indigo-950 uppercase mb-1">Amount of Robux *</label>
+                            <select id="r-package-select" onchange="syncRobuxChipFromSelect()" class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-pink-300 text-sm font-extrabold text-pink-700 focus:border-pink-500 outline-none">
+                                <!-- Populated via JS -->
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-extrabold text-indigo-950 uppercase mb-1">Roblox Profile Link *</label>
+                            <input type="url" id="r-profile-link" required placeholder="https://www.roblox.com/users/12345678/profile" class="w-full px-4 py-2.5 rounded-xl bg-white border-2 border-indigo-200 text-sm font-semibold text-indigo-950 focus:border-pink-500 outline-none">
+                        </div>
+
+                        <!-- 3 Screenshot Proof Confirmations -->
+                        <div class="bg-white/90 rounded-2xl p-4 border border-indigo-200 space-y-2.5">
+                            <p class="text-xs font-extrabold text-indigo-950 uppercase">Required Screenshot Proof Checklist (3 Screenshots):</p>
+                            <label class="flex items-start gap-2.5 text-xs font-bold text-indigo-900 cursor-pointer">
+                                <input type="checkbox" required class="mt-0.5 w-4 h-4 rounded accent-pink-600">
+                                <span>Screenshot 1: My account meets the <strong>18–20 age eligibility</strong> requirement.</span>
+                            </label>
+                            <label class="flex items-start gap-2.5 text-xs font-bold text-indigo-900 cursor-pointer">
+                                <input type="checkbox" required class="mt-0.5 w-4 h-4 rounded accent-pink-600">
+                                <span>Screenshot 2: My account has <strong>Email Two-Step Verification (2SV)</strong> enabled.</span>
+                            </label>
+                            <label class="flex items-start gap-2.5 text-xs font-bold text-indigo-900 cursor-pointer">
+                                <input type="checkbox" required class="mt-0.5 w-4 h-4 rounded accent-pink-600">
+                                <span>Screenshot 3: My <strong>Daily Robux purchase limit</strong> can receive this amount, and I have <strong>hidden sensitive info</strong> (email & verification codes).</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full btn-pink py-3.5 rounded-2xl font-display font-bold text-base flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span>Generate Robux Order & Copy Slip ♡</span>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <!-- END VIEW 3: ROBUX ORDER PAGE -->
+
+
+        <!-- =========================================================
+             SHARED SECTIONS (VISIBLE ACROSS ALL VIEWS)
+             1. RULES & REMINDERS SUMMARY
+             2. CUSTOMER TESTIMONIALS CAROUSEL
+             3. NEW FAQ ACCORDION SECTION
+             ========================================================= -->
+
+        <!-- SHARED SECTION 1: RULES & REMINDERS -->
+        <section id="rules-section" class="glass-card rounded-[2rem] p-6 sm:p-9 relative">
+            <div class="flex justify-center -mt-11 sm:-mt-13 mb-6">
+                <div class="section-ribbon px-7 py-2 rounded-full font-display font-bold text-lg sm:text-xl flex items-center gap-2.5">
+                    <span class="text-indigo-200 text-xs">✦</span>
+                    <span>Rules & Reminders</span>
+                    <span class="text-indigo-200 text-xs">✦</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                <div class="glass-subcard rounded-2xl p-4 flex items-start gap-3">
+                    <span class="text-pink-500 font-bold text-base">✩</span>
+                    <p class="text-xs sm:text-sm font-bold text-indigo-950"><strong>Malaysian players only 🇲🇾</strong> for Genshin piloting while building shop trust & reputation.</p>
+                </div>
+                <div class="glass-subcard rounded-2xl p-4 flex items-start gap-3">
+                    <span class="text-indigo-500 font-bold text-base">✩</span>
+                    <p class="text-xs sm:text-sm font-bold text-indigo-950">Provide complete quest details or all <strong>3 Robux eligibility screenshots</strong> before booking.</p>
+                </div>
+                <div class="glass-subcard rounded-2xl p-4 flex items-start gap-3">
+                    <span class="text-pink-500 font-bold text-base">✩</span>
+                    <p class="text-xs sm:text-sm font-bold text-indigo-950">No Spiral Abyss, artifact farming, material farming, or domain farming for now.</p>
+                </div>
+                <div class="glass-subcard rounded-2xl p-4 flex items-start gap-3">
+                    <span class="text-indigo-500 font-bold text-base">✩</span>
+                    <p class="text-xs sm:text-sm font-bold text-indigo-950">Hide sensitive personal details (email address & verification codes) in screenshots.</p>
+                </div>
+                <div class="glass-subcard rounded-2xl p-4 flex items-start gap-3">
+                    <span class="text-pink-500 font-bold text-base">✩</span>
+                    <p class="text-xs sm:text-sm font-bold text-indigo-950">I reserve the right to decline requests I am uncomfortable with or incomplete orders.</p>
+                </div>
+                <div class="glass-subcard rounded-2xl p-4 flex items-start gap-3">
+                    <span class="text-indigo-500 font-bold text-base">✩</span>
+                    <p class="text-xs sm:text-sm font-bold text-indigo-950">Please be patient since I'm still new to piloting! Thank you for supporting my small shop ♡</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHARED SECTION 2: CUSTOMER TESTIMONIALS CAROUSEL -->
+        <section id="testimonials-section" class="glass-card rounded-[2rem] p-6 sm:p-10 relative">
+            <div class="flex justify-center -mt-11 sm:-mt-14 mb-8">
+                <div class="section-ribbon px-8 py-2.5 rounded-full font-display font-bold text-lg sm:text-2xl flex items-center gap-3">
+                    <span class="text-indigo-200 text-sm">✦</span>
+                    <span>Customer Testimonials</span>
+                    <span class="text-indigo-200 text-sm">✦</span>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+
+                    <!-- Left Customer Bubble -->
+                    <div class="w-full md:w-1/3 flex flex-col items-center md:items-end text-center md:text-right order-2 md:order-1">
+                        <div class="glass-subcard p-4 sm:p-5 rounded-3xl border-2 border-white shadow-md w-full">
+                            <p id="testi-left-msg" class="text-indigo-950 font-bold text-sm">
+                                "ada masukk , thankyouu awaknyaaa 💕💕"
+                            </p>
+                            <span id="testi-left-user" class="block text-indigo-600 font-extrabold text-xs mt-2">
                                 - vqnillaaa ♡
                             </span>
                         </div>
                     </div>
 
-                    <!-- Center Tablet Screenshot Display -->
-                    <div class="w-full md:w-1/3 flex items-center justify-center order-1 md:order-2">
-                        
-                        <!-- Left Carousel Arrow -->
-                        <button onclick="prevTestimonial()" class="w-9 h-9 rounded-full bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 transition shadow-md shrink-0 mr-2">
-                            <i class="fa-solid fa-chevron-left text-sm"></i>
+                    <!-- Center Proof Notification Card with Prev/Next Controls -->
+                    <div class="w-full md:w-1/3 flex items-center justify-center gap-2.5 order-1 md:order-2">
+                        <button type="button" onclick="changeTestimonial(-1)" aria-label="Previous Testimonial" class="w-9 h-9 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white flex items-center justify-center shadow-md shrink-0 transition cursor-pointer">
+                            <i class="fa-solid fa-chevron-left text-xs"></i>
                         </button>
 
-                        <!-- Tablet Device Frame -->
-                        <div class="relative w-56 h-72 sm:w-64 sm:h-80 bg-slate-900 rounded-3xl p-3 shadow-2xl border-4 border-indigo-300 flex flex-col justify-between overflow-hidden">
-                            <!-- Camera Notch -->
-                            <div class="absolute top-2 left-1/2 -translate-x-1/2 w-3 h-3 bg-slate-700 rounded-full z-10"></div>
-                            
-                            <!-- Mock Discord / Chat Receipt Screen -->
-                            <div id="testi-screen" class="w-full h-full bg-slate-900 rounded-2xl p-3 text-white overflow-hidden flex flex-col justify-between border border-slate-800">
-                                <!-- Top Bar -->
-                                <div class="flex items-center justify-between pb-2 border-b border-slate-800 text-[10px] text-slate-400">
-                                    <div class="flex items-center gap-1">
-                                        <i class="fa-solid fa-lock text-[8px]"></i>
-                                        <span>Proof of Transaction</span>
-                                    </div>
-                                    <span class="text-green-400">● Completed</span>
-                                </div>
+                        <div class="w-56 sm:w-64 rounded-3xl bg-slate-900 p-3 border-4 border-indigo-300 shadow-2xl text-white space-y-3">
+                            <div class="flex items-center justify-between text-[10px] text-slate-400 border-b border-slate-800 pb-1.5">
+                                <span class="font-bold">Notifications</span>
+                                <span class="text-emerald-400 font-bold">● Verified Proof</span>
+                            </div>
 
-                                <!-- Transaction Detail Mock -->
-                                <div class="my-auto space-y-2 text-left bg-slate-800/60 p-2.5 rounded-xl border border-slate-700/50">
-                                    <div class="flex items-center justify-between text-xs">
-                                        <span class="text-indigo-300 font-bold" id="testi-item">Genshin 6480 Genesis</span>
-                                        <span class="text-pink-300 font-bold">RM 45.00</span>
-                                    </div>
-                                    <div class="h-1.5 w-full bg-indigo-950 rounded-full overflow-hidden">
-                                        <div class="h-full bg-indigo-500 w-full"></div>
-                                    </div>
-                                    <div class="text-[10px] text-slate-300 space-y-0.5">
-                                        <p>Status: <span class="text-emerald-400 font-semibold">Success Delivery</span></p>
-                                        <p class="text-slate-400">Buyer: <span id="testi-buyer">@vqnillaaa</span></p>
-                                    </div>
+                            <div class="bg-slate-800/80 rounded-2xl p-3 border border-slate-700 space-y-1.5 text-left">
+                                <div class="flex items-center justify-between">
+                                    <span id="testi-proof-badge" class="text-[11px] font-extrabold text-indigo-300">Roblox Robux</span>
+                                    <span id="testi-proof-amount" class="text-[11px] font-extrabold text-pink-300">Completed</span>
                                 </div>
+                                <p id="testi-proof-detail" class="text-xs font-bold text-white leading-snug">
+                                    Robux top-up credited via username!
+                                </p>
+                                <p id="testi-proof-buyer" class="text-[10px] text-slate-400">
+                                    Customer: vqnillaaa ♡
+                                </p>
+                            </div>
 
-                                <!-- Chat Message Preview -->
-                                <div class="bg-indigo-950/80 p-2 rounded-lg border border-indigo-500/30 text-[10px] text-indigo-200 flex items-center gap-2">
-                                    <div class="w-5 h-5 rounded-full bg-indigo-500 flex items-center justify-center text-[8px] font-bold">M</div>
-                                    <div class="truncate">
-                                        <p class="font-bold text-white">mitya.xo</p>
-                                        <p class="truncate" id="testi-reply">Order processing done! Thank you ♡</p>
-                                    </div>
+                            <div class="bg-indigo-950/90 rounded-xl p-2.5 border border-indigo-500/40 flex items-center gap-2 text-left">
+                                <div class="w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center text-[10px] font-bold shrink-0">♡</div>
+                                <div class="min-w-0">
+                                    <p class="text-[10px] font-bold text-indigo-200">mitya.xo</p>
+                                    <p id="testi-proof-note" class="text-[10px] text-white truncate">sama2, thank you beli kat saya 💕</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Right Carousel Arrow -->
-                        <button onclick="nextTestimonial()" class="w-9 h-9 rounded-full bg-indigo-600 text-white flex items-center justify-center hover:bg-indigo-700 transition shadow-md shrink-0 ml-2">
-                            <i class="fa-solid fa-chevron-right text-sm"></i>
+                        <button type="button" onclick="changeTestimonial(1)" aria-label="Next Testimonial" class="w-9 h-9 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white flex items-center justify-center shadow-md shrink-0 transition cursor-pointer">
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
                         </button>
                     </div>
 
-                    <!-- Right Chat Bubble -->
-                    <div class="w-full md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left space-y-2 order-3">
-                        <!-- Cute Chibi Character Right -->
-                        <div class="w-16 h-16 rounded-full bg-indigo-200 border-2 border-white p-1 shadow-md mb-1 animate-float-delayed">
-                            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="50" cy="50" r="45" fill="#a5b4fc"/>
-                                <ellipse cx="35" cy="45" rx="6" ry="7" fill="#1e1b4b"/>
-                                <ellipse cx="65" cy="45" rx="6" ry="7" fill="#1e1b4b"/>
-                                <circle cx="37" cy="43" r="2" fill="#fff"/>
-                                <circle cx="67" cy="43" r="2" fill="#fff"/>
-                                <path d="M42 60 Q 50 54 58 60" stroke="#1e1b4b" stroke-width="4" stroke-linecap="round"/>
-                                <ellipse cx="25" cy="52" rx="5" ry="3" fill="#f43f5e" opacity="0.4"/>
-                                <ellipse cx="75" cy="52" rx="5" ry="3" fill="#f43f5e" opacity="0.4"/>
-                            </svg>
-                        </div>
-
-                        <div class="glass-pill p-4 rounded-2xl border border-indigo-200 shadow-md relative w-full">
-                            <p id="testi-right-text" class="text-indigo-950 font-semibold text-sm sm:text-base">
+                    <!-- Right Seller Bubble -->
+                    <div class="w-full md:w-1/3 flex flex-col items-center md:items-start text-center md:text-left order-3">
+                        <div class="glass-subcard p-4 sm:p-5 rounded-3xl border-2 border-white shadow-md w-full">
+                            <p id="testi-right-msg" class="text-indigo-950 font-bold text-sm">
                                 "sama2, thank you beli kat saya 💕💕 ♡"
                             </p>
-                            <span id="testi-right-author" class="block text-indigo-600 text-xs font-bold mt-2">
+                            <span id="testi-right-user" class="block text-pink-600 font-extrabold text-xs mt-2">
                                 - sama2 ♡
                             </span>
                         </div>
@@ -554,341 +880,582 @@
 
                 </div>
 
-                <!-- Carousel Indicator Dots -->
+                <!-- Pagination Dots -->
                 <div class="flex justify-center gap-2 mt-6">
-                    <button onclick="setTestimonial(0)" class="testi-dot w-3 h-3 rounded-full bg-indigo-600 transition-all"></button>
-                    <button onclick="setTestimonial(1)" class="testi-dot w-3 h-3 rounded-full bg-indigo-300 hover:bg-indigo-400 transition-all"></button>
-                    <button onclick="setTestimonial(2)" class="testi-dot w-3 h-3 rounded-full bg-indigo-300 hover:bg-indigo-400 transition-all"></button>
+                    <button type="button" onclick="setTestimonial(0)" class="testi-dot w-3 h-3 rounded-full bg-indigo-600 transition-all cursor-pointer" aria-label="Slide 1"></button>
+                    <button type="button" onclick="setTestimonial(1)" class="testi-dot w-3 h-3 rounded-full bg-indigo-300 transition-all cursor-pointer" aria-label="Slide 2"></button>
+                    <button type="button" onclick="setTestimonial(2)" class="testi-dot w-3 h-3 rounded-full bg-indigo-300 transition-all cursor-pointer" aria-label="Slide 3"></button>
                 </div>
-
             </div>
         </section>
 
-
-        <!-- FEATURE HIGHLIGHTS & CTA ROW -->
-        <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-            
-            <!-- 4 Glassmorphism Feature Cards Grid (8 cols) -->
-            <div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4">
-                
-                <!-- Feature 1: Fast Delivery -->
-                <div class="glass-pill rounded-2xl p-4 flex flex-col items-center justify-center text-center space-y-2 border border-indigo-200 hover:scale-105 transition-transform shadow-sm">
-                    <div class="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center text-lg shadow">
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h4 class="font-bold text-indigo-950 text-sm">Fast Delivery</h4>
+        <!-- SHARED SECTION 3: NEW FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="glass-card rounded-[2rem] p-6 sm:p-10 relative">
+            <div class="flex justify-center -mt-11 sm:-mt-14 mb-8">
+                <div class="section-ribbon px-8 py-2.5 rounded-full font-display font-bold text-lg sm:text-2xl flex items-center gap-3">
+                    <span class="text-indigo-200 text-sm">✦</span>
+                    <span>Frequently Asked Questions (FAQ)</span>
+                    <span class="text-indigo-200 text-sm">✦</span>
                 </div>
-
-                <!-- Feature 2: 100% Trusted -->
-                <div class="glass-pill rounded-2xl p-4 flex flex-col items-center justify-center text-center space-y-2 border border-indigo-200 hover:scale-105 transition-transform shadow-sm">
-                    <div class="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center text-lg shadow">
-                        <i class="fa-solid fa-rocket"></i>
-                    </div>
-                    <h4 class="font-bold text-indigo-950 text-sm">100% Trusted</h4>
-                </div>
-
-                <!-- Feature 3: 24/7 Support -->
-                <div class="glass-pill rounded-2xl p-4 flex flex-col items-center justify-center text-center space-y-2 border border-indigo-200 hover:scale-105 transition-transform shadow-sm">
-                    <div class="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center text-lg shadow">
-                        <i class="fa-solid fa-headset"></i>
-                    </div>
-                    <h4 class="font-bold text-indigo-950 text-sm">24/7 Support</h4>
-                </div>
-
-                <!-- Feature 4: Affordable Prices -->
-                <div class="glass-pill rounded-2xl p-4 flex flex-col items-center justify-center text-center space-y-2 border border-indigo-200 hover:scale-105 transition-transform shadow-sm">
-                    <div class="w-10 h-10 rounded-full bg-indigo-500 text-white flex items-center justify-center text-lg shadow">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                    <h4 class="font-bold text-indigo-950 text-sm">Affordable Prices</h4>
-                </div>
-
             </div>
 
-            <!-- Ready to get started Banner (5 cols) -->
-            <div class="lg:col-span-5 glass-panel rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-2 border-indigo-200">
-                <div class="text-center sm:text-left space-y-1">
-                    <h3 class="text-xl sm:text-2xl font-extrabold text-indigo-950">Ready to get started?</h3>
-                    <p class="text-indigo-800 text-xs sm:text-sm font-medium">
-                        Let's make your game experience even better with mitya.xo ♡
-                    </p>
+            <div class="max-w-3xl mx-auto space-y-3.5" id="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <div class="glass-subcard rounded-2xl overflow-hidden border-2 border-white">
+                    <button type="button" onclick="toggleFaq(0)" class="w-full px-5 py-4 text-left flex items-center justify-between gap-3 font-display font-bold text-sm sm:text-base text-indigo-950 hover:bg-white/60 transition cursor-pointer">
+                        <span>1. How do I place an order and send proof?</span>
+                        <i id="faq-icon-0" class="fa-solid fa-chevron-down text-indigo-600 transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq-body-0" class="px-5 pb-4 text-xs sm:text-sm text-indigo-900 font-semibold leading-relaxed border-t border-indigo-100 pt-3">
+                        Click <strong>Order Genshin Pilot</strong> or <strong>Order Robux</strong> to fill out the inquiry/order form. Once submitted, your formatted order slip is automatically copied—just paste and send it via DM on my Main Threads (<a href="https://www.threads.com/@mitya.xo" target="_blank" class="text-indigo-600 underline font-bold">@mitya.xo</a>) or Alt Threads (<a href="https://www.threads.com/@lilacmitya" target="_blank" class="text-pink-600 underline font-bold">@lilacmitya</a>) along with your payment/screenshots!
+                    </div>
                 </div>
-                <a href="#shop" class="glass-btn text-white text-sm font-bold px-6 py-2.5 rounded-full shrink-0 shadow-md">
-                    Shop Now →
-                </a>
-            </div>
 
-        </section>
+                <!-- FAQ Item 2 -->
+                <div class="glass-subcard rounded-2xl overflow-hidden border-2 border-white">
+                    <button type="button" onclick="toggleFaq(1)" class="w-full px-5 py-4 text-left flex items-center justify-between gap-3 font-display font-bold text-sm sm:text-base text-indigo-950 hover:bg-white/60 transition cursor-pointer">
+                        <span>2. Who can order Genshin Pilot services?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-indigo-600 transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq-body-1" class="hidden px-5 pb-4 text-xs sm:text-sm text-indigo-900 font-semibold leading-relaxed border-t border-indigo-100 pt-3">
+                        Currently, Genshin Pilot services are open to <strong>Malaysian players only 🇲🇾</strong> while I build up reputation and trust. Regular quests (World Quests, Daily Commissions, and Archon Quests without boss fights) require <strong>RM0.50 upfront</strong> + pay whatever amount you desire after completion. Archon Quests involving major boss fights require <strong>RM10 upfront</strong>.
+                    </div>
+                </div>
 
-        <!-- FAQ SECTION -->
-        <section id="faq" class="glass-panel rounded-3xl p-6 sm:p-8">
-            <h3 class="text-2xl font-bold text-indigo-950 text-center mb-6">Frequently Asked Questions</h3>
-            <div class="space-y-3 max-w-3xl mx-auto">
-                <details class="glass-pill rounded-2xl p-4 border border-indigo-200 group cursor-pointer">
-                    <summary class="font-bold text-indigo-900 flex justify-between items-center list-none">
-                        <span>How long does the Genshin Pilot process take?</span>
-                        <span class="text-indigo-500 group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-indigo-800 text-sm mt-3 pt-2 border-t border-indigo-100">
-                        Most daily commissions and resin spending tasks take 15–30 minutes. Larger quest orders are usually completed within 24 hours depending on the request!
-                    </p>
-                </details>
+                <!-- FAQ Item 3 -->
+                <div class="glass-subcard rounded-2xl overflow-hidden border-2 border-white">
+                    <button type="button" onclick="toggleFaq(2)" class="w-full px-5 py-4 text-left flex items-center justify-between gap-3 font-display font-bold text-sm sm:text-base text-indigo-950 hover:bg-white/60 transition cursor-pointer">
+                        <span>3. What Genshin services are NOT accepted right now?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-indigo-600 transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq-body-2" class="hidden px-5 pb-4 text-xs sm:text-sm text-indigo-900 font-semibold leading-relaxed border-t border-indigo-100 pt-3">
+                        For now, I do <strong>NOT</strong> accept Spiral Abyss, artifact farming, material farming, or domain farming. Only World Quests, Daily Commissions, and Archon Quests are accepted.
+                    </div>
+                </div>
 
-                <details class="glass-pill rounded-2xl p-4 border border-indigo-200 group cursor-pointer">
-                    <summary class="font-bold text-indigo-900 flex justify-between items-center list-none">
-                        <span>Is my account 100% safe with mitya.xo?</span>
-                        <span class="text-indigo-500 group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-indigo-800 text-sm mt-3 pt-2 border-t border-indigo-100">
-                        Yes! All services are done manually by hand. No cheats, third-party software, or exploits are ever used. Your login details remain encrypted and private.
-                    </p>
-                </details>
+                <!-- FAQ Item 4 -->
+                <div class="glass-subcard rounded-2xl overflow-hidden border-2 border-white">
+                    <button type="button" onclick="toggleFaq(3)" class="w-full px-5 py-4 text-left flex items-center justify-between gap-3 font-display font-bold text-sm sm:text-base text-indigo-950 hover:bg-white/60 transition cursor-pointer">
+                        <span>4. What are the 3 screenshots required for Roblox Robux?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-indigo-600 transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq-body-3" class="hidden px-5 pb-4 text-xs sm:text-sm text-indigo-900 font-semibold leading-relaxed border-t border-indigo-100 pt-3">
+                        Before ordering Robux via Username, you must send <strong>3 screenshots</strong> showing: (1) Your Roblox account meets the <strong>18–20 age eligibility</strong> requirement, (2) <strong>Email Two-Step Verification (2SV)</strong> is enabled, and (3) Your <strong>Daily Robux purchase limit</strong> can receive the amount. Remember to hide sensitive personal info like your email address and verification codes!
+                    </div>
+                </div>
 
-                <details class="glass-pill rounded-2xl p-4 border border-indigo-200 group cursor-pointer">
-                    <summary class="font-bold text-indigo-900 flex justify-between items-center list-none">
-                        <span>How do I receive my Robux top up?</span>
-                        <span class="text-indigo-500 group-open:rotate-180 transition-transform">▼</span>
-                    </summary>
-                    <p class="text-indigo-800 text-sm mt-3 pt-2 border-t border-indigo-100">
-                        Robux are gifted via standard gamepass/group payout methods immediately after purchase confirmation through our official Discord or TikTok support.
-                    </p>
-                </details>
+                <!-- FAQ Item 5 -->
+                <div class="glass-subcard rounded-2xl overflow-hidden border-2 border-white">
+                    <button type="button" onclick="toggleFaq(4)" class="w-full px-5 py-4 text-left flex items-center justify-between gap-3 font-display font-bold text-sm sm:text-base text-indigo-950 hover:bg-white/60 transition cursor-pointer">
+                        <span>5. What if your main Threads account gets banned?</span>
+                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-indigo-600 transition-transform duration-200"></i>
+                    </button>
+                    <div id="faq-body-4" class="hidden px-5 pb-4 text-xs sm:text-sm text-indigo-900 font-semibold leading-relaxed border-t border-indigo-100 pt-3">
+                        No worries! You can follow and message my backup/alt account on Threads & Instagram at <a href="https://www.threads.com/@lilacmitya" target="_blank" class="text-pink-600 underline font-bold">https://www.threads.com/@lilacmitya</a> anytime in case my main (<a href="https://www.threads.com/@mitya.xo" target="_blank" class="text-indigo-600 underline font-bold">@mitya.xo</a>) ever gets restricted or banned.
+                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
-
-    <!-- FOOTER SECTION -->
-    <footer id="about" class="relative mt-16 bg-indigo-950 text-indigo-100 pt-16 pb-8 z-10">
-        
-        <!-- Wave Divider SVG Top -->
-        <div class="absolute -top-12 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
-            <svg class="relative block w-full h-12 text-indigo-950" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,10 1200,40 L1200,120 L0,120 Z" fill="currentColor"></path>
+    <!-- WAVE FOOTER -->
+    <footer class="relative mt-16 bg-periwinkle-950 text-indigo-100 pt-14 pb-10 z-10">
+        <!-- Decorative Top Wave SVG -->
+        <div class="absolute -top-10 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
+            <svg class="w-full h-11" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,60 C300,130 900,-10 1200,60 L1200,120 L0,120 Z" fill="#1f1d52"></path>
             </svg>
         </div>
 
         <div class="max-w-6xl mx-auto px-4 flex flex-col items-center space-y-6">
-            
-            <!-- Logo & Tagline -->
-            <div class="flex flex-col items-center text-center space-y-2">
-                <div class="flex items-center gap-2">
-                    <svg class="w-8 h-8 text-pink-400" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
-                    </svg>
-                    <span class="text-3xl font-extrabold text-white tracking-wide">mitya.xo</span>
+            <div class="flex flex-col md:flex-row items-center justify-between w-full gap-6">
+                <!-- Left Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-indigo-900 border-2 border-indigo-400 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-amber-300" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-display font-bold text-2xl text-white">mitya.xo</span>
+                        <p class="text-xs text-indigo-300 font-semibold">Play more, Worry less ♡</p>
+                    </div>
                 </div>
-                <p class="text-indigo-300 text-sm font-medium">Play more, Worry less ♡</p>
+
+                <!-- Center Quick Links -->
+                <div class="flex flex-wrap justify-center gap-4 text-xs sm:text-sm font-bold text-indigo-200">
+                    <button type="button" onclick="navigateTo('home')" class="hover:text-white transition cursor-pointer">Home</button>
+                    <button type="button" onclick="navigateTo('genshin')" class="hover:text-white transition cursor-pointer">Genshin Pilot</button>
+                    <button type="button" onclick="navigateTo('robux')" class="hover:text-white transition cursor-pointer">Roblox Robux</button>
+                    <button type="button" onclick="scrollToShared('testimonials-section')" class="hover:text-white transition cursor-pointer">Testimonials</button>
+                    <button type="button" onclick="scrollToShared('faq-section')" class="hover:text-white transition cursor-pointer">FAQ</button>
+                </div>
+
+                <!-- Right Threads Links -->
+                <div class="flex flex-wrap justify-center gap-2.5">
+                    <a href="https://www.threads.com/@mitya.xo" target="_blank" rel="noopener noreferrer" class="btn-lavender px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1.5">
+                        <i class="fa-brands fa-threads"></i>
+                        <span>Main: @mitya.xo</span>
+                    </a>
+                    <a href="https://www.threads.com/@lilacmitya" target="_blank" rel="noopener noreferrer" class="btn-pink px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1.5">
+                        <i class="fa-brands fa-threads"></i>
+                        <span>Alt: @lilacmitya</span>
+                    </a>
+                </div>
             </div>
 
-            <!-- Footer Navigation -->
-            <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-indigo-200">
-                <a href="#home" class="hover:text-white transition">Home</a>
-                <a href="#shop" class="hover:text-white transition">Shop</a>
-                <a href="#testimonials" class="hover:text-white transition">Testimonials</a>
-                <a href="#about" class="hover:text-white transition">About</a>
-                <a href="#faq" class="hover:text-white transition">FAQ</a>
+            <div class="w-full border-t border-indigo-900 pt-5 text-center text-xs text-indigo-300 font-semibold">
+                © 2026 mitya.xo. All rights reserved. ♡ Thank you for supporting my small shop!
             </div>
-
-            <!-- Social Icons -->
-            <div class="flex items-center gap-4 pt-2">
-                <a href="https://discord.com" target="_blank" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-700 flex items-center justify-center text-indigo-200 hover:bg-indigo-600 hover:text-white transition shadow-md">
-                    <i class="fa-brands fa-discord text-lg"></i>
-                </a>
-                <a href="https://tiktok.com" target="_blank" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-700 flex items-center justify-center text-indigo-200 hover:bg-indigo-600 hover:text-white transition shadow-md">
-                    <i class="fa-brands fa-tiktok text-lg"></i>
-                </a>
-                <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-700 flex items-center justify-center text-indigo-200 hover:bg-indigo-600 hover:text-white transition shadow-md">
-                    <i class="fa-brands fa-youtube text-lg"></i>
-                </a>
-                <a href="mailto:support@mitya.xo" class="w-10 h-10 rounded-full bg-indigo-900 border border-indigo-700 flex items-center justify-center text-indigo-200 hover:bg-indigo-600 hover:text-white transition shadow-md">
-                    <i class="fa-solid fa-envelope text-lg"></i>
-                </a>
-            </div>
-
-            <!-- Copyright Line -->
-            <div class="pt-6 border-t border-indigo-900/80 w-full text-center text-xs text-indigo-400 font-medium">
-                © 2025 mitya.xo. All rights reserved. ♡
-            </div>
-
         </div>
     </footer>
 
-
-    <!-- ORDER MODAL DIALOG -->
-    <div id="orderModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="glass-panel bg-white/90 rounded-3xl p-6 sm:p-8 max-w-md w-full border-4 border-indigo-200 shadow-2xl space-y-5 transform scale-95 transition-transform duration-300" id="modalContent">
-            <div class="flex justify-between items-center border-b border-indigo-100 pb-3">
-                <h3 id="modalTitle" class="text-2xl font-extrabold text-indigo-950">Order Service</h3>
-                <button onclick="closeOrderModal()" class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold hover:bg-indigo-200">✕</button>
+    <!-- =========================================================
+         MODAL 1: CHANGE PROFILE PHOTO MODAL (FILE UPLOAD OR URL)
+         ========================================================= -->
+    <div id="photo-modal" class="hidden fixed inset-0 z-50 bg-indigo-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card rounded-3xl p-6 sm:p-7 max-w-md w-full space-y-5 relative">
+            <div class="flex items-center justify-between border-b border-indigo-200 pb-3">
+                <h3 class="font-display font-bold text-xl text-indigo-950">📷 Change Profile Photo</h3>
+                <button type="button" onclick="closePhotoModal()" class="w-8 h-8 rounded-full bg-indigo-100 hover:bg-indigo-200 text-indigo-900 flex items-center justify-center font-bold cursor-pointer">✕</button>
             </div>
 
-            <p class="text-xs text-indigo-700">Fill in your preferred order details and click submit to open direct chat with our agent!</p>
-
-            <form onsubmit="handleOrderSubmit(event)" class="space-y-4 text-left">
-                <div>
-                    <label class="block text-xs font-bold text-indigo-950 uppercase mb-1">Your Discord / Username</label>
-                    <input type="text" required placeholder="e.g. traveler_123" class="w-full px-4 py-2.5 rounded-xl border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white/80 text-sm">
+            <div class="space-y-4">
+                <!-- Option A: Upload Image File -->
+                <div class="glass-subcard rounded-2xl p-4 space-y-2">
+                    <label class="block text-xs font-extrabold text-indigo-950 uppercase">Option 1: Upload from Device</label>
+                    <input type="file" id="photo-file-input" accept="image/*" onchange="handlePhotoFileUpload(event)" class="block w-full text-xs text-indigo-900 file:mr-3 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 cursor-pointer">
                 </div>
 
-                <div>
-                    <label class="block text-xs font-bold text-indigo-950 uppercase mb-1">Service Type</label>
-                    <select id="modalServiceSelect" class="w-full px-4 py-2.5 rounded-xl border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white/80 text-sm font-semibold">
-                        <option value="Genshin Pilot">Genshin Pilot Service</option>
-                        <option value="Robux Top Up">Robux Top Up</option>
-                    </select>
+                <!-- Option B: Paste Image URL -->
+                <div class="glass-subcard rounded-2xl p-4 space-y-2">
+                    <label class="block text-xs font-extrabold text-indigo-950 uppercase">Option 2: Paste Image URL</label>
+                    <div class="flex gap-2">
+                        <input type="url" id="photo-url-input" placeholder="https://example.com/avatar.png" class="flex-1 px-3 py-2 rounded-xl bg-white border border-indigo-200 text-xs font-semibold outline-none focus:border-indigo-500">
+                        <button type="button" onclick="applyPhotoUrl()" class="btn-lavender px-4 py-2 rounded-xl text-xs font-bold cursor-pointer">Apply</button>
+                    </div>
                 </div>
 
-                <div>
-                    <label class="block text-xs font-bold text-indigo-950 uppercase mb-1">Notes / Request</label>
-                    <textarea rows="3" placeholder="Tell us what quests, primos, or robux amount you need..." class="w-full px-4 py-2.5 rounded-xl border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white/80 text-sm"></textarea>
+                <!-- Reset to Default Mascot -->
+                <div class="flex items-center justify-between pt-1">
+                    <button type="button" onclick="resetProfilePhoto()" class="text-xs font-bold text-pink-600 hover:underline cursor-pointer">
+                        Reset to Default Chibi Mascot
+                    </button>
+                    <button type="button" onclick="closePhotoModal()" class="glass-pill px-4 py-1.5 rounded-full text-xs font-bold text-indigo-950 cursor-pointer">
+                        Done
+                    </button>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <button type="submit" class="w-full glass-btn text-white font-bold py-3 rounded-2xl text-base shadow-lg mt-2">
-                    Submit Order Request ♡
+    <!-- =========================================================
+         MODAL 2: ORDER SLIP PREVIEW & DIRECT THREADS DM MODAL
+         ========================================================= -->
+    <div id="order-slip-modal" class="hidden fixed inset-0 z-50 bg-indigo-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card rounded-3xl p-6 sm:p-7 max-w-lg w-full space-y-4 relative">
+            <div class="flex items-center justify-between border-b border-indigo-200 pb-3">
+                <h3 class="font-display font-bold text-xl text-indigo-950">✨ Order Slip Ready & Copied!</h3>
+                <button type="button" onclick="closeOrderSlipModal()" class="w-8 h-8 rounded-full bg-indigo-100 hover:bg-indigo-200 text-indigo-900 flex items-center justify-center font-bold cursor-pointer">✕</button>
+            </div>
+
+            <p class="text-xs sm:text-sm text-indigo-900 font-semibold">
+                Your formatted order details have been copied to your clipboard! Tap a Threads account below to paste & send your order DM (don't forget to attach any required screenshots!):
+            </p>
+
+            <pre id="order-slip-preview" class="bg-white/95 border-2 border-indigo-200 rounded-2xl p-4 text-xs font-mono text-indigo-950 whitespace-pre-wrap max-h-56 overflow-y-auto"></pre>
+
+            <div class="flex flex-col sm:flex-row gap-2.5 pt-1">
+                <a href="https://www.threads.com/@mitya.xo" target="_blank" rel="noopener noreferrer" class="flex-1 btn-lavender py-3 rounded-2xl font-display font-bold text-sm flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-threads"></i>
+                    <span>DM Main (@mitya.xo)</span>
+                </a>
+                <a href="https://www.threads.com/@lilacmitya" target="_blank" rel="noopener noreferrer" class="flex-1 btn-pink py-3 rounded-2xl font-display font-bold text-sm flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-threads"></i>
+                    <span>DM Alt (@lilacmitya)</span>
+                </a>
+            </div>
+
+            <div class="text-center">
+                <button type="button" onclick="copyOrderSlipAgain()" class="text-xs font-extrabold text-indigo-600 hover:underline cursor-pointer">
+                    <i class="fa-regular fa-copy mr-1"></i> Copy Slip Again
                 </button>
-            </form>
+            </div>
         </div>
     </div>
 
     <!-- TOAST NOTIFICATION -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 glass-btn bg-indigo-900 text-white px-5 py-3 rounded-2xl shadow-2xl border-2 border-indigo-300 flex items-center gap-3 transform translate-y-24 opacity-0 pointer-events-none">
-        <span class="text-pink-400 text-xl">✨</span>
+    <div id="toast-banner" class="fixed bottom-5 right-5 z-50 glass-pill bg-indigo-950/95 text-white border-2 border-indigo-300 px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300 translate-y-24 opacity-0 pointer-events-none">
+        <span class="text-pink-400 text-lg">♡</span>
         <div>
-            <h5 id="toast-title" class="font-bold text-sm">Success!</h5>
-            <p id="toast-msg" class="text-xs text-indigo-200">Your order request has been registered.</p>
+            <p id="toast-title" class="font-display font-bold text-sm text-white">Notice</p>
+            <p id="toast-desc" class="text-xs text-indigo-200">Action completed.</p>
         </div>
     </div>
 
-
-    <!-- JAVASCRIPT FOR INTERACTIVITY -->
     <script>
-        // Testimonials Data Carousel
-        const testimonials = [
+        /* =========================================================
+           1. SPA NAVIGATION & VIEW SWITCHING
+           ========================================================= */
+        function navigateTo(viewName) {
+            const views = ['home', 'genshin', 'robux'];
+            views.forEach(v => {
+                const el = document.getElementById('view-' + v);
+                if (el) {
+                    if (v === viewName) {
+                        el.classList.remove('hidden');
+                    } else {
+                        el.classList.add('hidden');
+                    }
+                }
+                const navBtn = document.getElementById('nav-' + v);
+                if (navBtn) {
+                    if (v === viewName) {
+                        navBtn.classList.add('bg-indigo-100/90', 'text-indigo-950');
+                    } else {
+                        navBtn.classList.remove('bg-indigo-100/90');
+                    }
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function scrollToShared(sectionId) {
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        /* =========================================================
+           2. REPLACEABLE HERO PROFILE PHOTO (LOCALSTORAGE)
+           ========================================================= */
+        const PHOTO_STORAGE_KEY = 'mitya_xo_custom_profile_photo';
+
+        function applyProfilePhoto(src) {
+            const imgEl = document.getElementById('hero-custom-photo');
+            const svgEl = document.getElementById('hero-default-svg');
+            if (src) {
+                imgEl.src = src;
+                imgEl.classList.remove('hidden');
+                svgEl.classList.add('hidden');
+            } else {
+                imgEl.src = '';
+                imgEl.classList.add('hidden');
+                svgEl.classList.remove('hidden');
+            }
+        }
+
+        function openPhotoModal() {
+            document.getElementById('photo-modal').classList.remove('hidden');
+        }
+
+        function closePhotoModal() {
+            document.getElementById('photo-modal').classList.add('hidden');
+        }
+
+        function handlePhotoFileUpload(event) {
+            const file = event.target.files && event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const dataUrl = e.target.result;
+                try {
+                    localStorage.setItem(PHOTO_STORAGE_KEY, dataUrl);
+                } catch (err) {
+                    console.warn('Storage limit reached, displaying for current session.');
+                }
+                applyProfilePhoto(dataUrl);
+                closePhotoModal();
+                showToast('Profile Photo Updated! 📷', 'Your custom avatar is now displayed.');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function applyPhotoUrl() {
+            const url = document.getElementById('photo-url-input').value.trim();
+            if (!url) return;
+            try {
+                localStorage.setItem(PHOTO_STORAGE_KEY, url);
+            } catch (err) {}
+            applyProfilePhoto(url);
+            closePhotoModal();
+            showToast('Profile Photo Updated! 📷', 'Your image URL has been applied.');
+        }
+
+        function resetProfilePhoto() {
+            localStorage.removeItem(PHOTO_STORAGE_KEY);
+            applyProfilePhoto(null);
+            closePhotoModal();
+            showToast('Reset Complete ♡', 'Restored default anime chibi mascot.');
+        }
+
+        /* =========================================================
+           3. ROBLOX ROBUX PRICELIST & SYNCED ORDER FORM
+           ========================================================= */
+        const robuxPackages = [
+            { robux: '100 Robux', price: 'RM5.00' },
+            { robux: '200 Robux', price: 'RM8.50' },
+            { robux: '300 Robux', price: 'RM12.50' },
+            { robux: '400 Robux', price: 'RM16.50' },
+            { robux: '500 Robux', price: 'RM19.50' },
+            { robux: '600 Robux', price: 'RM24.00' },
+            { robux: '700 Robux', price: 'RM28.00' },
+            { robux: '800 Robux', price: 'RM31.00' },
+            { robux: '900 Robux', price: 'RM34.00' },
+            { robux: '1,000 Robux', price: 'RM38.00' },
+            { robux: '1,500 Robux', price: 'RM55.00' },
+            { robux: '2,000 Robux', price: 'RM75.00' },
+            { robux: '3,000 Robux', price: 'RM110.00' },
+            { robux: '4,000 Robux', price: 'RM150.00' },
+            { robux: '5,000 Robux', price: 'RM185.00' }
+        ];
+
+        let selectedRobuxIndex = 0;
+
+        function renderRobuxPricelist() {
+            const grid = document.getElementById('robux-pricelist-grid');
+            const select = document.getElementById('r-package-select');
+            if (!grid || !select) return;
+
+            grid.innerHTML = '';
+            select.innerHTML = '';
+
+            robuxPackages.forEach((pkg, idx) => {
+                // Build interactive chip
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                const isSelected = idx === selectedRobuxIndex;
+                btn.className = isSelected
+                    ? 'rounded-2xl p-3 text-center border-2 border-pink-500 bg-white shadow-md transform scale-[1.02] transition cursor-pointer'
+                    : 'glass-subcard rounded-2xl p-3 text-center border-2 border-white hover:border-pink-300 hover:bg-white/90 transition cursor-pointer';
+                btn.innerHTML = `
+                    <div class="text-xs font-extrabold text-indigo-950">✦ ${pkg.robux}</div>
+                    <div class="font-display font-bold text-sm sm:text-base text-pink-600 mt-0.5">${pkg.price}</div>
+                `;
+                btn.onclick = () => {
+                    selectedRobuxIndex = idx;
+                    renderRobuxPricelist();
+                    select.value = String(idx);
+                    showToast('Package Selected ♡', `${pkg.robux} — ${pkg.price}`);
+                };
+                grid.appendChild(btn);
+
+                // Build dropdown option
+                const opt = document.createElement('option');
+                opt.value = String(idx);
+                opt.textContent = `${pkg.robux} — ${pkg.price}`;
+                if (isSelected) opt.selected = true;
+                select.appendChild(opt);
+            });
+        }
+
+        function syncRobuxChipFromSelect() {
+            const select = document.getElementById('r-package-select');
+            selectedRobuxIndex = parseInt(select.value, 10) || 0;
+            renderRobuxPricelist();
+        }
+
+        /* =========================================================
+           4. GENSHIN & ROBUX INQUIRY SLIP GENERATION + CLIPBOARD
+           ========================================================= */
+        let latestFormattedSlip = '';
+
+        function updateGenshinUpfront() {
+            const val = document.getElementById('g-quest-type').value;
+            const badge = document.getElementById('g-upfront-display');
+            if (val.includes('RM10.00')) {
+                badge.textContent = 'RM10.00 Upfront (Archon Quest Boss Fight)';
+                badge.className = 'font-display font-bold text-base text-pink-600';
+            } else {
+                badge.textContent = 'RM0.50 Upfront (+ Pay What You Desire after)';
+                badge.className = 'font-display font-bold text-base text-indigo-700';
+            }
+        }
+
+        function handleGenshinSubmit(e) {
+            e.preventDefault();
+            const handle = document.getElementById('g-handle').value.trim();
+            const server = document.getElementById('g-server').value;
+            const questType = document.getElementById('g-quest-type').value;
+            const details = document.getElementById('g-details').value.trim();
+
+            latestFormattedSlip =
+`✦ GENSHIN PILOT INQUIRY (mitya.xo) ✦
+• Threads/IG: ${handle}
+• Server: ${server} (Malaysian Player 🇲🇾)
+• Quest Type: ${questType}
+• Quest Details: ${details}
+• Terms Confirmed: Upfront payment ready & no Abyss/artifact/material/domain farming.`;
+
+            copyTextSafe(latestFormattedSlip);
+            openOrderSlipModal(latestFormattedSlip);
+        }
+
+        function handleRobuxSubmit(e) {
+            e.preventDefault();
+            const username = document.getElementById('r-username').value.trim();
+            const display = document.getElementById('r-display').value.trim();
+            const pkg = robuxPackages[selectedRobuxIndex];
+            const link = document.getElementById('r-profile-link').value.trim();
+
+            latestFormattedSlip =
+`✦ ROBUX ORDER FORM — VIA USERNAME (mitya.xo) ✦
+• Roblox Username: ${username}
+• Display Name: ${display}
+• Amount of Robux: ${pkg.robux} (${pkg.price})
+• Roblox Profile Link: ${link}
+• Screenshot Proof (3): Ready (18-20 Age Eligibility, Email 2SV, Daily Robux Limit — sensitive info hidden)`;
+
+            copyTextSafe(latestFormattedSlip);
+            openOrderSlipModal(latestFormattedSlip);
+        }
+
+        function copyTextSafe(text) {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                if (navigator.clipboard) navigator.clipboard.writeText(text);
+            }
+            document.body.removeChild(ta);
+        }
+
+        function openOrderSlipModal(slipText) {
+            document.getElementById('order-slip-preview').textContent = slipText;
+            document.getElementById('order-slip-modal').classList.remove('hidden');
+            showToast('Order Slip Copied! ♡', 'Ready to paste in Threads DM.');
+        }
+
+        function closeOrderSlipModal() {
+            document.getElementById('order-slip-modal').classList.add('hidden');
+        }
+
+        function copyOrderSlipAgain() {
+            if (latestFormattedSlip) {
+                copyTextSafe(latestFormattedSlip);
+                showToast('Copied Again! ♡', 'Order slip copied to clipboard.');
+            }
+        }
+
+        /* =========================================================
+           5. TESTIMONIALS CAROUSEL & FAQ ACCORDION
+           ========================================================= */
+        const testimonialsData = [
             {
-                leftText: `"ada masukk , thankyouu awaknyaaa 💕💕 ♡"`,
-                leftAuthor: `- vqnillaaa ♡`,
-                rightText: `"sama2, thank you beli kat saya 💕💕 ♡"`,
-                rightAuthor: `- sama2 ♡`,
-                item: `Genshin 6480 Genesis`,
-                buyer: `@vqnillaaa`,
-                reply: `Order processing done! Thank you ♡`
+                leftMsg: '"ada masukk , thankyouu awaknyaaa 💕💕"',
+                leftUser: '- vqnillaaa ♡',
+                rightMsg: '"sama2, thank you beli kat saya 💕💕 ♡"',
+                rightUser: '- sama2 ♡',
+                badge: 'Roblox Robux',
+                amount: 'Completed',
+                detail: 'Robux top-up via username credited safely!',
+                buyer: 'Customer: vqnillaaa ♡',
+                note: 'sama2, thank you beli kat saya 💕'
             },
             {
-                leftText: `"fast delivery & seller fast reply super trusted!! 🌸"`,
-                leftAuthor: `- cherry_blossom ♡`,
-                rightText: `"tq order dgn mitya.xo! enjoy your pull 💕"`,
-                rightAuthor: `- mitya.xo ♡`,
-                item: `10,000 Robux Payout`,
-                buyer: `@cherry_blossom`,
-                reply: `Robux transferred safely! ✨`
+                leftMsg: '"archon quest siap laju gila, thank youu mitya!! ✨"',
+                leftUser: '- nurul_gi ♡',
+                rightMsg: '"sama2 awak! thank you support pilot saya ♡"',
+                rightUser: '- mitya.xo ♡',
+                badge: 'Genshin Pilot',
+                amount: 'RM0.50 + Tip',
+                detail: 'Archon Quest & Daily Commissions cleared!',
+                buyer: 'Customer: nurul_gi ♡',
+                note: 'Thank you for trusting my piloting service! ♡'
             },
             {
-                leftText: `"Spiral Abyss 36 stars cleared so fast, highly recommended 👍"`,
-                leftAuthor: `- kazuha_main ♡`,
-                rightText: `"welcome anytime dear! happy gaming 💕"`,
-                rightAuthor: `- mitya.xo ♡`,
-                item: `Abyss 12 Full Clear`,
-                buyer: `@kazuha_main`,
-                reply: `Abyss cleared 36/36 stars ⭐`
+                leftMsg: '"trusted seller 100%, proses cepat & friendly 💖"',
+                leftUser: '- aisyah.rblx ♡',
+                rightMsg: '"terima kasih banyakk beli kat kedai saya ♡"',
+                rightUser: '- mitya.xo ♡',
+                badge: '500 Robux',
+                amount: 'RM19.50',
+                detail: '500 Robux delivered smoothly via username!',
+                buyer: 'Customer: aisyah.rblx ♡',
+                note: 'Play more, Worry less ♡'
             }
         ];
 
-        let currentTestiIndex = 0;
+        let activeTesti = 0;
 
-        function updateTestimonialUI() {
-            const data = testimonials[currentTestiIndex];
-            
-            document.getElementById('testi-left-text').innerText = data.leftText;
-            document.getElementById('testi-left-author').innerText = data.leftAuthor;
-            
-            document.getElementById('testi-right-text').innerText = data.rightText;
-            document.getElementById('testi-right-author').innerText = data.rightAuthor;
-            
-            document.getElementById('testi-item').innerText = data.item;
-            document.getElementById('testi-buyer').innerText = data.buyer;
-            document.getElementById('testi-reply').innerText = data.reply;
+        function renderTestimonial() {
+            const item = testimonialsData[activeTesti];
+            document.getElementById('testi-left-msg').textContent = item.leftMsg;
+            document.getElementById('testi-left-user').textContent = item.leftUser;
+            document.getElementById('testi-right-msg').textContent = item.rightMsg;
+            document.getElementById('testi-right-user').textContent = item.rightUser;
+            document.getElementById('testi-proof-badge').textContent = item.badge;
+            document.getElementById('testi-proof-amount').textContent = item.amount;
+            document.getElementById('testi-proof-detail').textContent = item.detail;
+            document.getElementById('testi-proof-buyer').textContent = item.buyer;
+            document.getElementById('testi-proof-note').textContent = item.note;
 
-            // Update dots styling
-            const dots = document.querySelectorAll('.testi-dot');
-            dots.forEach((dot, idx) => {
-                if (idx === currentTestiIndex) {
+            document.querySelectorAll('.testi-dot').forEach((dot, idx) => {
+                if (idx === activeTesti) {
                     dot.classList.remove('bg-indigo-300');
-                    dot.classList.add('bg-indigo-600', 'w-6');
+                    dot.classList.add('bg-indigo-600', 'scale-125');
                 } else {
-                    dot.classList.remove('bg-indigo-600', 'w-6');
-                    dot.classList.add('bg-indigo-300', 'w-3');
+                    dot.classList.remove('bg-indigo-600', 'scale-125');
+                    dot.classList.add('bg-indigo-300');
                 }
             });
         }
 
-        function nextTestimonial() {
-            currentTestiIndex = (currentTestiIndex + 1) % testimonials.length;
-            updateTestimonialUI();
+        function changeTestimonial(dir) {
+            activeTesti = (activeTesti + dir + testimonialsData.length) % testimonialsData.length;
+            renderTestimonial();
         }
 
-        function prevTestimonial() {
-            currentTestiIndex = (currentTestiIndex - 1 + testimonials.length) % testimonials.length;
-            updateTestimonialUI();
+        function setTestimonial(idx) {
+            activeTesti = idx;
+            renderTestimonial();
         }
 
-        function setTestimonial(index) {
-            currentTestiIndex = index;
-            updateTestimonialUI();
-        }
-
-        // Auto rotate testimonials every 6s
-        setInterval(() => {
-            nextTestimonial();
-        }, 6000);
-
-        // Modal Logic
-        function openOrderModal(serviceName) {
-            const modal = document.getElementById('orderModal');
-            const modalContent = document.getElementById('modalContent');
-            const select = document.getElementById('modalServiceSelect');
-            
-            if (serviceName) {
-                select.value = serviceName;
+        function toggleFaq(index) {
+            const body = document.getElementById('faq-body-' + index);
+            const icon = document.getElementById('faq-icon-' + index);
+            if (!body || !icon) return;
+            const isHidden = body.classList.contains('hidden');
+            if (isHidden) {
+                body.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                body.classList.add('hidden');
+                icon.classList.remove('rotate-180');
             }
-
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            modalContent.classList.remove('scale-95');
-            modalContent.classList.add('scale-100');
         }
 
-        function closeOrderModal() {
-            const modal = document.getElementById('orderModal');
-            const modalContent = document.getElementById('modalContent');
-
-            modalContent.classList.remove('scale-100');
-            modalContent.classList.add('scale-95');
-            modal.classList.add('opacity-0', 'pointer-events-none');
+        /* =========================================================
+           6. TOAST UTILITY & INIT
+           ========================================================= */
+        let toastTimer = null;
+        function showToast(title, desc) {
+            const banner = document.getElementById('toast-banner');
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-desc').textContent = desc;
+            banner.classList.remove('translate-y-24', 'opacity-0');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                banner.classList.add('translate-y-24', 'opacity-0');
+            }, 3400);
         }
 
-        function showToast(title, message) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-title').innerText = title;
-            document.getElementById('toast-msg').innerText = message;
-
-            toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
-
-            setTimeout(() => {
-                toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
-            }, 4000);
-        }
-
-        function handleOrderSubmit(e) {
-            e.preventDefault();
-            closeOrderModal();
-            showToast("Order Request Sent! ♡", "We will redirect you to Discord to finalize details.");
-        }
-
-        // Initialize UI states
-        window.onload = function() {
-            updateTestimonialUI();
-        }
+        window.addEventListener('DOMContentLoaded', () => {
+            // Restore saved custom profile photo if available
+            const savedPhoto = localStorage.getItem(PHOTO_STORAGE_KEY);
+            if (savedPhoto) {
+                applyProfilePhoto(savedPhoto);
+            }
+            renderRobuxPricelist();
+            renderTestimonial();
+        });
     </script>
 </body>
 </html>
